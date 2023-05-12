@@ -74,6 +74,7 @@
     <Compile Include="document.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="exam.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -196,6 +197,12 @@
     <Compile Include="View\mainFormTeacher.Designer.cs">
       <DependentUpon>mainFormTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\profileManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\profileManage.Designer.cs">
+      <DependentUpon>profileManage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -246,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\mainFormTeacher.resx">
       <DependentUpon>mainFormTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\profileManage.resx">
+      <DependentUpon>profileManage.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
