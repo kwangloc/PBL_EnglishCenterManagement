@@ -1,6 +1,6 @@
 ﻿namespace PBL_EnglishCenter.View
 {
-    partial class login
+    partial class courseViewTeacher
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // login
+            // courseViewTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 977);
-            this.Name = "login";
-            this.Text = "login";
+            this.Name = "courseViewTeacher";
+            this.Text = "courseViewTeacher";
             this.ResumeLayout(false);
 
         }

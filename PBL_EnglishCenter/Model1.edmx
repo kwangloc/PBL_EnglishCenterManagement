@@ -540,7 +540,7 @@
           <NavigationProperty Name="teacher_info" Relationship="Self.FK_userid_in_teacherinfo" FromRole="users" ToRole="teacher_info" />
         </EntityType>
         <Association Name="FK_userid_in_account">
-          <End Role="users" Type="Self.user" Multiplicity="0..1" />
+          <End Role="users" Type="pbl3_english_centerModel.user" Multiplicity="0..1" />
           <End Role="account" Type="Self.account" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -576,7 +576,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_studentid_in_document">
-          <End Role="users" Type="Self.user" Multiplicity="0..1" />
+          <End Role="users" Type="pbl3_english_centerModel.user" Multiplicity="0..1" />
           <End Role="attendance" Type="Self.attendance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -648,7 +648,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_teacherid_in_course">
-          <End Role="users" Type="Self.user" Multiplicity="0..1" />
+          <End Role="users" Type="pbl3_english_centerModel.user" Multiplicity="0..1" />
           <End Role="course" Type="Self.course" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -660,7 +660,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_studentid_in_coursemember">
-          <End Role="users" Type="Self.user" Multiplicity="0..1" />
+          <End Role="users" Type="pbl3_english_centerModel.user" Multiplicity="0..1" />
           <End Role="course_member" Type="Self.course_member" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -684,7 +684,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_studentid_in_examdetails">
-          <End Role="users" Type="Self.user" Multiplicity="0..1" />
+          <End Role="users" Type="pbl3_english_centerModel.user" Multiplicity="0..1" />
           <End Role="exam_details" Type="Self.exam_details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -696,7 +696,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_userid_in_studentinfo">
-          <End Role="users" Type="Self.user" Multiplicity="0..1" />
+          <End Role="users" Type="pbl3_english_centerModel.user" Multiplicity="0..1" />
           <End Role="student_info" Type="Self.student_info" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -708,7 +708,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_userid_in_teacherinfo">
-          <End Role="users" Type="Self.user" Multiplicity="0..1" />
+          <End Role="users" Type="pbl3_english_centerModel.user" Multiplicity="0..1" />
           <End Role="teacher_info" Type="Self.teacher_info" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -732,7 +732,7 @@
           <EntitySet Name="schedules" EntityType="Self.schedule" />
           <EntitySet Name="student_info" EntityType="Self.student_info" />
           <EntitySet Name="teacher_info" EntityType="Self.teacher_info" />
-          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="users" EntityType="pbl3_english_centerModel.user" />
           <AssociationSet Name="FK_userid_in_account" Association="Self.FK_userid_in_account">
             <End Role="users" EntitySet="users" />
             <End Role="account" EntitySet="accounts" />

@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace PBL_EnglishCenter.View
 {
-    public partial class login : Form
+    public partial class loginForm : Form
     {
-        public login()
+        public loginForm()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            dataGridView1.DataSource = db.users.ToList();
         }
     }
 }

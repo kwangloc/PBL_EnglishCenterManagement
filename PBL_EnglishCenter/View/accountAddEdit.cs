@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PBL_EnglishCenter.View
 {
-    public partial class login : Form
+    public partial class accountAddEdit : Form
     {
-        public login()
+        public accountAddEdit()
         {
             InitializeComponent();
         }
