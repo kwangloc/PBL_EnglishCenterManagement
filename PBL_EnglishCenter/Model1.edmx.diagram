@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e8133edb954d47b3a7e200658a1f83e4" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="pbl3_english_centerModel.account" Width="1.5" PointX="7.5" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.announcement" Width="1.5" PointX="13.875" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.attendance" Width="1.5" PointX="8.125" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.course" Width="3.25" PointX="9.125" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.course_member" Width="1.5" PointX="10.125" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.document" Width="1.5" PointX="13.875" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.exam" Width="1.5" PointX="12.125" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.exam_details" Width="1.5" PointX="14.125" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.location" Width="1.5" PointX="6.125" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.schedule" Width="1.5" PointX="6.125" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.student_info" Width="1.5" PointX="12" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.teacher_info" Width="1.5" PointX="9.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pbl3_english_centerModel.user" Width="2.875" PointX="9.125" PointY="19.25" IsExpanded="true" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_userid_in_account" ManuallyRouted="false" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_courseid_in_announcement" ManuallyRouted="false" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_courseid_in_attendance" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="pbl3_english_centerModel.FK_studentid_in_document" ManuallyRouted="false" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_courseid_in_coursemember" ManuallyRouted="false" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_courseid_in_document" ManuallyRouted="false" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_courseid_in_exam" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="pbl3_english_centerModel.FK_courseid_in_schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_locationid_in_course" ManuallyRouted="false" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_teacherid_in_course" ManuallyRouted="false" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_studentid_in_coursemember" ManuallyRouted="false" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_examid_in_examdetails" ManuallyRouted="false" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_studentid_in_examdetails" ManuallyRouted="false" />
+        <AssociationConnector Association="pbl3_english_centerModel.FK_userid_in_studentinfo" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="pbl3_english_centerModel.FK_userid_in_teacherinfo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
