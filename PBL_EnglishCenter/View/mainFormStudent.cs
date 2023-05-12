@@ -12,9 +12,17 @@ namespace PBL_EnglishCenter.View
 {
     public partial class mainFormStudent : Form
     {
+        public delegate void DelMainFormStudent();
+        public DelMainFormStudent DelStudent1 { get; set; }
         public mainFormStudent()
         {
             InitializeComponent();
+        }
+
+        private void bt_logout_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            DelStudent1();
         }
     }
 }
