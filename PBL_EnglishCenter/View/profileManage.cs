@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace PBL_EnglishCenter.View
 {
-    public partial class mainFormAdmin : Form
+    public partial class profileManage : Form
     {
-        public delegate void DelMainFormAdmin();
-        public DelMainFormAdmin DelAdmin1 { get; set; }
-        public mainFormAdmin()
+        public profileManage()
         {
             InitializeComponent();
-        }
-
-        private void bt_logout_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            DelAdmin1();
         }
     }
 }

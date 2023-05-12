@@ -1,6 +1,6 @@
 ﻿namespace PBL_EnglishCenter.View
 {
-    partial class examDetailsManage
+    partial class profileManage
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // examDetailsManage
+            // profileManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1662, 977);
-            this.Name = "examDetailsManage";
-            this.Text = "examDetailsManage";
+            this.Name = "profileManage";
+            this.Text = "profileManage";
             this.ResumeLayout(false);
 
         }
