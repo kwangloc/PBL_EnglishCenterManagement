@@ -138,15 +138,26 @@ namespace PBL_EnglishCenter.BLL
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             return db.accounts.Find(Id);
         }
+        // teacher_info and user_info
         public teacher_info getTeacherInfoById(int Id)
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             return db.teacher_info.Find(Id);
         }
+        public teacher_info getTeacherInfoByUserId(int userId)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            return db.teacher_info.Where(p => p.user_id == userId).FirstOrDefault();
+        }
         public student_info getStudentInfoById(int Id)
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             return db.student_info.Find(Id);
+        }
+        public student_info getStudentInfoByUserId(int userId)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            return db.student_info.Where(p => p.user_id == userId).FirstOrDefault();
         }
         public List<schedule> getListScheduleByCourseId(int courseId)
         {
