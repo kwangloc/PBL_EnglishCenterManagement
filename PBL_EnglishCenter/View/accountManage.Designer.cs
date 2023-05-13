@@ -59,8 +59,8 @@ namespace PBL_EnglishCenter.View
             this.lb_searchbyname = new System.Windows.Forms.Label();
             this.lb_searchbytype = new System.Windows.Forms.Label();
             this.gb_manage = new System.Windows.Forms.GroupBox();
-            this.lb_accmanage = new System.Windows.Forms.Label();
             this.lb_gender = new System.Windows.Forms.Label();
+            this.lb_accmanage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gb_search.SuspendLayout();
             this.gb_manage.SuspendLayout();
@@ -261,7 +261,7 @@ namespace PBL_EnglishCenter.View
             // rb_Male
             // 
             this.rb_Male.AutoSize = true;
-            this.rb_Male.Location = new System.Drawing.Point(332, 84);
+            this.rb_Male.Location = new System.Drawing.Point(340, 84);
             this.rb_Male.Margin = new System.Windows.Forms.Padding(2);
             this.rb_Male.Name = "rb_Male";
             this.rb_Male.Size = new System.Drawing.Size(48, 17);
@@ -273,7 +273,7 @@ namespace PBL_EnglishCenter.View
             // rb_female
             // 
             this.rb_female.AutoSize = true;
-            this.rb_female.Location = new System.Drawing.Point(386, 83);
+            this.rb_female.Location = new System.Drawing.Point(406, 84);
             this.rb_female.Margin = new System.Windows.Forms.Padding(2);
             this.rb_female.Name = "rb_female";
             this.rb_female.Size = new System.Drawing.Size(59, 17);
@@ -399,17 +399,6 @@ namespace PBL_EnglishCenter.View
             this.gb_manage.TabStop = false;
             this.gb_manage.Text = "Manage";
             // 
-            // lb_accmanage
-            // 
-            this.lb_accmanage.AutoSize = true;
-            this.lb_accmanage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lb_accmanage.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_accmanage.Location = new System.Drawing.Point(134, 12);
-            this.lb_accmanage.Name = "lb_accmanage";
-            this.lb_accmanage.Size = new System.Drawing.Size(248, 35);
-            this.lb_accmanage.TabIndex = 26;
-            this.lb_accmanage.Text = "Account Manage";
-            // 
             // lb_gender
             // 
             this.lb_gender.AutoSize = true;
@@ -419,6 +408,17 @@ namespace PBL_EnglishCenter.View
             this.lb_gender.Size = new System.Drawing.Size(67, 20);
             this.lb_gender.TabIndex = 17;
             this.lb_gender.Text = "Gender:";
+            // 
+            // lb_accmanage
+            // 
+            this.lb_accmanage.AutoSize = true;
+            this.lb_accmanage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lb_accmanage.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_accmanage.Location = new System.Drawing.Point(138, 12);
+            this.lb_accmanage.Name = "lb_accmanage";
+            this.lb_accmanage.Size = new System.Drawing.Size(248, 35);
+            this.lb_accmanage.TabIndex = 26;
+            this.lb_accmanage.Text = "Account Manage";
             // 
             // accountManage
             // 
