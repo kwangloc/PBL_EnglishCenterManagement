@@ -40,5 +40,11 @@ namespace PBL_EnglishCenter.View
             profileManage profileForm = new profileManage(currentAccount);
             profileForm.Show();
         }
+
+        private void bt_courseTeacher_Click(object sender, EventArgs e)
+        {
+            courseViewTeacher courseViewTeacherForm = new courseViewTeacher(currentAccount);
+            courseViewTeacherForm.ShowDialog();
+        }
     }
 }

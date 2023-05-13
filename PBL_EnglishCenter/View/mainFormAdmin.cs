@@ -47,5 +47,12 @@ namespace PBL_EnglishCenter.View
             accountManage f = new accountManage();
             f.ShowDialog();
         }
+
+        private void bt_courseAdmin_Click(object sender, EventArgs e)
+        {
+            courseViewAdmin courseViewAdminForm = new courseViewAdmin(currentAccount);
+            courseViewAdminForm.ShowDialog();
+
+        }
     }
 }

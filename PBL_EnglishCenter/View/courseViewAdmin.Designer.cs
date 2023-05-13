@@ -42,7 +42,7 @@
             // dgv_allcourse
             // 
             this.dgv_allcourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_allcourse.Location = new System.Drawing.Point(374, 172);
+            this.dgv_allcourse.Location = new System.Drawing.Point(239, 143);
             this.dgv_allcourse.Name = "dgv_allcourse";
             this.dgv_allcourse.RowHeadersWidth = 51;
             this.dgv_allcourse.RowTemplate.Height = 24;
@@ -51,7 +51,7 @@
             // 
             // bt_add
             // 
-            this.bt_add.Location = new System.Drawing.Point(1262, 251);
+            this.bt_add.Location = new System.Drawing.Point(1129, 236);
             this.bt_add.Name = "bt_add";
             this.bt_add.Size = new System.Drawing.Size(119, 29);
             this.bt_add.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // bt_delete
             // 
-            this.bt_delete.Location = new System.Drawing.Point(1262, 307);
+            this.bt_delete.Location = new System.Drawing.Point(1129, 292);
             this.bt_delete.Name = "bt_delete";
             this.bt_delete.Size = new System.Drawing.Size(119, 29);
             this.bt_delete.TabIndex = 1;
@@ -70,7 +70,7 @@
             // 
             // bt_edit
             // 
-            this.bt_edit.Location = new System.Drawing.Point(1262, 356);
+            this.bt_edit.Location = new System.Drawing.Point(1129, 341);
             this.bt_edit.Name = "bt_edit";
             this.bt_edit.Size = new System.Drawing.Size(119, 29);
             this.bt_edit.TabIndex = 1;
@@ -109,7 +109,7 @@
             // 
             // bt_exit
             // 
-            this.bt_exit.Location = new System.Drawing.Point(711, 544);
+            this.bt_exit.Location = new System.Drawing.Point(583, 498);
             this.bt_exit.Name = "bt_exit";
             this.bt_exit.Size = new System.Drawing.Size(119, 29);
             this.bt_exit.TabIndex = 1;
@@ -121,7 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1462, 653);
+            this.ClientSize = new System.Drawing.Size(1312, 567);
             this.Controls.Add(this.lb_fullname);
             this.Controls.Add(this.bt_edit);
             this.Controls.Add(this.bt_delete);

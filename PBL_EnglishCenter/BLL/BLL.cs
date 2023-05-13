@@ -240,6 +240,17 @@ namespace PBL_EnglishCenter.BLL
             }
             return res;
         }
+        //
+        public List<course> getListCourseByStudentId(int studentId)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            List<course> res = new List<course>();
+            foreach (int i in getListCourseIdByStudentId(studentId))
+            {
+                res.Add(db.courses.Where(p => p.id == i).FirstOrDefault());
+            }
+            return res;
+        }
         // announcement teacher
         public List<course> getListCourseByTeacherId(int teacherId) // seek in course
         {
