@@ -12,9 +12,29 @@ namespace PBL_EnglishCenter.View
 {
     public partial class courseViewAdmin : Form
     {
-        public courseViewAdmin()
+        private account currentAccount;
+        public courseViewAdmin(account currentAccount)
         {
             InitializeComponent();
+            this.currentAccount = currentAccount;
+            setGUI();
+        }
+        private void setGUI()
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            // set hello + full name
+            lb_fullname.Text = "Hello, " + (db.users.Find(currentAccount.user_id)).fullname;
+            // set manage course dgv
+            dgv_allcourse.DataSource = BLL.BLL.Instance.getListAllCourse().ToList();
+        }
+        private void bt_add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
