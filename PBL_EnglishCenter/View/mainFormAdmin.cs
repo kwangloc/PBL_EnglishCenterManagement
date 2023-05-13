@@ -41,5 +41,11 @@ namespace PBL_EnglishCenter.View
             profileManage profileForm = new profileManage(currentAccount);
             profileForm.Show();
         }
+
+        private void bt_accountAdmin_Click(object sender, EventArgs e)
+        {
+            accountManage f = new accountManage();
+            f.ShowDialog();
+        }
     }
 }
