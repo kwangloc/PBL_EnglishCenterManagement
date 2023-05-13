@@ -414,7 +414,7 @@ namespace PBL_EnglishCenter.View
             this.lb_accmanage.AutoSize = true;
             this.lb_accmanage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lb_accmanage.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_accmanage.Location = new System.Drawing.Point(117, 21);
+            this.lb_accmanage.Location = new System.Drawing.Point(132, 21);
             this.lb_accmanage.Name = "lb_accmanage";
             this.lb_accmanage.Size = new System.Drawing.Size(248, 35);
             this.lb_accmanage.TabIndex = 26;
