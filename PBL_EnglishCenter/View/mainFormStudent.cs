@@ -34,5 +34,11 @@ namespace PBL_EnglishCenter.View
             this.Dispose();
             DelStudent1();
         }
+
+        private void bt_profile_Click(object sender, EventArgs e)
+        {
+            profileManage profileForm = new profileManage(currentAccount);
+            profileForm.Show();
+        }
     }
 }

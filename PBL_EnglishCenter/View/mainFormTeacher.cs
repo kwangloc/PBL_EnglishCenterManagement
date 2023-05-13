@@ -24,6 +24,7 @@ namespace PBL_EnglishCenter.View
         private void setGUI()
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            // set hello + full name
             lb_fullname.Text = "Hello, " + (db.users.Find(currentAccount.user_id)).fullname;
             // set ann dgv
             dgvAnnTea.DataSource = BLL.BLL.Instance.getListAnnouncementByTeacherId((int)currentAccount.user_id).ToList();
@@ -32,6 +33,12 @@ namespace PBL_EnglishCenter.View
         {
             this.Dispose();
             DelTeacher1();
+        }
+
+        private void bt_profile_Click(object sender, EventArgs e)
+        {
+            profileManage profileForm = new profileManage(currentAccount);
+            profileForm.Show();
         }
     }
 }

@@ -39,7 +39,7 @@
             // 
             // bt_logout
             // 
-            this.bt_logout.Location = new System.Drawing.Point(1366, 42);
+            this.bt_logout.Location = new System.Drawing.Point(1130, 46);
             this.bt_logout.Name = "bt_logout";
             this.bt_logout.Size = new System.Drawing.Size(143, 39);
             this.bt_logout.TabIndex = 0;
@@ -68,17 +68,17 @@
             // dgvAnnAdm
             // 
             this.dgvAnnAdm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnnAdm.Location = new System.Drawing.Point(385, 195);
+            this.dgvAnnAdm.Location = new System.Drawing.Point(261, 125);
             this.dgvAnnAdm.Name = "dgvAnnAdm";
             this.dgvAnnAdm.RowHeadersWidth = 51;
             this.dgvAnnAdm.RowTemplate.Height = 24;
-            this.dgvAnnAdm.Size = new System.Drawing.Size(1210, 670);
+            this.dgvAnnAdm.Size = new System.Drawing.Size(1104, 383);
             this.dgvAnnAdm.TabIndex = 1;
             // 
             // lb_fullname
             // 
             this.lb_fullname.AutoSize = true;
-            this.lb_fullname.Location = new System.Drawing.Point(997, 53);
+            this.lb_fullname.Location = new System.Drawing.Point(761, 57);
             this.lb_fullname.Name = "lb_fullname";
             this.lb_fullname.Size = new System.Drawing.Size(57, 16);
             this.lb_fullname.TabIndex = 2;
@@ -86,18 +86,19 @@
             // 
             // bt_profile
             // 
-            this.bt_profile.Location = new System.Drawing.Point(1178, 42);
+            this.bt_profile.Location = new System.Drawing.Point(942, 46);
             this.bt_profile.Name = "bt_profile";
             this.bt_profile.Size = new System.Drawing.Size(143, 39);
             this.bt_profile.TabIndex = 0;
             this.bt_profile.Text = "Profile";
             this.bt_profile.UseVisualStyleBackColor = true;
+            this.bt_profile.Click += new System.EventHandler(this.bt_profile_Click);
             // 
             // mainFormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1662, 977);
+            this.ClientSize = new System.Drawing.Size(1497, 632);
             this.Controls.Add(this.lb_fullname);
             this.Controls.Add(this.dgvAnnAdm);
             this.Controls.Add(this.bt_accountAdmin);
