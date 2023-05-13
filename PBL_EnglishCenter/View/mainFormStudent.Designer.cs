@@ -39,63 +39,77 @@
             // lb_fullname
             // 
             this.lb_fullname.AutoSize = true;
-            this.lb_fullname.Location = new System.Drawing.Point(997, 53);
+            this.lb_fullname.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic);
+            this.lb_fullname.Location = new System.Drawing.Point(201, 18);
+            this.lb_fullname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_fullname.Name = "lb_fullname";
-            this.lb_fullname.Size = new System.Drawing.Size(57, 16);
+            this.lb_fullname.Size = new System.Drawing.Size(87, 28);
             this.lb_fullname.TabIndex = 5;
             this.lb_fullname.Text = "fullname";
             // 
             // bt_profile
             // 
-            this.bt_profile.Location = new System.Drawing.Point(1178, 42);
+            this.bt_profile.BackColor = System.Drawing.Color.SkyBlue;
+            this.bt_profile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bt_profile.Location = new System.Drawing.Point(22, 218);
+            this.bt_profile.Margin = new System.Windows.Forms.Padding(2);
             this.bt_profile.Name = "bt_profile";
-            this.bt_profile.Size = new System.Drawing.Size(143, 39);
+            this.bt_profile.Size = new System.Drawing.Size(124, 61);
             this.bt_profile.TabIndex = 3;
             this.bt_profile.Text = "Profile";
-            this.bt_profile.UseVisualStyleBackColor = true;
+            this.bt_profile.UseVisualStyleBackColor = false;
             this.bt_profile.Click += new System.EventHandler(this.bt_profile_Click);
             // 
             // bt_logout
             // 
-            this.bt_logout.Location = new System.Drawing.Point(1366, 42);
+            this.bt_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.bt_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bt_logout.Location = new System.Drawing.Point(22, 306);
+            this.bt_logout.Margin = new System.Windows.Forms.Padding(2);
             this.bt_logout.Name = "bt_logout";
-            this.bt_logout.Size = new System.Drawing.Size(143, 39);
+            this.bt_logout.Size = new System.Drawing.Size(124, 61);
             this.bt_logout.TabIndex = 4;
             this.bt_logout.Text = "Log out";
-            this.bt_logout.UseVisualStyleBackColor = true;
+            this.bt_logout.UseVisualStyleBackColor = false;
             this.bt_logout.Click += new System.EventHandler(this.bt_logout_Click);
             // 
             // dgvAnnStu
             // 
             this.dgvAnnStu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnnStu.Location = new System.Drawing.Point(378, 195);
+            this.dgvAnnStu.Location = new System.Drawing.Point(169, 59);
+            this.dgvAnnStu.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAnnStu.Name = "dgvAnnStu";
             this.dgvAnnStu.RowHeadersWidth = 51;
             this.dgvAnnStu.RowTemplate.Height = 24;
             this.dgvAnnStu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAnnStu.Size = new System.Drawing.Size(1210, 670);
+            this.dgvAnnStu.Size = new System.Drawing.Size(804, 391);
             this.dgvAnnStu.TabIndex = 6;
             // 
             // bt_courseStudent
             // 
-            this.bt_courseStudent.Location = new System.Drawing.Point(51, 239);
+            this.bt_courseStudent.BackColor = System.Drawing.Color.SkyBlue;
+            this.bt_courseStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bt_courseStudent.Location = new System.Drawing.Point(22, 129);
+            this.bt_courseStudent.Margin = new System.Windows.Forms.Padding(2);
             this.bt_courseStudent.Name = "bt_courseStudent";
-            this.bt_courseStudent.Size = new System.Drawing.Size(167, 46);
+            this.bt_courseStudent.Size = new System.Drawing.Size(124, 61);
             this.bt_courseStudent.TabIndex = 8;
             this.bt_courseStudent.Text = "My Course";
-            this.bt_courseStudent.UseVisualStyleBackColor = true;
+            this.bt_courseStudent.UseVisualStyleBackColor = false;
             // 
             // mainFormStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1662, 977);
+            this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.bt_courseStudent);
             this.Controls.Add(this.dgvAnnStu);
             this.Controls.Add(this.lb_fullname);
             this.Controls.Add(this.bt_profile);
             this.Controls.Add(this.bt_logout);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "mainFormStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainFormStudent";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnnStu)).EndInit();
             this.ResumeLayout(false);
