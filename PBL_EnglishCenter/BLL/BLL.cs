@@ -204,6 +204,56 @@ namespace PBL_EnglishCenter.BLL
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             return db.accounts.Where(p => p.type.Equals("admin")).ToList();
         }
+        // announcement Student
+        public List<course_member> getListCourseMemberByStudentId(int studentId) // seek in course_member
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            return db.course_member.Where(p => p.student_id == studentId).ToList(); 
+        }
+        public List<int> getListCourseIdByStudentId(int studentId) 
+        {
+            List<int> res = new List<int>();
+            foreach(course_member i in getListCourseMemberByStudentId(studentId))
+            {
+                res.Add((int)i.course_id);
+            }
+            return res;
+        }
+        public List<announcement> getListAnnouncementByStudentId(int studentId)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            List<announcement> res = new List<announcement>();
+            foreach (int i in getListCourseIdByStudentId(studentId))
+            {
+                res.Add(db.announcements.Where(p => p.course_id == i).FirstOrDefault());
+            }
+            return res;
+        }
+        // announcement teacher
+        public List<course> getListCourseByTeacherId(int teacherId) // seek in course
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            return db.courses.Where(p => p.teacher_id == teacherId).ToList();
+        }
+        public List<int> getListCourseIdByTeacherId(int teacherId)
+        {
+            List<int> res = new List<int>();
+            foreach (course i in getListCourseByTeacherId(teacherId))
+            {
+                res.Add((int)i.id);
+            }
+            return res;
+        }
+        public List<announcement> getListAnnouncementByTeacherId(int studentId)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            List<announcement> res = new List<announcement>();
+            foreach (int i in getListCourseIdByTeacherId(studentId))
+            {
+                res.Add(db.announcements.Where(p => p.course_id == i).FirstOrDefault());
+            }
+            return res;
+        }
         // functions to check condition
         public account checkLogin(string username, string password)
         {

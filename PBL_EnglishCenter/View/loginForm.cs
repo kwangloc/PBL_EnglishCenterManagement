@@ -34,17 +34,17 @@ namespace PBL_EnglishCenter.View
                 switch (temp.type.ToString().Trim())
                 {
                     case "admin":
-                        mainFormAdmin adForm = new mainFormAdmin();
+                        mainFormAdmin adForm = new mainFormAdmin(temp);
                         adForm.DelAdmin1 += new mainFormAdmin.DelMainFormAdmin(clear_info);
                         adForm.Show();
                         break;
                     case "teacher":
-                        mainFormTeacher teaForm = new mainFormTeacher();
+                        mainFormTeacher teaForm = new mainFormTeacher(temp);
                         teaForm.DelTeacher1 += new mainFormTeacher.DelMainFormTeacher(clear_info);
                         teaForm.Show();
                         break;
                     case "student":
-                        mainFormStudent stuForm = new mainFormStudent();
+                        mainFormStudent stuForm = new mainFormStudent(temp);
                         stuForm.DelStudent1 += new mainFormStudent.DelMainFormStudent(clear_info);
                         stuForm.Show();
                         break;

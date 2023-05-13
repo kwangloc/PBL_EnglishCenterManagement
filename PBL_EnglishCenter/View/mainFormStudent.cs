@@ -14,11 +14,21 @@ namespace PBL_EnglishCenter.View
     {
         public delegate void DelMainFormStudent();
         public DelMainFormStudent DelStudent1 { get; set; }
-        public mainFormStudent()
+        private account currentAccount;
+        public mainFormStudent(account getAccount)
         {
             InitializeComponent();
+            this.currentAccount = getAccount;
+            setGUI();
         }
-
+        private void setGUI()
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            // set hello + full name
+            lb_fullname.Text = "Hello, " + (db.users.Find(currentAccount.user_id)).fullname;
+            // set ann dgv
+            dgvAnnStu.DataSource = BLL.BLL.Instance.getListAnnouncementByStudentId((int)currentAccount.user_id).ToList();
+        }
         private void bt_logout_Click(object sender, EventArgs e)
         {
             this.Dispose();

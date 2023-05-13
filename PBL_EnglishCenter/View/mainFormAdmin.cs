@@ -14,11 +14,18 @@ namespace PBL_EnglishCenter.View
     {
         public delegate void DelMainFormAdmin();
         public DelMainFormAdmin DelAdmin1 { get; set; }
-        public mainFormAdmin()
+        private account currentAccount;
+        public mainFormAdmin(account getAccount)
         {
             InitializeComponent();
+            this.currentAccount = getAccount;
+            setGUI();
         }
-
+        private void setGUI()
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            lb_fullname.Text = "Hello, " + (db.users.Find(currentAccount.user_id)).fullname;
+        }
         private void bt_logout_Click(object sender, EventArgs e)
         {
             this.Dispose();
