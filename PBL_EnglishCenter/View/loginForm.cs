@@ -46,7 +46,8 @@ namespace PBL_EnglishCenter.View
                     case "student":
                         mainFormStudent stuForm = new mainFormStudent(temp);
                         stuForm.DelStudent1 += new mainFormStudent.DelMainFormStudent(clear_info);
-                        stuForm.Show();
+                        stuForm.ShowDialog();
+                        
                         break;
                     default:
                         MessageBox.Show("Suprised Error! Try login later.");
