@@ -23,7 +23,7 @@ namespace PBL_EnglishCenter.View
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             // set hello + full name
-            lb_fullname.Text = "Hello, " + (db.users.Find(currentAccount.user_id)).fullname;
+            lb_fullname.Text = (db.users.Find(currentAccount.user_id)).fullname + "'s Profile";
             // fill text box
             tb_fullname.Text = currentAccount.user.fullname;
             if(currentAccount.user.gender.Equals("Nam"))
@@ -41,12 +41,12 @@ namespace PBL_EnglishCenter.View
             tb_password.Text = currentAccount.password;
             if(currentAccount.type.Trim().Equals("teacher"))
             {
-                lb_detailsInfo.Text = "Degree:";
+                lb_detailsInfo.Text = "Degree";
                 tb_detailsInfo.Text = (BLL.BLL.Instance.getTeacherInfoByUserId((int)currentAccount.user_id)).degree;
             }
             else if(currentAccount.type.Trim().Equals("student"))
             {
-                lb_detailsInfo.Text = "Parent phone:";
+                lb_detailsInfo.Text = "Phone";
                 tb_detailsInfo.Text = (BLL.BLL.Instance.getStudentInfoByUserId((int)currentAccount.user_id)).parent_phone;
             }
             else
