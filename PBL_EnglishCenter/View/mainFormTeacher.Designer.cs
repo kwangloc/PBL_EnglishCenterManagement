@@ -72,6 +72,7 @@
             this.bt_profile.TabIndex = 5;
             this.bt_profile.Text = "Profile";
             this.bt_profile.UseVisualStyleBackColor = true;
+            this.bt_profile.Click += new System.EventHandler(this.bt_profile_Click);
             // 
             // bt_logout
             // 
