@@ -31,10 +31,10 @@
             this.bt_logout = new System.Windows.Forms.Button();
             this.bt_courseAdmin = new System.Windows.Forms.Button();
             this.bt_accountAdmin = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvAnnAdm = new System.Windows.Forms.DataGridView();
             this.lb_fullname = new System.Windows.Forms.Label();
             this.bt_profile = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnnAdm)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_logout
@@ -65,15 +65,15 @@
             this.bt_accountAdmin.Text = "Manage Account";
             this.bt_accountAdmin.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvAnnAdm
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(385, 195);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1210, 670);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvAnnAdm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAnnAdm.Location = new System.Drawing.Point(385, 195);
+            this.dgvAnnAdm.Name = "dgvAnnAdm";
+            this.dgvAnnAdm.RowHeadersWidth = 51;
+            this.dgvAnnAdm.RowTemplate.Height = 24;
+            this.dgvAnnAdm.Size = new System.Drawing.Size(1210, 670);
+            this.dgvAnnAdm.TabIndex = 1;
             // 
             // lb_fullname
             // 
@@ -99,14 +99,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1662, 977);
             this.Controls.Add(this.lb_fullname);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvAnnAdm);
             this.Controls.Add(this.bt_accountAdmin);
             this.Controls.Add(this.bt_courseAdmin);
             this.Controls.Add(this.bt_profile);
             this.Controls.Add(this.bt_logout);
             this.Name = "mainFormAdmin";
             this.Text = "mainFormAdmin";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnnAdm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,7 +117,7 @@
         private System.Windows.Forms.Button bt_logout;
         private System.Windows.Forms.Button bt_courseAdmin;
         private System.Windows.Forms.Button bt_accountAdmin;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAnnAdm;
         private System.Windows.Forms.Label lb_fullname;
         private System.Windows.Forms.Button bt_profile;
     }
