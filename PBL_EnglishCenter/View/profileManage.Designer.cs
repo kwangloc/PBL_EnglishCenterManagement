@@ -66,7 +66,7 @@
             // bt_logout
             // 
             this.bt_logout.Location = new System.Drawing.Point(1030, 63);
-            this.bt_logout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bt_logout.Margin = new System.Windows.Forms.Padding(2);
             this.bt_logout.Name = "bt_logout";
             this.bt_logout.Size = new System.Drawing.Size(107, 32);
             this.bt_logout.TabIndex = 11;
@@ -88,7 +88,7 @@
             // 
             this.tb_fullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_fullname.Location = new System.Drawing.Point(120, 101);
-            this.tb_fullname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_fullname.Margin = new System.Windows.Forms.Padding(2);
             this.tb_fullname.Name = "tb_fullname";
             this.tb_fullname.Size = new System.Drawing.Size(217, 26);
             this.tb_fullname.TabIndex = 15;
@@ -119,7 +119,7 @@
             // 
             this.tb_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_phone.Location = new System.Drawing.Point(121, 188);
-            this.tb_phone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_phone.Margin = new System.Windows.Forms.Padding(2);
             this.tb_phone.Name = "tb_phone";
             this.tb_phone.Size = new System.Drawing.Size(217, 26);
             this.tb_phone.TabIndex = 15;
@@ -139,7 +139,7 @@
             // 
             this.tb_gmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_gmail.Location = new System.Drawing.Point(121, 236);
-            this.tb_gmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_gmail.Margin = new System.Windows.Forms.Padding(2);
             this.tb_gmail.Name = "tb_gmail";
             this.tb_gmail.Size = new System.Drawing.Size(217, 26);
             this.tb_gmail.TabIndex = 15;
@@ -159,7 +159,7 @@
             // 
             this.tb_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_username.Location = new System.Drawing.Point(498, 141);
-            this.tb_username.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_username.Margin = new System.Windows.Forms.Padding(2);
             this.tb_username.Name = "tb_username";
             this.tb_username.ReadOnly = true;
             this.tb_username.Size = new System.Drawing.Size(217, 26);
@@ -180,7 +180,7 @@
             // 
             this.tb_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_password.Location = new System.Drawing.Point(498, 186);
-            this.tb_password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_password.Margin = new System.Windows.Forms.Padding(2);
             this.tb_password.Name = "tb_password";
             this.tb_password.Size = new System.Drawing.Size(217, 26);
             this.tb_password.TabIndex = 15;
@@ -189,7 +189,7 @@
             // 
             this.lb_detailsInfo.AutoSize = true;
             this.lb_detailsInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_detailsInfo.Location = new System.Drawing.Point(390, 236);
+            this.lb_detailsInfo.Location = new System.Drawing.Point(373, 236);
             this.lb_detailsInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_detailsInfo.Name = "lb_detailsInfo";
             this.lb_detailsInfo.Size = new System.Drawing.Size(100, 24);
@@ -200,7 +200,7 @@
             // 
             this.tb_detailsInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_detailsInfo.Location = new System.Drawing.Point(498, 236);
-            this.tb_detailsInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_detailsInfo.Margin = new System.Windows.Forms.Padding(2);
             this.tb_detailsInfo.Name = "tb_detailsInfo";
             this.tb_detailsInfo.Size = new System.Drawing.Size(217, 26);
             this.tb_detailsInfo.TabIndex = 15;
@@ -210,7 +210,7 @@
             this.rb_male.AutoSize = true;
             this.rb_male.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_male.Location = new System.Drawing.Point(132, 141);
-            this.rb_male.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rb_male.Margin = new System.Windows.Forms.Padding(2);
             this.rb_male.Name = "rb_male";
             this.rb_male.Size = new System.Drawing.Size(69, 28);
             this.rb_male.TabIndex = 16;
@@ -223,7 +223,7 @@
             this.rb_female.AutoSize = true;
             this.rb_female.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_female.Location = new System.Drawing.Point(217, 139);
-            this.rb_female.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rb_female.Margin = new System.Windows.Forms.Padding(2);
             this.rb_female.Name = "rb_female";
             this.rb_female.Size = new System.Drawing.Size(92, 28);
             this.rb_female.TabIndex = 16;
@@ -236,7 +236,7 @@
             this.bt_save.BackColor = System.Drawing.Color.SkyBlue;
             this.bt_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.bt_save.Location = new System.Drawing.Point(179, 313);
-            this.bt_save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bt_save.Margin = new System.Windows.Forms.Padding(2);
             this.bt_save.Name = "bt_save";
             this.bt_save.Size = new System.Drawing.Size(130, 59);
             this.bt_save.TabIndex = 10;
@@ -249,7 +249,7 @@
             this.bt_cancel.BackColor = System.Drawing.Color.SkyBlue;
             this.bt_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.bt_cancel.Location = new System.Drawing.Point(428, 313);
-            this.bt_cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bt_cancel.Margin = new System.Windows.Forms.Padding(2);
             this.bt_cancel.Name = "bt_cancel";
             this.bt_cancel.Size = new System.Drawing.Size(130, 59);
             this.bt_cancel.TabIndex = 10;
@@ -272,7 +272,7 @@
             // 
             this.tb_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_type.Location = new System.Drawing.Point(498, 101);
-            this.tb_type.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_type.Margin = new System.Windows.Forms.Padding(2);
             this.tb_type.Name = "tb_type";
             this.tb_type.ReadOnly = true;
             this.tb_type.Size = new System.Drawing.Size(217, 26);
@@ -304,7 +304,7 @@
             this.Controls.Add(this.bt_cancel);
             this.Controls.Add(this.bt_save);
             this.Controls.Add(this.bt_logout);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "profileManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "profileManage";

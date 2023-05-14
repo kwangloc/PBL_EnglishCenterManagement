@@ -26,7 +26,7 @@ namespace PBL_EnglishCenter.View
             account temp = BLL.BLL.Instance.checkLogin(username, password);
             if (temp == null) 
             {
-                MessageBox.Show("username or password is incorrect, try again!.");
+                MessageBox.Show("Username or password is incorrect, try again!.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else // login succeed
             {

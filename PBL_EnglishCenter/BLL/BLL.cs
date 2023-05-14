@@ -322,6 +322,38 @@ namespace PBL_EnglishCenter.BLL
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             return db.accounts.Where(p => p.type.Equals(type)).ToList();
         }
-        //
+        // Save profile Long code
+        public void saveUser(user tmp)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            user tempUser = db.users.Where(p => p.id == tmp.id).FirstOrDefault();
+            tempUser.fullname = tmp.fullname;
+            tempUser.gender = tmp.gender;
+            tempUser.phone = tmp.phone;
+            tempUser.gmail = tmp.gmail;
+            db.SaveChanges();
+        }
+        public void saveAccount(account tmp)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            account tempAccount = db.accounts.Where(p => p.id == tmp.id).FirstOrDefault();
+            tempAccount.password = tmp.password;
+            db.SaveChanges();
+        }
+        public void saveDegree(teacher_info tmp)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            teacher_info tempTeacherInfo = db.teacher_info.Where(p => p.user_id == tmp.id).FirstOrDefault();
+            tempTeacherInfo.degree = tmp.degree;
+            db.SaveChanges();
+        }
+        public void saveParentPhone(student_info tmp)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            student_info tempStudentInfo = db.student_info.Where(p => p.user_id == tmp.id).FirstOrDefault();
+            tempStudentInfo.parent_phone = tmp.parent_phone;
+            db.SaveChanges();
+        }
+
     }
 }
