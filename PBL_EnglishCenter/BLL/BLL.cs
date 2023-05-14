@@ -211,11 +211,12 @@ namespace PBL_EnglishCenter.BLL
             }
             return students;
         }
-        public List<account> getListAllTypeAccount(string type)
+        public List<account> getListAllAdminAccount()
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
-            return db.accounts.Where(p => p.type.Equals(type)).ToList();
+            return db.accounts.Where(p => p.type.Equals("admin")).ToList();
         }
+
         // announcement Student
         public List<course_member> getListCourseMemberByStudentId(int studentId) // seek in course_member
         {
@@ -288,7 +289,7 @@ namespace PBL_EnglishCenter.BLL
             return true;
         }
 
-        //cac ham moi cho accountManage
+        //cac ham moi cho accountManage (Hai update)
         public void addUser(user tmp)
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
@@ -316,5 +317,11 @@ namespace PBL_EnglishCenter.BLL
             
             db.SaveChanges();
         }
+        public List<account> getListAllTypeAccount(string type)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            return db.accounts.Where(p => p.type.Equals(type)).ToList();
+        }
+        //
     }
 }
