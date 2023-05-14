@@ -315,7 +315,6 @@ namespace PBL_EnglishCenter.BLL
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             //db.Entry(tmp1).State = System.Data.Entity.EntityState.Modified;
             db.Entry(tmp2).State = System.Data.Entity.EntityState.Modified;
-            
             db.SaveChanges();
         }
         public List<account> getListAllTypeAccount(string type)
@@ -363,6 +362,34 @@ namespace PBL_EnglishCenter.BLL
                 });
             }
             return res;
+        }
+        public void addCourse(course tempAddCourse)
+        {
+            using (pbl3_english_centerEntities db = new pbl3_english_centerEntities())
+            {
+                db.courses.Add(tempAddCourse);
+                db.SaveChanges();
+            }
+        }
+        public course getCourseByCourseID(int courseId)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            return db.courses.Find(courseId);
+        }
+        public void editCourse(int id, string name, int cost, int limit, string description, string status, DateTime time_begin, DateTime time_end, int teacher_id, int location_id)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            course tempCourse = db.courses.Where(p => p.id == id).FirstOrDefault();
+            tempCourse.name = name;
+            tempCourse.cost = cost;
+            tempCourse.limit = limit;
+            tempCourse.description = description;
+            tempCourse.status = status;
+            tempCourse.time_begin = time_begin;
+            tempCourse.time_end = time_end;
+            tempCourse.teacher_id = teacher_id;
+            tempCourse.location_id = location_id;
+            db.SaveChanges();
         }
     }
 }
