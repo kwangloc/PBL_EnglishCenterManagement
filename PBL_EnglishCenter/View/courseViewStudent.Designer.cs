@@ -61,6 +61,7 @@
             this.bt_exit.TabIndex = 9;
             this.bt_exit.Text = "Exit";
             this.bt_exit.UseVisualStyleBackColor = true;
+            this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
             // 
             // dgv_courseStu
             // 

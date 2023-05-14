@@ -27,9 +27,8 @@ namespace PBL_EnglishCenter.View
         }
         private void setGUI()
         {
-            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             // set hello + full name
-            lb_fullname.Text = "Hello, " + (db.users.Find(currentAccount.user_id)).fullname;
+            lb_fullname.Text = "Hello, " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname;
             // set manage course dgv
             dgv_courseadmin.DataSource = BLL.BLL.Instance.getListAllCourse().ToList();
 
@@ -53,7 +52,6 @@ namespace PBL_EnglishCenter.View
             {
                 cbb_teacher.Items.Add(i);
             }
-            //cbb_teacher.Items.Add(BLL.BLL.Instance.getListCBBAllTeacher());
         }
         private void setCBBLocation()
         {
@@ -61,14 +59,7 @@ namespace PBL_EnglishCenter.View
             {
                 cbb_location.Items.Add(i);
             }
-            //cbb_teacher.Items.Add(BLL.BLL.Instance.getListCBBAllTeacher());
         }
-
-        private void bt_add_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void bt_exit_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -78,9 +69,8 @@ namespace PBL_EnglishCenter.View
         {
             if (dgv_courseadmin.SelectedRows.Count == 1)
             {
-                pbl3_english_centerEntities db = new pbl3_english_centerEntities();
                 int courseId = Convert.ToInt32(dgv_courseadmin.SelectedRows[0].Cells["id"].Value);
-                course tempCourse = db.courses.Find(courseId);
+                course tempCourse = BLL.BLL.Instance.getCourseByCourseID(courseId);
                 tb_id.Text = tempCourse.id.ToString();
                 tb_name.Text = tempCourse.name.ToString();
                 tb_cost.Text = tempCourse.cost.ToString();
@@ -116,29 +106,63 @@ namespace PBL_EnglishCenter.View
                 MessageBox.Show("Choose type");
             }
         }
-
         private void bt_edit_Click(object sender, EventArgs e)
         {
             try
             {
-                pbl3_english_centerEntities db = new pbl3_english_centerEntities();
                 int idCourseToEdit = Convert.ToInt32(tb_id.Text);
-                course tempCourse = db.courses.Where(p => p.id == idCourseToEdit).FirstOrDefault();
-                //
-                tempCourse.name = tb_name.Text;
-                tempCourse.cost = Convert.ToInt32(tb_cost.Text);
-                tempCourse.limit = Convert.ToInt32(tb_limit.Text);
-                tempCourse.description = rtb_des.Text;
-                tempCourse.status = cbb_status.SelectedItem.ToString();
-                tempCourse.time_begin = dtp_timebegin.Value;
-                tempCourse.time_end = dtp_timeend.Value;
-                tempCourse.teacher_id = ((CBBItem)(cbb_teacher.SelectedItem)).Value;
-                tempCourse.location_id = ((CBBItem)(cbb_location.SelectedItem)).Value;
-                db.SaveChanges();
+                string name = tb_name.Text;
+                int cost = Convert.ToInt32(tb_cost.Text);
+                int limit = Convert.ToInt32(tb_limit.Text);
+                string description = rtb_des.Text;
+                string status = cbb_status.SelectedItem.ToString();
+                DateTime time_begin = dtp_timebegin.Value;
+                DateTime time_end = dtp_timeend.Value;
+                int teacher_id = ((CBBItem)(cbb_teacher.SelectedItem)).Value;
+                int location_id = ((CBBItem)(cbb_location.SelectedItem)).Value;
+                BLL.BLL.Instance.editCourse(idCourseToEdit, name, cost, limit, description, status, time_begin, time_end, teacher_id, location_id);  
             }
             catch
             {
                 MessageBox.Show("Fill all required info.");
+            }
+            setGUI();
+        }
+
+        private void bt_clear_Click(object sender, EventArgs e)
+        {
+            tb_id.Text = "";
+            tb_name.Text = "";
+            rtb_des.Text = "";
+            tb_cost.Text = "";
+            tb_limit.Text = "";
+            dtp_timebegin.Value = new DateTime(2023, 1, 1);
+            dtp_timeend.Value = new DateTime(2023, 2, 1);
+            cbb_location.SelectedIndex = 0;
+            cbb_status.SelectedIndex = 0;
+            cbb_teacher.SelectedIndex = 0;
+        }
+        private void bt_add_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                course tempAddCourse = new course
+                {
+                    name = tb_name.Text.Trim(),
+                    description = rtb_des.Text.Trim(),
+                    cost = Convert.ToInt32(tb_cost.Text.Trim()),
+                    limit = Convert.ToInt32(tb_limit.Text.Trim()),
+                    time_begin = Convert.ToDateTime(dtp_timebegin.Value),
+                    time_end = Convert.ToDateTime(dtp_timeend.Value),
+                    teacher_id = ((CBBItem)cbb_teacher.SelectedItem).Value,
+                    location_id = ((CBBItem)cbb_location.SelectedItem).Value,
+                    status = cbb_status.SelectedItem.ToString()
+                };
+                BLL.BLL.Instance.addCourse(tempAddCourse);
+            }
+            catch
+            {
+                MessageBox.Show("Fill all required info");
             }
             setGUI();
         }

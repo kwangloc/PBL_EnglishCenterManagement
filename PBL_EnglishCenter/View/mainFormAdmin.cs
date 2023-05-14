@@ -23,9 +23,8 @@ namespace PBL_EnglishCenter.View
         }
         private void setGUI()
         {
-            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             // set hello + full name
-            lb_fullname.Text = "Hello, " + (db.users.Find(currentAccount.user_id)).fullname;
+            lb_fullname.Text = "Hello, " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname;
             // set ann dgv
             dgvAnnAdm.DataSource = BLL.BLL.Instance.getListAllAnnouncement().ToList();
             

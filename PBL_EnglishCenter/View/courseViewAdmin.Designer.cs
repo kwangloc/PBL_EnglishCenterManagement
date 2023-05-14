@@ -40,12 +40,14 @@
             this.lb_searchbystatus = new System.Windows.Forms.Label();
             this.lb_coursemanage = new System.Windows.Forms.Label();
             this.gb_manage = new System.Windows.Forms.GroupBox();
+            this.cbb_location = new System.Windows.Forms.ComboBox();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.dtp_timeend = new System.Windows.Forms.DateTimePicker();
             this.dtp_timebegin = new System.Windows.Forms.DateTimePicker();
             this.cbb_teacher = new System.Windows.Forms.ComboBox();
             this.cbb_status = new System.Windows.Forms.ComboBox();
             this.rtb_des = new System.Windows.Forms.RichTextBox();
+            this.bt_clear = new System.Windows.Forms.Button();
             this.tb_limit = new System.Windows.Forms.TextBox();
             this.tb_cost = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,7 +65,6 @@
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.dgv_courseadmin = new System.Windows.Forms.DataGridView();
             this.bt_exit = new System.Windows.Forms.Button();
-            this.cbb_location = new System.Windows.Forms.ComboBox();
             this.gb_manage.SuspendLayout();
             this.gb_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_courseadmin)).BeginInit();
@@ -99,6 +100,7 @@
             this.bt_add.TabIndex = 1;
             this.bt_add.Text = "Add";
             this.bt_add.UseVisualStyleBackColor = false;
+            this.bt_add.Click += new System.EventHandler(this.bt_add_Click);
             // 
             // bt_view
             // 
@@ -115,7 +117,7 @@
             // 
             // bt_delete
             // 
-            this.bt_delete.BackColor = System.Drawing.Color.SkyBlue;
+            this.bt_delete.BackColor = System.Drawing.Color.Crimson;
             this.bt_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_delete.Location = new System.Drawing.Point(72, 483);
             this.bt_delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -202,6 +204,7 @@
             this.gb_manage.Controls.Add(this.cbb_status);
             this.gb_manage.Controls.Add(this.rtb_des);
             this.gb_manage.Controls.Add(this.tb_id);
+            this.gb_manage.Controls.Add(this.bt_clear);
             this.gb_manage.Controls.Add(this.bt_add);
             this.gb_manage.Controls.Add(this.bt_view);
             this.gb_manage.Controls.Add(this.bt_delete);
@@ -226,6 +229,14 @@
             this.gb_manage.TabIndex = 29;
             this.gb_manage.TabStop = false;
             this.gb_manage.Text = "Manage";
+            // 
+            // cbb_location
+            // 
+            this.cbb_location.FormattingEnabled = true;
+            this.cbb_location.Location = new System.Drawing.Point(449, 39);
+            this.cbb_location.Name = "cbb_location";
+            this.cbb_location.Size = new System.Drawing.Size(280, 24);
+            this.cbb_location.TabIndex = 28;
             // 
             // tb_name
             // 
@@ -271,6 +282,19 @@
             this.rtb_des.Size = new System.Drawing.Size(598, 94);
             this.rtb_des.TabIndex = 24;
             this.rtb_des.Text = "";
+            // 
+            // bt_clear
+            // 
+            this.bt_clear.BackColor = System.Drawing.Color.Lavender;
+            this.bt_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_clear.Location = new System.Drawing.Point(526, 378);
+            this.bt_clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_clear.Name = "bt_clear";
+            this.bt_clear.Size = new System.Drawing.Size(149, 38);
+            this.bt_clear.TabIndex = 1;
+            this.bt_clear.Text = "Clear";
+            this.bt_clear.UseVisualStyleBackColor = false;
+            this.bt_clear.Click += new System.EventHandler(this.bt_clear_Click);
             // 
             // tb_limit
             // 
@@ -440,7 +464,7 @@
             // 
             // bt_exit
             // 
-            this.bt_exit.BackColor = System.Drawing.Color.Crimson;
+            this.bt_exit.BackColor = System.Drawing.Color.Transparent;
             this.bt_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_exit.Location = new System.Drawing.Point(857, 768);
             this.bt_exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -450,14 +474,6 @@
             this.bt_exit.Text = "Exit";
             this.bt_exit.UseVisualStyleBackColor = false;
             this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
-            // 
-            // cbb_location
-            // 
-            this.cbb_location.FormattingEnabled = true;
-            this.cbb_location.Location = new System.Drawing.Point(449, 39);
-            this.cbb_location.Name = "cbb_location";
-            this.cbb_location.Size = new System.Drawing.Size(280, 24);
-            this.cbb_location.TabIndex = 28;
             // 
             // courseViewAdmin
             // 
@@ -519,5 +535,6 @@
         private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.Button bt_exit;
         private System.Windows.Forms.ComboBox cbb_location;
+        private System.Windows.Forms.Button bt_clear;
     }
 }

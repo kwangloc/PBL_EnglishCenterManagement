@@ -21,9 +21,8 @@ namespace PBL_EnglishCenter.View
         }
         private void setGUI()
         {
-            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             // set hello + full name
-            lb_fullname.Text = (db.users.Find(currentAccount.user_id)).fullname + "'s Profile";
+            lb_fullname.Text = "Hello, " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname + "'s Profile";
             // fill text box
             tb_fullname.Text = currentAccount.user.fullname;
             if(currentAccount.user.gender.Equals("Nam"))
