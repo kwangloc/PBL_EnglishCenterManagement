@@ -62,7 +62,7 @@ namespace PBL_EnglishCenter.View
 
         private void bt_save_Click(object sender, EventArgs e)
         {
-            // save user
+            //save user
             user tempUser = new user();
             tempUser.id = currentAccount.user.id;
             tempUser.fullname = tb_fullname.Text.Trim();
@@ -70,12 +70,12 @@ namespace PBL_EnglishCenter.View
             tempUser.phone = tb_phone.Text.Trim();
             tempUser.gmail = tb_gmail.Text.Trim();
             BLL.BLL.Instance.saveUser(tempUser);
-            // save account
+            //save account
             account tempAccount = new account();
             tempAccount.id = currentAccount.user.id;
             tempAccount.password = tb_password.Text.Trim();
             BLL.BLL.Instance.saveAccount(tempAccount);
-            // save details Info
+            //save details Info
             if (currentAccount.type.Trim().Equals("teacher"))
             {
                 teacher_info tempTeacherInfo = new teacher_info();

@@ -189,7 +189,7 @@
             // 
             this.lb_detailsInfo.AutoSize = true;
             this.lb_detailsInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_detailsInfo.Location = new System.Drawing.Point(373, 236);
+            this.lb_detailsInfo.Location = new System.Drawing.Point(370, 234);
             this.lb_detailsInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_detailsInfo.Name = "lb_detailsInfo";
             this.lb_detailsInfo.Size = new System.Drawing.Size(100, 24);
