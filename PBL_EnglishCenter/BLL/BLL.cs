@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL_EnglishCenter.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -322,6 +323,46 @@ namespace PBL_EnglishCenter.BLL
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             return db.accounts.Where(p => p.type.Equals(type)).ToList();
         }
-        //
+        // functions for Teacher (Loc update)
+        public List<user> getListAllUserIsTeacher()
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            return (db.accounts.Where(p => p.type.Equals("teacher"))).Select(p => p.user).ToList();
+        }
+        public List<CBBItem> getListCBBAllTeacher()
+        {
+            List<CBBItem> res = new List<CBBItem>();
+            foreach(user i in getListAllUserIsTeacher())
+            {
+                res.Add(new CBBItem
+                {
+                    Value = i.id,
+                    Text = i.fullname
+                });
+            }
+            return res;
+        }
+        public List<course> getListCourseByStatusAndName(string status, string name)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            if(status.Equals("all"))
+            {
+                return db.courses.Where(p => p.name.Contains(name)).ToList();
+            }
+            return db.courses.Where(p => p.status.Equals(status) && p.name.Contains(name)).ToList();
+        }
+        public List<CBBItem> getListCBBAllLocation()
+        {
+            List<CBBItem> res = new List<CBBItem>();
+            foreach (location i in getListAllLocation())
+            {
+                res.Add(new CBBItem
+                {
+                    Value = i.id,
+                    Text = i.name + ", " + i.description
+                });
+            }
+            return res;
+        }
     }
 }
