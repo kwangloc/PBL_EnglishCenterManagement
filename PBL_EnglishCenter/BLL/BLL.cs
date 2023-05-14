@@ -1,6 +1,7 @@
 ﻿using PBL_EnglishCenter.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
@@ -310,17 +311,81 @@ namespace PBL_EnglishCenter.BLL
             db.accounts.Remove(tmp);
             db.SaveChanges();
         }
-        public void updateUserAndAccount(user tmp1, account tmp2)
+        public void updateUser(user tmp1)
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
-            //db.Entry(tmp1).State = System.Data.Entity.EntityState.Modified;
-            db.Entry(tmp2).State = System.Data.Entity.EntityState.Modified;
+            db.Entry(tmp1).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
         }
-        public List<account> getListAllTypeAccount(string type)
+        public void updateAccount(account tmp)
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
-            return db.accounts.Where(p => p.type.Equals(type)).ToList();
+            db.Entry(tmp).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+
+        }
+        public DataTable getAllAccount(string text)
+        {
+            DataTable data = new DataTable();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn{ColumnName = "id",DataType = typeof(int)},
+                new DataColumn{ColumnName = "username",DataType = typeof(string)},
+                new DataColumn{ColumnName = "password",DataType = typeof(string)},
+                new DataColumn{ColumnName = "type",DataType = typeof(string)},
+                new DataColumn{ColumnName = "fullname",DataType = typeof(string)},
+                new DataColumn{ColumnName = "user_id",DataType = typeof(string)}
+            });
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            foreach (account i in getListAllAccount())
+            {
+                if (i.username.Contains(text))
+                {
+                    data.Rows.Add(i.id, i.username, i.password, i.type, i.user.fullname, i.user_id);
+                }
+            }
+            return data;
+        }
+        public DataTable getListAllTypeAccount(string type)
+        {
+            DataTable data = new DataTable();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn{ColumnName = "id",DataType = typeof(int)},
+                new DataColumn{ColumnName = "username",DataType = typeof(string)},
+                new DataColumn{ColumnName = "password",DataType = typeof(string)},
+                new DataColumn{ColumnName = "type",DataType = typeof(string)},
+                new DataColumn{ColumnName = "fullname",DataType = typeof(string)},
+                new DataColumn{ColumnName = "user_id",DataType = typeof(string)}
+            });
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            foreach (account i in db.accounts.Where(p => p.type.Equals(type)).ToList())
+            {
+                data.Rows.Add(i.id, i.username, i.password, i.type, i.user.fullname, i.user_id);
+            }
+            return data;
+        }
+        public DataTable getSearchAccount(string type, string text)
+        {
+            DataTable data = new DataTable();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn{ColumnName = "id",DataType = typeof(int)},
+                new DataColumn{ColumnName = "username",DataType = typeof(string)},
+                new DataColumn{ColumnName = "password",DataType = typeof(string)},
+                new DataColumn{ColumnName = "type",DataType = typeof(string)},
+                new DataColumn{ColumnName = "fullname",DataType = typeof(string)},
+                new DataColumn{ColumnName = "user_id",DataType = typeof(string)}
+            });
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            foreach (account i in db.accounts.Where(p => p.type.Equals(type)).ToList())
+            {
+                if (i.username.Contains(text))
+                {
+                    data.Rows.Add(i.id, i.username, i.password, i.type, i.user.fullname, i.user_id);
+                }
+            }
+            return data;
         }
         // functions for Teacher (Loc update)
         public List<user> getListAllUserIsTeacher()
