@@ -21,11 +21,11 @@ namespace PBL_EnglishCenter.View
         }
         private void setGUI()
         {
-            // set hello + full name
-            lb_fullname.Text = "Hello, " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname + "'s Profile";
+            // set name profile
+            lb_fullname.Text = currentAccount.user.fullname + "'s Profile";
             // fill text box
             tb_fullname.Text = currentAccount.user.fullname;
-            if(currentAccount.user.gender.Equals("Nam"))
+            if (currentAccount.user.gender.Equals("Nam"))
             {
                 rb_male.Checked = true;
             }
@@ -38,14 +38,14 @@ namespace PBL_EnglishCenter.View
             tb_type.Text = currentAccount.type;
             tb_username.Text = currentAccount.username;
             tb_password.Text = currentAccount.password;
-            if(currentAccount.type.Trim().Equals("teacher"))
+            if (currentAccount.type.Trim().Equals("teacher"))
             {
                 lb_detailsInfo.Text = "Degree";
                 tb_detailsInfo.Text = (BLL.BLL.Instance.getTeacherInfoByUserId((int)currentAccount.user_id)).degree;
             }
-            else if(currentAccount.type.Trim().Equals("student"))
+            else if (currentAccount.type.Trim().Equals("student"))
             {
-                lb_detailsInfo.Text = "Phone";
+                lb_detailsInfo.Text = "Parent Phone";
                 tb_detailsInfo.Text = (BLL.BLL.Instance.getStudentInfoByUserId((int)currentAccount.user_id)).parent_phone;
             }
             else
@@ -62,30 +62,33 @@ namespace PBL_EnglishCenter.View
 
         private void bt_save_Click(object sender, EventArgs e)
         {
-            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
-            user tempUser = db.users.Where(p => p.id == currentAccount.user_id).FirstOrDefault();
-            account tempAccount = db.accounts.Where(p => p.user_id ==  currentAccount.user_id).FirstOrDefault();
-            // user
+            //save user
+            user tempUser = new user();
+            tempUser.id = currentAccount.user.id;
             tempUser.fullname = tb_fullname.Text.Trim();
             tempUser.gender = (rb_male.Checked) ? "Nam" : "Nữ";
             tempUser.phone = tb_phone.Text.Trim();
             tempUser.gmail = tb_gmail.Text.Trim();
-            // account
+            BLL.BLL.Instance.saveUser(tempUser);
+            //save account
+            account tempAccount = new account();
+            tempAccount.id = currentAccount.user.id;
             tempAccount.password = tb_password.Text.Trim();
-            // saveChange
-            db.SaveChanges();
-            // details Info
-            if(currentAccount.type.Trim().Equals("teacher"))
+            BLL.BLL.Instance.saveAccount(tempAccount);
+            //save details Info
+            if (currentAccount.type.Trim().Equals("teacher"))
             {
-                teacher_info tempTeacherInfo = db.teacher_info.Where(p => p.user_id == currentAccount.user_id).FirstOrDefault();
+                teacher_info tempTeacherInfo = new teacher_info();
+                tempTeacherInfo.id = currentAccount.user.id;
                 tempTeacherInfo.degree = tb_detailsInfo.Text.Trim();
-                db.SaveChanges();
+                BLL.BLL.Instance.saveDegree(tempTeacherInfo);
             }
-            else if(currentAccount.type.Trim().Equals("student"))
+            else if (currentAccount.type.Trim().Equals("student"))
             {
-                student_info tempStudentInfo = db.student_info.Where(p => p.user_id == currentAccount.user_id).FirstOrDefault();
+                student_info tempStudentInfo = new student_info();
+                tempStudentInfo.id = currentAccount.id;
                 tempStudentInfo.parent_phone = tb_detailsInfo.Text.Trim();
-                db.SaveChanges();
+                BLL.BLL.Instance.saveParentPhone(tempStudentInfo);
             }
             this.Dispose();
         }
