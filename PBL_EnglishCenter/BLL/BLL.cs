@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -210,10 +211,10 @@ namespace PBL_EnglishCenter.BLL
             }
             return students;
         }
-        public List<account> getListAllAdminAccount()
+        public List<account> getListAllTypeAccount(string type)
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
-            return db.accounts.Where(p => p.type.Equals("admin")).ToList();
+            return db.accounts.Where(p => p.type.Equals(type)).ToList();
         }
         // announcement Student
         public List<course_member> getListCourseMemberByStudentId(int studentId) // seek in course_member
@@ -285,6 +286,35 @@ namespace PBL_EnglishCenter.BLL
         public bool checkConflictSchedule(int locationId, string time)
         {
             return true;
+        }
+
+        //cac ham moi cho accountManage
+        public void addUser(user tmp)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            db.users.Add(tmp);
+            db.SaveChanges();
+        }
+        public void addAccount(account tmp)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            db.accounts.Add(tmp);
+            db.SaveChanges();
+        }
+        public void deleteAccount(int id)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            account tmp = db.accounts.Where(p => p.id == id).FirstOrDefault();
+            db.accounts.Remove(tmp);
+            db.SaveChanges();
+        }
+        public void updateUserAndAccount(user tmp1, account tmp2)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            //db.Entry(tmp1).State = System.Data.Entity.EntityState.Modified;
+            db.Entry(tmp2).State = System.Data.Entity.EntityState.Modified;
+            
+            db.SaveChanges();
         }
     }
 }

@@ -33,8 +33,7 @@ namespace PBL_EnglishCenter.View
         }
         private void bt_add_Click(object sender, EventArgs e)
         {
-            //try catch
-
+            //try catch chua them 
 
             user ustmp = new user();
             ustmp.fullname = tb_fullname.Text;
@@ -48,30 +47,45 @@ namespace PBL_EnglishCenter.View
             }
             ustmp.gmail = tb_gmail.Text;
             ustmp.phone = tb_Phone.Text;
-            //   can ham addUser(user ustmp);
 
-
-
+            BLL.BLL.Instance.addUser(ustmp);            
+            //BLL.BLL_new.Instance.addUser(ustmp);
+            
             List<user> lstmp = BLL.BLL.Instance.getListAllUser();
+            //List<user> lstmp = BLL.BLL_new.Instance.getAllUser();
+
             ustmp = lstmp[lstmp.Count - 1];
             account actmp = new account();
             actmp.username = tb_username.Text.ToString();
             actmp.password = tb_pass.Text.ToString();
-            actmp.type = cb_type.SelectedItem.ToString();
+            actmp.type = cb_type.Text.ToString();
             actmp.user_id = ustmp.id;
-            //  can ham addAccount (account actmp);
+
+            BLL.BLL.Instance.addAccount(actmp);
+            //BLL.BLL_new.Instance.addAccount(actmp);
+
+            dataGridView1.DataSource = BLL.BLL.Instance.getListAllAccount();
+            //dataGridView1.DataSource = BLL.BLL_new.Instance.getAllAccount();
+
         }
         private void bt_delete_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedCells.Count > 0)
             {
+                DataGridViewRow r = dataGridView1.CurrentRow;
+                int idtmp = Convert.ToInt16(r.Cells[0].Value);
                 var message = "Are you sure to delete this account?";
                 var title = "Warning!";
                 var result = MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 switch (result)
                 {
                     case DialogResult.Yes:
-                        //  can ham deleteAccount (int id)
+                        BLL.BLL.Instance.deleteAccount(idtmp);
+                        //BLL.BLL_new.Instance.deleteAccount(idtmp);
+
+                        dataGridView1.DataSource = BLL.BLL.Instance.getListAllAccount();
+                        //dataGridView1.DataSource = BLL.BLL_new.Instance.getAllAccount();
+
                         break;
                     case DialogResult.No:
                         break;
@@ -105,20 +119,24 @@ namespace PBL_EnglishCenter.View
                 }
                 ustmp.gmail = tb_gmail.Text;
                 ustmp.phone = tb_Phone.Text;
-                //   can ham addUser(user ustmp);
+                ustmp.id = Convert.ToInt32(r.Cells[4].Value);
 
-
-                //create account
                 List<user> lstmp = BLL.BLL.Instance.getListAllUser();
+                //List<user> lstmp = BLL.BLL_new.Instance.getAllUser();
+
                 ustmp = lstmp[lstmp.Count - 1];
                 account actmp = new account();
+                actmp.id = Convert.ToInt32(r.Cells[0].Value);
                 actmp.username = tb_username.Text.ToString();
                 actmp.password = tb_pass.Text.ToString();
                 actmp.type = cb_type.Text.ToString();
                 actmp.user_id = ustmp.id;
 
-                // can ham editAccount ()
+                BLL.BLL.Instance.updateUserAndAccount(ustmp, actmp);
+                //BLL.BLL_new.Instance.updateUserAndAccount(ustmp, actmp);
+
                 dataGridView1.DataSource = BLL.BLL.Instance.getListAllAccount();
+                //dataGridView1.DataSource = BLL.BLL_new.Instance.getAllAccount();
             }
             else
             {
@@ -132,11 +150,14 @@ namespace PBL_EnglishCenter.View
             if (cb_searchtype.Text == "All")
             {
                 dataGridView1.DataSource = BLL.BLL.Instance.getListAllAccount();
+                //dataGridView1.DataSource = BLL.BLL_new.Instance.getAllAccount();
             }
             else
             {
-                // can ham getAccount (string type, string name)
-                //   dataGridView1.DataSource = BLL.BLL.Instance.getListAllTypeAccount(cb_searchtype.Text);
+                
+                dataGridView1.DataSource = BLL.BLL.Instance.getListAllTypeAccount(cb_searchtype.Text);
+                //dataGridView1.DataSource = BLL.BLL_new.Instance.getAccountByType(cb_searchtype.Text);
+
             }
         }
 
@@ -159,7 +180,7 @@ namespace PBL_EnglishCenter.View
                 tb_gmail.Text = ustmp.gmail;
                 tb_Phone.Text = ustmp.phone;
                 tb_username.Text = r.Cells["username"].Value.ToString();
-                tb_pass.Text = r.Cells["password"].Value.ToString();
+                tb_pass.Text = r.Cells["password"].Value.ToString().Trim();
                 cb_type.Text = r.Cells["type"].Value.ToString();
             }
             else
