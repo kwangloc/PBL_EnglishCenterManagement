@@ -31,6 +31,21 @@ namespace PBL_EnglishCenter.View
             cb_type.Items.Add("admin");
 
         }
+        public void clear()
+        {
+
+            tb_username.Clear();
+            cb_type.Text = string.Empty;
+            tb_pass.Clear();
+            tb_pass2.Clear();
+            tb_fullname.Clear();
+            tb_gmail.Clear();
+            tb_Phone.Clear();
+            rb_female.Checked = false;
+            rb_Male.Checked = false;
+
+        }
+
         private void bt_add_Click(object sender, EventArgs e)
         {
             //try catch chua them 
@@ -47,26 +62,19 @@ namespace PBL_EnglishCenter.View
             }
             ustmp.gmail = tb_gmail.Text;
             ustmp.phone = tb_Phone.Text;
+            BLL.BLL.Instance.addUser(ustmp);
 
-            BLL.BLL.Instance.addUser(ustmp);            
-            //BLL.BLL_new.Instance.addUser(ustmp);
-            
             List<user> lstmp = BLL.BLL.Instance.getListAllUser();
-            //List<user> lstmp = BLL.BLL_new.Instance.getAllUser();
-
             ustmp = lstmp[lstmp.Count - 1];
             account actmp = new account();
             actmp.username = tb_username.Text.ToString();
             actmp.password = tb_pass.Text.ToString();
             actmp.type = cb_type.Text.ToString();
             actmp.user_id = ustmp.id;
-
             BLL.BLL.Instance.addAccount(actmp);
-            //BLL.BLL_new.Instance.addAccount(actmp);
 
             dataGridView1.DataSource = BLL.BLL.Instance.getListAllAccount();
-            //dataGridView1.DataSource = BLL.BLL_new.Instance.getAllAccount();
-
+            clear();
         }
         private void bt_delete_Click(object sender, EventArgs e)
         {
@@ -81,11 +89,7 @@ namespace PBL_EnglishCenter.View
                 {
                     case DialogResult.Yes:
                         BLL.BLL.Instance.deleteAccount(idtmp);
-                        //BLL.BLL_new.Instance.deleteAccount(idtmp);
-
-                        dataGridView1.DataSource = BLL.BLL.Instance.getListAllAccount();
-                        //dataGridView1.DataSource = BLL.BLL_new.Instance.getAllAccount();
-
+                        dataGridView1.DataSource = BLL.BLL.Instance.getAllAccount(tb_search.Text);
                         break;
                     case DialogResult.No:
                         break;
@@ -119,12 +123,8 @@ namespace PBL_EnglishCenter.View
                 }
                 ustmp.gmail = tb_gmail.Text;
                 ustmp.phone = tb_Phone.Text;
-                ustmp.id = Convert.ToInt32(r.Cells[4].Value);
+                ustmp.id = Convert.ToInt32(r.Cells[5].Value);
 
-                List<user> lstmp = BLL.BLL.Instance.getListAllUser();
-                //List<user> lstmp = BLL.BLL_new.Instance.getAllUser();
-
-                ustmp = lstmp[lstmp.Count - 1];
                 account actmp = new account();
                 actmp.id = Convert.ToInt32(r.Cells[0].Value);
                 actmp.username = tb_username.Text.ToString();
@@ -132,32 +132,29 @@ namespace PBL_EnglishCenter.View
                 actmp.type = cb_type.Text.ToString();
                 actmp.user_id = ustmp.id;
 
-                BLL.BLL.Instance.updateUserAndAccount(ustmp, actmp);
-                //BLL.BLL_new.Instance.updateUserAndAccount(ustmp, actmp);
+                BLL.BLL.Instance.updateUser(ustmp);
+                BLL.BLL.Instance.updateAccount(actmp);
 
-                dataGridView1.DataSource = BLL.BLL.Instance.getListAllAccount();
-                //dataGridView1.DataSource = BLL.BLL_new.Instance.getAllAccount();
+                dataGridView1.DataSource = BLL.BLL.Instance.getAllAccount(tb_search.Text);
+
             }
             else
             {
                 MessageBox.Show("Select account first!");
             }
-
+            clear();
         }
 
         private void bt_search_Click(object sender, EventArgs e)
         {
             if (cb_searchtype.Text == "All")
             {
-                dataGridView1.DataSource = BLL.BLL.Instance.getListAllAccount();
-                //dataGridView1.DataSource = BLL.BLL_new.Instance.getAllAccount();
+                dataGridView1.DataSource = BLL.BLL.Instance.getAllAccount(tb_search.Text);
             }
             else
             {
-                
-                dataGridView1.DataSource = BLL.BLL.Instance.getListAllTypeAccount(cb_searchtype.Text);
-                //dataGridView1.DataSource = BLL.BLL_new.Instance.getAccountByType(cb_searchtype.Text);
-
+                //dataGridView1.DataSource = BLL.BLL.Instance.getListAllTypeAccount(cb_searchtype.Text);
+                dataGridView1.DataSource = BLL.BLL.Instance.getSearchAccount(cb_searchtype.Text, tb_search.Text);
             }
         }
 
@@ -187,6 +184,21 @@ namespace PBL_EnglishCenter.View
             {
                 MessageBox.Show("Select account first!");
             }
+        }
+
+        private void tb_username_TextChanged(object sender, EventArgs e)
+        {
+            if (cb_type.Text == "")
+            {
+                cb_type.Text = "student";
+                rb_Male.Checked = true;
+            }
+
+        }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
