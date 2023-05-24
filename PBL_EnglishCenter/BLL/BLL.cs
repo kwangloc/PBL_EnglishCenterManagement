@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -89,7 +90,7 @@ namespace PBL_EnglishCenter.BLL
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             return db.student_info.ToList();
         }
-
+        
         // get by conditions
         public location getLocationById(int Id)
         {
@@ -488,6 +489,112 @@ namespace PBL_EnglishCenter.BLL
             tempStudentInfo.parent_phone = tmp.parent_phone;
             db.SaveChanges();
         }
-        //
+        // functions to custom dataGridView (Loc)
+        public DataTable customDGVAnnInViewCourseDetails(int courseId) // student & teacher
+        {
+            DataTable data = new DataTable();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("Title", typeof(string)),
+                new DataColumn("Description", typeof(string))
+            });
+
+            foreach (announcement i in getListAnnouncementByCourseId(courseId))
+            {
+                data.Rows.Add(i.name, i.description);
+            }
+            return data;
+        }
+        public DataTable customDGVExamInViewCourseDetails(int courseId, int stuId) // student
+        {
+            DataTable data = new DataTable();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("Name", typeof(string)),
+                new DataColumn("Link", typeof(string)),
+                new DataColumn("Grade", typeof(string)),
+                new DataColumn("Feedback", typeof(string))
+            });
+            foreach (exam i in getListExamByCourseId(courseId))
+            {
+                string grade = "";
+                string feedback = "";
+                if (getExamDetailsByExamIdAndStudentId(i.id, stuId) != null)
+                {
+                    grade = getExamDetailsByExamIdAndStudentId(i.id, stuId).grade.ToString();
+                    feedback = getExamDetailsByExamIdAndStudentId(i.id, stuId).feedback.ToString();
+                }
+                data.Rows.Add(i.name, i.description, grade, feedback);
+            }
+            return data;
+        }
+        public DataTable customDGVDocInViewCourseDetails(int courseId) // student
+        {
+            DataTable data = new DataTable();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("Name", typeof(string)),
+                new DataColumn("Description", typeof(string))
+            });
+            foreach (document i in getListDocumentByCourseId(courseId))
+            {
+                data.Rows.Add(i.name, i.description);
+            }
+            return data;
+        }
+        public DataTable customDGVAnnInMainFormAdm() // admin
+        {
+            DataTable data = new DataTable();
+            List<announcement> ann = new List<announcement>();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("Course Name", typeof(string)),
+                new DataColumn("Title", typeof(string)),
+                new DataColumn("Description", typeof(string))
+            });
+            foreach (announcement i in getListAllAnnouncement())
+            {
+                data.Rows.Add( i.course.name, i.name, i.description);
+            }
+            return data;
+        }
+        public DataTable customDGVAnnInMainFormStu(int stuId) // student
+        {
+            DataTable data = new DataTable();
+            List<announcement> ann = new List<announcement>();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("Course Name", typeof(string)),
+                new DataColumn("Title", typeof(string)),
+                new DataColumn("Description", typeof(string))
+            });
+            foreach(int i in getListCourseIdByStudentId(stuId))
+            {
+                foreach (announcement j in getListAnnouncementByCourseId(i))
+                {
+                    data.Rows.Add(getCourseByCourseID(i).name, j.name, j.description);
+                }
+            }
+            return data;
+        }
+        public DataTable customDGVAnnInMainFormTea(int teaId) // teacher
+        {
+            DataTable data = new DataTable();
+            List<announcement> ann = new List<announcement>();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("Course Name", typeof(string)),
+                new DataColumn("Title", typeof(string)),
+                new DataColumn("Description", typeof(string))
+            });
+            foreach (int i in getListCourseIdByTeacherId(teaId))
+            {
+                foreach (announcement j in getListAnnouncementByCourseId(i))
+                {
+                    data.Rows.Add(getCourseByCourseID(i).name, j.name, j.description);
+                }
+            }
+            return data;
+        }
     }
 }
