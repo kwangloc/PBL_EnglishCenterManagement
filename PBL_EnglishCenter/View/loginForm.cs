@@ -60,5 +60,10 @@ namespace PBL_EnglishCenter.View
             tb_username.Clear();
             tb_password.Clear();
         }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

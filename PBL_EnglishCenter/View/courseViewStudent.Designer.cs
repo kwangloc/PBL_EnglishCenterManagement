@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lb_fullname = new System.Windows.Forms.Label();
-            this.bt_viewCourse = new System.Windows.Forms.Button();
+            this.bt_viewCourseDetails = new System.Windows.Forms.Button();
             this.bt_exit = new System.Windows.Forms.Button();
             this.dgv_courseStu = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_courseStu)).BeginInit();
@@ -44,14 +44,15 @@
             this.lb_fullname.TabIndex = 11;
             this.lb_fullname.Text = "fullname";
             // 
-            // bt_viewCourse
+            // bt_viewCourseDetails
             // 
-            this.bt_viewCourse.Location = new System.Drawing.Point(1102, 255);
-            this.bt_viewCourse.Name = "bt_viewCourse";
-            this.bt_viewCourse.Size = new System.Drawing.Size(119, 40);
-            this.bt_viewCourse.TabIndex = 5;
-            this.bt_viewCourse.Text = "View Course";
-            this.bt_viewCourse.UseVisualStyleBackColor = true;
+            this.bt_viewCourseDetails.Location = new System.Drawing.Point(1102, 255);
+            this.bt_viewCourseDetails.Name = "bt_viewCourseDetails";
+            this.bt_viewCourseDetails.Size = new System.Drawing.Size(152, 40);
+            this.bt_viewCourseDetails.TabIndex = 5;
+            this.bt_viewCourseDetails.Text = "View Course Details";
+            this.bt_viewCourseDetails.UseVisualStyleBackColor = true;
+            this.bt_viewCourseDetails.Click += new System.EventHandler(this.bt_viewCourseDetails_Click);
             // 
             // bt_exit
             // 
@@ -80,7 +81,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 567);
             this.Controls.Add(this.lb_fullname);
-            this.Controls.Add(this.bt_viewCourse);
+            this.Controls.Add(this.bt_viewCourseDetails);
             this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.dgv_courseStu);
             this.Name = "courseViewStudent";
@@ -94,7 +95,7 @@
         #endregion
 
         private System.Windows.Forms.Label lb_fullname;
-        private System.Windows.Forms.Button bt_viewCourse;
+        private System.Windows.Forms.Button bt_viewCourseDetails;
         private System.Windows.Forms.Button bt_exit;
         private System.Windows.Forms.DataGridView dgv_courseStu;
     }

@@ -32,5 +32,15 @@ namespace PBL_EnglishCenter.View
         {
             this.Dispose();
         }
+
+        private void bt_viewCourseDetails_Click(object sender, EventArgs e)
+        {
+            if(dgv_courseStu.SelectedRows.Count == 1)
+            {
+                int courseId = (int)dgv_courseStu.SelectedRows[0].Cells["id"].Value;
+                courseDetailsViewStudent cdvsForm = new courseDetailsViewStudent(BLL.BLL.Instance.getCourseByCourseID(courseId), currentAccount);
+                cdvsForm.ShowDialog();
+            }
+        }
     }
 }
