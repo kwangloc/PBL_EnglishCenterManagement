@@ -24,7 +24,8 @@ namespace PBL_EnglishCenter.View
             // set hello + full name
             lb_fullname.Text = "Hello, " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname;
             // set ann dgv
-            dgv_courseStu.DataSource = BLL.BLL.Instance.getListCourseByTeacherId((int)currentAccount.user_id).ToList();
+            dgv_courseTea.DataSource = BLL.BLL.Instance.customDGVCourseViewTea((int)currentAccount.user_id);
+            dgv_courseTea.Columns["ID"].Visible = false;
 
         }
 

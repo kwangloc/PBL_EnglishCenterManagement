@@ -596,5 +596,116 @@ namespace PBL_EnglishCenter.BLL
             }
             return data;
         }
+        public DataTable customDGVCourseViewStu(int studentId) // student
+        {
+            DataTable data = new DataTable();
+            List<course> ann = new List<course>();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID", typeof(string)),
+                new DataColumn("Name", typeof(string)),
+                new DataColumn("Description", typeof(string)),
+                new DataColumn("Number of places", typeof(string)),
+                new DataColumn("Teacher", typeof(string)),
+                new DataColumn("Location", typeof(string)),
+                new DataColumn("Status", typeof(string)),
+                new DataColumn("Schedule", typeof(string)),
+                new DataColumn("Cost", typeof(string))
+            });
+            foreach (course i in getListCourseByStudentId(studentId))
+            {
+                string sche = "";
+                foreach(schedule v in getListScheduleByCourseId(i.id))
+                {
+                    sche += (v.time).ToString() + ". ";
+                }
+                data.Rows.Add(
+                    (i.id).ToString(),
+                    i.name, 
+                    i.description, 
+                    (i.limit).ToString(), 
+                    getUserById((int)i.teacher_id).fullname, 
+                    getLocationById((int)i.location_id).name + ", " + getLocationById((int)i.location_id).description,
+                    i.status,
+                    sche,
+                    (i.cost).ToString()
+                );
+            }
+            return data;
+        }
+        public DataTable customDGVCourseViewAdm() // admin
+        {
+            DataTable data = new DataTable();
+            List<course> ann = new List<course>();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID", typeof(string)),
+                new DataColumn("Name", typeof(string)),
+                new DataColumn("Description", typeof(string)),
+                new DataColumn("Number of places", typeof(string)),
+                new DataColumn("Teacher", typeof(string)),
+                new DataColumn("Location", typeof(string)),
+                new DataColumn("Status", typeof(string)),
+                new DataColumn("Schedule", typeof(string)),
+                new DataColumn("Cost", typeof(string))
+            });
+            foreach (course i in getListAllCourse())
+            {
+                string sche = "";
+                foreach (schedule v in getListScheduleByCourseId(i.id))
+                {
+                    sche += (v.time).ToString() + ". ";
+                }
+                data.Rows.Add(
+                    (i.id).ToString(),
+                    i.name,
+                    i.description,
+                    (i.limit).ToString(),
+                    getUserById((int)i.teacher_id).fullname,
+                    getLocationById((int)i.location_id).name + ", " + getLocationById((int)i.location_id).description,
+                    i.status,
+                    sche,
+                    (i.cost).ToString()
+                );
+            }
+            return data;
+        }
+        public DataTable customDGVCourseViewTea(int teacherId) // teacher
+        {
+            DataTable data = new DataTable();
+            List<course> ann = new List<course>();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID", typeof(string)),
+                new DataColumn("Name", typeof(string)),
+                new DataColumn("Description", typeof(string)),
+                new DataColumn("Number of places", typeof(string)),
+                new DataColumn("Teacher", typeof(string)),
+                new DataColumn("Location", typeof(string)),
+                new DataColumn("Status", typeof(string)),
+                new DataColumn("Schedule", typeof(string)),
+                new DataColumn("Cost", typeof(string))
+            });
+            foreach (course i in getListCourseByTeacherId(teacherId))
+            {
+                string sche = "";
+                foreach (schedule v in getListScheduleByCourseId(i.id))
+                {
+                    sche += (v.time).ToString() + ". ";
+                }
+                data.Rows.Add(
+                    (i.id).ToString(),
+                    i.name,
+                    i.description,
+                    (i.limit).ToString(),
+                    getUserById((int)i.teacher_id).fullname,
+                    getLocationById((int)i.location_id).name + ", " + getLocationById((int)i.location_id).description,
+                    i.status,
+                    sche,
+                    (i.cost).ToString()
+                );
+            }
+            return data;
+        }
     }
 }

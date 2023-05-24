@@ -56,7 +56,7 @@
             // 
             // bt_exit
             // 
-            this.bt_exit.Location = new System.Drawing.Point(587, 487);
+            this.bt_exit.Location = new System.Drawing.Point(495, 488);
             this.bt_exit.Name = "bt_exit";
             this.bt_exit.Size = new System.Drawing.Size(119, 29);
             this.bt_exit.TabIndex = 9;
@@ -67,12 +67,12 @@
             // dgv_courseStu
             // 
             this.dgv_courseStu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_courseStu.Location = new System.Drawing.Point(243, 132);
+            this.dgv_courseStu.Location = new System.Drawing.Point(90, 132);
             this.dgv_courseStu.Name = "dgv_courseStu";
             this.dgv_courseStu.RowHeadersWidth = 51;
             this.dgv_courseStu.RowTemplate.Height = 24;
             this.dgv_courseStu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_courseStu.Size = new System.Drawing.Size(842, 327);
+            this.dgv_courseStu.Size = new System.Drawing.Size(995, 327);
             this.dgv_courseStu.TabIndex = 4;
             // 
             // courseViewStudent

@@ -30,7 +30,8 @@ namespace PBL_EnglishCenter.View
             // set hello + full name
             lb_fullname.Text = "Hello, " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname;
             // set manage course dgv
-            dgv_courseadmin.DataSource = BLL.BLL.Instance.getListAllCourse().ToList();
+            //dgv_courseadmin.DataSource = BLL.BLL.Instance.getListAllCourse().ToList();
+            dgv_courseadmin.DataSource = BLL.BLL.Instance.customDGVCourseViewAdm();
 
         }
         private void setCBBStatus()
@@ -69,7 +70,7 @@ namespace PBL_EnglishCenter.View
         {
             if (dgv_courseadmin.SelectedRows.Count == 1)
             {
-                int courseId = Convert.ToInt32(dgv_courseadmin.SelectedRows[0].Cells["id"].Value);
+                int courseId = Convert.ToInt32(dgv_courseadmin.SelectedRows[0].Cells["ID"].Value);
                 course tempCourse = BLL.BLL.Instance.getCourseByCourseID(courseId);
                 tb_id.Text = tempCourse.id.ToString();
                 tb_name.Text = tempCourse.name.ToString();

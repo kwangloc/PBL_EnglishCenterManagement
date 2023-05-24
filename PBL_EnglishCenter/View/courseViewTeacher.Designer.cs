@@ -31,8 +31,8 @@
             this.lb_fullname = new System.Windows.Forms.Label();
             this.bt_viewCourse = new System.Windows.Forms.Button();
             this.bt_exit = new System.Windows.Forms.Button();
-            this.dgv_courseStu = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_courseStu)).BeginInit();
+            this.dgv_courseTea = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_courseTea)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_fullname
@@ -63,16 +63,16 @@
             this.bt_exit.UseVisualStyleBackColor = true;
             this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
             // 
-            // dgv_courseStu
+            // dgv_courseTea
             // 
-            this.dgv_courseStu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_courseStu.Location = new System.Drawing.Point(167, 132);
-            this.dgv_courseStu.Name = "dgv_courseStu";
-            this.dgv_courseStu.RowHeadersWidth = 51;
-            this.dgv_courseStu.RowTemplate.Height = 24;
-            this.dgv_courseStu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_courseStu.Size = new System.Drawing.Size(842, 327);
-            this.dgv_courseStu.TabIndex = 12;
+            this.dgv_courseTea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_courseTea.Location = new System.Drawing.Point(167, 132);
+            this.dgv_courseTea.Name = "dgv_courseTea";
+            this.dgv_courseTea.RowHeadersWidth = 51;
+            this.dgv_courseTea.RowTemplate.Height = 24;
+            this.dgv_courseTea.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_courseTea.Size = new System.Drawing.Size(842, 327);
+            this.dgv_courseTea.TabIndex = 12;
             // 
             // courseViewTeacher
             // 
@@ -82,10 +82,10 @@
             this.Controls.Add(this.lb_fullname);
             this.Controls.Add(this.bt_viewCourse);
             this.Controls.Add(this.bt_exit);
-            this.Controls.Add(this.dgv_courseStu);
+            this.Controls.Add(this.dgv_courseTea);
             this.Name = "courseViewTeacher";
             this.Text = "courseViewTeacher";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_courseStu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_courseTea)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,6 +96,6 @@
         private System.Windows.Forms.Label lb_fullname;
         private System.Windows.Forms.Button bt_viewCourse;
         private System.Windows.Forms.Button bt_exit;
-        private System.Windows.Forms.DataGridView dgv_courseStu;
+        private System.Windows.Forms.DataGridView dgv_courseTea;
     }
 }

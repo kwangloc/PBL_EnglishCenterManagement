@@ -24,8 +24,8 @@ namespace PBL_EnglishCenter.View
             // set hello + full name
             lb_fullname.Text = "Hello, " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname;
             // set ann dgv
-            dgv_courseStu.DataSource = BLL.BLL.Instance.getListCourseByStudentId((int)currentAccount.user_id).ToList();
-
+            dgv_courseStu.DataSource = BLL.BLL.Instance.customDGVCourseViewStu((int)currentAccount.user_id);
+            dgv_courseStu.Columns["ID"].Visible = false;
         }
 
         private void bt_exit_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace PBL_EnglishCenter.View
         {
             if(dgv_courseStu.SelectedRows.Count == 1)
             {
-                int courseId = (int)dgv_courseStu.SelectedRows[0].Cells["id"].Value;
+                int courseId = Convert.ToInt32(dgv_courseStu.SelectedRows[0].Cells["ID"].Value);
                 courseDetailsViewStudent cdvsForm = new courseDetailsViewStudent(BLL.BLL.Instance.getCourseByCourseID(courseId), currentAccount);
                 cdvsForm.ShowDialog();
             }
