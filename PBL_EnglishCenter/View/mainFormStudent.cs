@@ -26,7 +26,7 @@ namespace PBL_EnglishCenter.View
             // set hello + full name
             lb_fullname.Text = "Hello, " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname;
             // set ann dgv
-            dgvAnnStu.DataSource = BLL.BLL.Instance.customDGVAnnInMainFormStu((int)currentAccount.user_id);
+            dgvAnnStu.DataSource = (BLL.BLL.Instance.customDGVAnnInMainFormStu((int)currentAccount.user_id));
         }
         private void bt_logout_Click(object sender, EventArgs e)
         {
