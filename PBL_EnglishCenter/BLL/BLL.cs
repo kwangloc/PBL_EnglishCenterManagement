@@ -493,13 +493,14 @@ namespace PBL_EnglishCenter.BLL
         public DataTable customDGVAnnInViewCourseDetails(int courseId) // student & teacher
         {
             DataTable data = new DataTable();
+            List<announcement> temp = getListAnnouncementByCourseId(courseId);
+            temp.Reverse();
             data.Columns.AddRange(new DataColumn[]
             {
                 new DataColumn("Title", typeof(string)),
                 new DataColumn("Description", typeof(string))
             });
-
-            foreach (announcement i in getListAnnouncementByCourseId(courseId))
+            foreach (announcement i in temp)
             {
                 data.Rows.Add(i.name, i.description);
             }
@@ -508,6 +509,8 @@ namespace PBL_EnglishCenter.BLL
         public DataTable customDGVExamInViewCourseDetails(int courseId, int stuId) // student
         {
             DataTable data = new DataTable();
+            List<exam> temp = getListExamByCourseId(courseId);
+            temp.Reverse();
             data.Columns.AddRange(new DataColumn[]
             {
                 new DataColumn("Name", typeof(string)),
@@ -515,7 +518,7 @@ namespace PBL_EnglishCenter.BLL
                 new DataColumn("Grade", typeof(string)),
                 new DataColumn("Feedback", typeof(string))
             });
-            foreach (exam i in getListExamByCourseId(courseId))
+            foreach (exam i in temp)
             {
                 string grade = "";
                 string feedback = "";
@@ -531,12 +534,13 @@ namespace PBL_EnglishCenter.BLL
         public DataTable customDGVDocInViewCourseDetails(int courseId) // student
         {
             DataTable data = new DataTable();
+            List<document> temp = getListDocumentByCourseId(courseId);
             data.Columns.AddRange(new DataColumn[]
             {
                 new DataColumn("Name", typeof(string)),
                 new DataColumn("Description", typeof(string))
             });
-            foreach (document i in getListDocumentByCourseId(courseId))
+            foreach (document i in temp)
             {
                 data.Rows.Add(i.name, i.description);
             }
@@ -561,14 +565,14 @@ namespace PBL_EnglishCenter.BLL
         public DataTable customDGVAnnInMainFormStu(int stuId) // student
         {
             DataTable data = new DataTable();
-            List<announcement> ann = new List<announcement>();
+            //List<announcement> ann = new List<announcement>();
             data.Columns.AddRange(new DataColumn[]
             {
                 new DataColumn("Course Name", typeof(string)),
                 new DataColumn("Title", typeof(string)),
                 new DataColumn("Description", typeof(string))
             });
-            foreach(int i in getListCourseIdByStudentId(stuId))
+            foreach (int i in getListCourseIdByStudentId(stuId))
             {
                 foreach (announcement j in getListAnnouncementByCourseId(i))
                 {
@@ -706,6 +710,12 @@ namespace PBL_EnglishCenter.BLL
                 );
             }
             return data;
+        }
+        public void addAnnouncement(announcement annToAdd)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            db.announcements.Add(annToAdd);
+            db.SaveChanges();
         }
     }
 }
