@@ -30,6 +30,7 @@ namespace PBL_EnglishCenter.View
             }
             else // login succeed
             {
+                this.Hide();
                 // check role to display mainform
                 switch (temp.type.ToString().Trim())
                 {
@@ -59,6 +60,7 @@ namespace PBL_EnglishCenter.View
         {
             tb_username.Clear();
             tb_password.Clear();
+            this.Show();
         }
 
         private void bt_exit_Click(object sender, EventArgs e)
