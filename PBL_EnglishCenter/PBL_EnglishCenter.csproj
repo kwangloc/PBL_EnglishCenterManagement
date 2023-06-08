@@ -125,6 +125,12 @@
     <Compile Include="View\announcementManage.Designer.cs">
       <DependentUpon>announcementManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\changePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\changePassword.Designer.cs">
+      <DependentUpon>changePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\courseDetailsViewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\announcementManage.resx">
       <DependentUpon>announcementManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\changePassword.resx">
+      <DependentUpon>changePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\courseDetailsViewStudent.resx">
       <DependentUpon>courseDetailsViewStudent.cs</DependentUpon>

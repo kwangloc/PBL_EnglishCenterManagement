@@ -34,10 +34,7 @@ namespace PBL_EnglishCenter.View
                 rb_female.Checked = true;
             }
             tb_phone.Text = currentAccount.user.phone;
-            tb_gmail.Text = currentAccount.user.gmail;
-            tb_type.Text = currentAccount.type;
-            tb_username.Text = currentAccount.username;
-            tb_password.Text = currentAccount.password;
+            tb_gmail.Text = currentAccount.user.gmail;       
             if (currentAccount.type.Trim().Equals("teacher"))
             {
                 lb_detailsInfo.Text = "Degree";
@@ -70,11 +67,7 @@ namespace PBL_EnglishCenter.View
             tempUser.phone = tb_phone.Text.Trim();
             tempUser.gmail = tb_gmail.Text.Trim();
             BLL.BLL.Instance.saveUser(tempUser);
-            //save account
-            account tempAccount = new account();
-            tempAccount.id = currentAccount.user.id;
-            tempAccount.password = tb_password.Text.Trim();
-            BLL.BLL.Instance.saveAccount(tempAccount);
+        
             //save details Info
             if (currentAccount.type.Trim().Equals("teacher"))
             {
@@ -91,6 +84,12 @@ namespace PBL_EnglishCenter.View
                 BLL.BLL.Instance.saveParentPhone(tempStudentInfo);
             }
             this.Dispose();
+        }
+
+        private void bt_changePassword_Click(object sender, EventArgs e)
+        {
+            changePassword changePassword = new changePassword(currentAccount);
+            changePassword.ShowDialog();
         }
     }
 }
