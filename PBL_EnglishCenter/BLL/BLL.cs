@@ -3,10 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity.Migrations;
+using System.Diagnostics.PerformanceData;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PBL_EnglishCenter.BLL
 {
@@ -75,6 +78,16 @@ namespace PBL_EnglishCenter.BLL
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             return db.users.ToList();
         }
+        public List<account> getListAllStudentAccount()
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            return db.accounts.Where(p => p.type.Equals("student")).ToList();
+        }
+        public List<user> getListAllStudent(string searchName)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            return db.accounts.Where(p => p.type.Equals("student") && p.user.fullname.Contains(searchName)).Select(p => p.user).ToList();
+        }
         public List<account> getListAllAccount()
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
@@ -142,7 +155,7 @@ namespace PBL_EnglishCenter.BLL
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             return db.accounts.Find(Id);
         }
-        // teacher_info and user_info
+        // teacher_info and user_info (Loc)
         public teacher_info getTeacherInfoById(int Id)
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
@@ -220,7 +233,7 @@ namespace PBL_EnglishCenter.BLL
             return db.accounts.Where(p => p.type.Equals("admin")).ToList();
         }
 
-        // announcement Student
+        // announcement Student (Loc)
         public List<course_member> getListCourseMemberByStudentId(int studentId) // seek in course_member
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
@@ -256,7 +269,7 @@ namespace PBL_EnglishCenter.BLL
             }
             return res;
         }
-        // announcement teacher
+        // announcement teacher (Loc)
         public List<course> getListCourseByTeacherId(int teacherId) // seek in course
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
@@ -281,7 +294,7 @@ namespace PBL_EnglishCenter.BLL
             }
             return res;
         }
-        // functions to check condition
+        // functions to check condition (Loc)
         public account checkLogin(string username, string password)
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
@@ -429,11 +442,15 @@ namespace PBL_EnglishCenter.BLL
             }
             return res;
         }
-        public void addCourse(course tempAddCourse)
+        public void addCourse(course tempAddCourse, schedule sche1, schedule sche2)
         {
             using (pbl3_english_centerEntities db = new pbl3_english_centerEntities())
             {
                 db.courses.Add(tempAddCourse);
+                sche1.course_id = tempAddCourse.id;
+                sche2.course_id = tempAddCourse.id;
+                db.schedules.Add(sche1);
+                db.schedules.Add(sche2);
                 db.SaveChanges();
             }
         }
@@ -455,6 +472,26 @@ namespace PBL_EnglishCenter.BLL
             tempCourse.time_end = time_end;
             tempCourse.teacher_id = teacher_id;
             tempCourse.location_id = location_id;
+            db.SaveChanges();
+        }
+        public void editCourse(course tempCourse, schedule sche1, schedule sche2)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            course curCourse = db.courses.Where(p => p.id == tempCourse.id).FirstOrDefault();
+            curCourse.name = tempCourse.name;
+            curCourse.cost = tempCourse.cost;
+            curCourse.limit = tempCourse.limit;
+            curCourse.description = tempCourse.description;
+            curCourse.status = tempCourse.status;
+            curCourse.time_begin = tempCourse.time_begin;
+            curCourse.time_end = tempCourse.time_end;
+            curCourse.teacher_id = tempCourse.teacher_id;
+            curCourse.location_id = tempCourse.location_id;
+            //
+            schedule curSche1 = db.schedules.Where(p => p.id == sche1.id).FirstOrDefault();
+            curSche1.time = sche1.time;
+            schedule curSche2 = db.schedules.Where(p => p.id == sche2.id).FirstOrDefault();
+            curSche2.time = sche2.time;
             db.SaveChanges();
         }
         // Save profile Long code
@@ -645,13 +682,13 @@ namespace PBL_EnglishCenter.BLL
             {
                 new DataColumn("ID", typeof(string)),
                 new DataColumn("Name", typeof(string)),
-                new DataColumn("Description", typeof(string)),
-                new DataColumn("Number of places", typeof(string)),
+                //new DataColumn("Description", typeof(string)),
+                //new DataColumn("Number of places", typeof(string)),
                 new DataColumn("Teacher", typeof(string)),
-                new DataColumn("Location", typeof(string)),
+                //new DataColumn("Location", typeof(string)),
                 new DataColumn("Status", typeof(string)),
                 new DataColumn("Schedule", typeof(string)),
-                new DataColumn("Cost", typeof(string))
+                //new DataColumn("Cost", typeof(string))
             });
             foreach (course i in getListAllCourse())
             {
@@ -663,13 +700,13 @@ namespace PBL_EnglishCenter.BLL
                 data.Rows.Add(
                     (i.id).ToString(),
                     i.name,
-                    i.description,
-                    (i.limit).ToString(),
+                    //i.description,
+                    //(i.limit).ToString(),
                     getUserById((int)i.teacher_id).fullname,
-                    getLocationById((int)i.location_id).name + ", " + getLocationById((int)i.location_id).description,
+                    //getLocationById((int)i.location_id).name + ", " + getLocationById((int)i.location_id).description,
                     i.status,
-                    sche,
-                    (i.cost).ToString()
+                    sche
+                    //(i.cost).ToString()
                 );
             }
             return data;
@@ -711,11 +748,109 @@ namespace PBL_EnglishCenter.BLL
             }
             return data;
         }
+        public DataTable customDGVViewParticipants(int courseId, string searchName) // admin & teacher
+        {
+            DataTable data = new DataTable();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID", typeof(string)),
+                new DataColumn("Name", typeof(string)),
+                new DataColumn("Gender", typeof(string)),
+                new DataColumn("Phone", typeof(string)),
+                new DataColumn("Gmail", typeof(string))
+            });
+            foreach (user i in getListStudentByCourseId(courseId))
+            {
+                if(i.fullname.Contains(searchName))
+                {
+                    data.Rows.Add(
+                    (i.id).ToString(),
+                    i.fullname,
+                    i.gender,
+                    i.phone,
+                    i.gmail
+                    );
+                }
+            }
+            return data;
+        }
+        public DataTable customDGVSearchStudent(string searchName) // admin & teacher
+        {
+            DataTable data = new DataTable();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID", typeof(string)),
+                new DataColumn("Name", typeof(string)),
+                new DataColumn("Gender", typeof(string)),
+                new DataColumn("Phone", typeof(string)),
+                new DataColumn("Gmail", typeof(string))
+            });
+            foreach (user i in getListAllStudent(searchName))
+            {
+                data.Rows.Add(
+                (i.id).ToString(),
+                i.fullname,
+                i.gender,
+                i.phone,
+                i.gmail
+                );
+            }
+            return data;
+        }
         public void addAnnouncement(announcement annToAdd)
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             db.announcements.Add(annToAdd);
             db.SaveChanges();
+        }
+        // functions for course Management
+        public void removeCourseMember(int courseId, int stuId) 
+        {
+            try
+            {
+                pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+                course_member tempCourseMember = db.course_member.Where(p => p.course_id == courseId && p.student_id == stuId).FirstOrDefault();
+                db.course_member.Remove(tempCourseMember);
+                db.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Remove failed. The student hasn't been registered to course yet.");
+            }
+        }
+        public void addStudentToCourse(int courseId, int stuId)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            course_member tempCourseMember = new course_member
+            {
+                course_id = courseId,
+                student_id = stuId
+            };
+            db.course_member.Add(tempCourseMember);
+            db.SaveChanges();
+        }
+        public bool checkCourseToDelete(int courseId)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            int numOfRecord = (db.course_member.Where(p => p.course_id == courseId)).Count();
+            if(numOfRecord == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool deleteCourse(int courseId)
+        {
+            if(checkCourseToDelete(courseId)) 
+            {
+                pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+                course tempCourse = db.courses.Find(courseId);
+                db.courses.Remove(tempCourse);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+
         }
     }
 }
