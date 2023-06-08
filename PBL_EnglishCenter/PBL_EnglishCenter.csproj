@@ -143,6 +143,18 @@
     <Compile Include="View\courseViewAdmin.Designer.cs">
       <DependentUpon>courseViewAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\courseViewDetailsAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\courseViewDetailsAdmin.Designer.cs">
+      <DependentUpon>courseViewDetailsAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\courseViewParticipantsAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\courseViewParticipantsAdmin.Designer.cs">
+      <DependentUpon>courseViewParticipantsAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\courseViewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +244,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\courseViewAdmin.resx">
       <DependentUpon>courseViewAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\courseViewDetailsAdmin.resx">
+      <DependentUpon>courseViewDetailsAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\courseViewParticipantsAdmin.resx">
+      <DependentUpon>courseViewParticipantsAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\courseViewStudent.resx">
       <DependentUpon>courseViewStudent.cs</DependentUpon>
