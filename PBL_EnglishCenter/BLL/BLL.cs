@@ -343,19 +343,19 @@ namespace PBL_EnglishCenter.BLL
             DataTable data = new DataTable();
             data.Columns.AddRange(new DataColumn[]
             {
-                new DataColumn{ColumnName = "id",DataType = typeof(int)},
+                //new DataColumn{ColumnName = "id",DataType = typeof(int)},
                 new DataColumn{ColumnName = "username",DataType = typeof(string)},
                 new DataColumn{ColumnName = "password",DataType = typeof(string)},
                 new DataColumn{ColumnName = "type",DataType = typeof(string)},
                 new DataColumn{ColumnName = "fullname",DataType = typeof(string)},
-                new DataColumn{ColumnName = "user_id",DataType = typeof(string)}
+                //new DataColumn{ColumnName = "user_id",DataType = typeof(string)}
             });
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             foreach (account i in getListAllAccount())
             {
-                if (i.username.Contains(text))
+                if (i.user.fullname.Contains(text))
                 {
-                    data.Rows.Add(i.id, i.username, i.password, i.type, i.user.fullname, i.user_id);
+                    data.Rows.Add(/*i.id,*/ i.username, i.password, i.type, i.user.fullname /*,i.user_id*/);
                 }
             }
             return data;
@@ -384,22 +384,48 @@ namespace PBL_EnglishCenter.BLL
             DataTable data = new DataTable();
             data.Columns.AddRange(new DataColumn[]
             {
-                new DataColumn{ColumnName = "id",DataType = typeof(int)},
+                //new DataColumn{ColumnName = "id",DataType = typeof(int)},
                 new DataColumn{ColumnName = "username",DataType = typeof(string)},
                 new DataColumn{ColumnName = "password",DataType = typeof(string)},
                 new DataColumn{ColumnName = "type",DataType = typeof(string)},
                 new DataColumn{ColumnName = "fullname",DataType = typeof(string)},
-                new DataColumn{ColumnName = "user_id",DataType = typeof(string)}
+                //new DataColumn{ColumnName = "user_id",DataType = typeof(string)}
             });
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             foreach (account i in db.accounts.Where(p => p.type.Equals(type)).ToList())
             {
-                if (i.username.Contains(text))
+                if (i.user.fullname.Contains(text))
                 {
-                    data.Rows.Add(i.id, i.username, i.password, i.type, i.user.fullname, i.user_id);
+                    data.Rows.Add(/*i.id,*/ i.username, i.password, i.type, i.user.fullname/*, i.user_id*/);
                 }
             }
             return data;
+        }
+        public int checkAccount(string name)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            account tmp = db.accounts.Where(p=> p.username.Equals(name)).FirstOrDefault();
+            if (tmp == null) return -1;
+            return tmp.id;
+        }
+        public user getUserbyAccID(int AccID)
+        {
+            user tmp = BLL.Instance.getAccountById(AccID).user;
+            return tmp;
+        }
+        public bool checkEmail(string eMail)
+        {
+            bool Result = false;
+            try
+            {
+                var eMailValidator = new System.Net.Mail.MailAddress(eMail);
+                Result = (eMail.LastIndexOf(".") > eMail.LastIndexOf("@"));
+            }
+            catch
+            {
+                Result = false;
+            };
+            return Result;
         }
         // functions for Teacher (Loc update)
         public List<user> getListAllUserIsTeacher()
