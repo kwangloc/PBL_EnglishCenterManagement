@@ -28,10 +28,19 @@ namespace PBL_EnglishCenter.View
             dgv_courseTea.Columns["ID"].Visible = false;
 
         }
-
         private void bt_exit_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void bt_viewCourseDetails_Click(object sender, EventArgs e)
+        {
+            if (dgv_courseTea.SelectedRows.Count == 1)
+            {
+                int courseId = Convert.ToInt32(dgv_courseTea.SelectedRows[0].Cells["ID"].Value);
+                courseDetailsViewTeacher cdvsForm = new courseDetailsViewTeacher(BLL.BLL.Instance.getCourseByCourseID(courseId), currentAccount);
+                cdvsForm.ShowDialog();
+            }
         }
     }
 }

@@ -46,15 +46,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lb_valueSche1 = new System.Windows.Forms.Label();
             this.lb_valueSche2 = new System.Windows.Forms.Label();
-            this.lb_ann = new System.Windows.Forms.Label();
-            this.lb_exam = new System.Windows.Forms.Label();
-            this.lb_document = new System.Windows.Forms.Label();
-            this.dgv_ann = new System.Windows.Forms.DataGridView();
-            this.dgv_exam = new System.Windows.Forms.DataGridView();
-            this.dgv_doc = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ann)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_exam)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_doc)).BeginInit();
+            this.bt_ann = new System.Windows.Forms.Button();
+            this.bt_exam = new System.Windows.Forms.Button();
+            this.bt_doc = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_valueNameCourse
@@ -221,74 +217,56 @@
             this.lb_valueSche2.TabIndex = 0;
             this.lb_valueSche2.Text = "lb_valueSche2";
             // 
-            // lb_ann
+            // bt_ann
             // 
-            this.lb_ann.AutoSize = true;
-            this.lb_ann.Location = new System.Drawing.Point(206, 310);
-            this.lb_ann.Name = "lb_ann";
-            this.lb_ann.Size = new System.Drawing.Size(99, 16);
-            this.lb_ann.TabIndex = 1;
-            this.lb_ann.Text = "Announcement:";
+            this.bt_ann.Location = new System.Drawing.Point(206, 333);
+            this.bt_ann.Name = "bt_ann";
+            this.bt_ann.Size = new System.Drawing.Size(118, 31);
+            this.bt_ann.TabIndex = 3;
+            this.bt_ann.Text = "Announcement";
+            this.bt_ann.UseVisualStyleBackColor = true;
+            this.bt_ann.Click += new System.EventHandler(this.bt_ann_Click);
             // 
-            // lb_exam
+            // bt_exam
             // 
-            this.lb_exam.AutoSize = true;
-            this.lb_exam.Location = new System.Drawing.Point(206, 544);
-            this.lb_exam.Name = "lb_exam";
-            this.lb_exam.Size = new System.Drawing.Size(51, 16);
-            this.lb_exam.TabIndex = 1;
-            this.lb_exam.Text = "Exams:";
+            this.bt_exam.Location = new System.Drawing.Point(206, 387);
+            this.bt_exam.Name = "bt_exam";
+            this.bt_exam.Size = new System.Drawing.Size(118, 31);
+            this.bt_exam.TabIndex = 3;
+            this.bt_exam.Text = "Exam";
+            this.bt_exam.UseVisualStyleBackColor = true;
+            this.bt_exam.Click += new System.EventHandler(this.bt_exam_Click);
             // 
-            // lb_document
+            // bt_doc
             // 
-            this.lb_document.AutoSize = true;
-            this.lb_document.Location = new System.Drawing.Point(206, 779);
-            this.lb_document.Name = "lb_document";
-            this.lb_document.Size = new System.Drawing.Size(78, 16);
-            this.lb_document.TabIndex = 1;
-            this.lb_document.Text = "Documents:";
+            this.bt_doc.Location = new System.Drawing.Point(206, 438);
+            this.bt_doc.Name = "bt_doc";
+            this.bt_doc.Size = new System.Drawing.Size(118, 31);
+            this.bt_doc.TabIndex = 3;
+            this.bt_doc.Text = "Document";
+            this.bt_doc.UseVisualStyleBackColor = true;
+            this.bt_doc.Click += new System.EventHandler(this.bt_doc_Click);
             // 
-            // dgv_ann
+            // dataGridView1
             // 
-            this.dgv_ann.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ann.Location = new System.Drawing.Point(349, 310);
-            this.dgv_ann.Name = "dgv_ann";
-            this.dgv_ann.RowHeadersWidth = 51;
-            this.dgv_ann.RowTemplate.Height = 24;
-            this.dgv_ann.Size = new System.Drawing.Size(622, 191);
-            this.dgv_ann.TabIndex = 2;
-            // 
-            // dgv_exam
-            // 
-            this.dgv_exam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_exam.Location = new System.Drawing.Point(349, 544);
-            this.dgv_exam.Name = "dgv_exam";
-            this.dgv_exam.RowHeadersWidth = 51;
-            this.dgv_exam.RowTemplate.Height = 24;
-            this.dgv_exam.Size = new System.Drawing.Size(622, 191);
-            this.dgv_exam.TabIndex = 2;
-            // 
-            // dgv_doc
-            // 
-            this.dgv_doc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_doc.Location = new System.Drawing.Point(349, 779);
-            this.dgv_doc.Name = "dgv_doc";
-            this.dgv_doc.RowHeadersWidth = 51;
-            this.dgv_doc.RowTemplate.Height = 24;
-            this.dgv_doc.Size = new System.Drawing.Size(622, 191);
-            this.dgv_doc.TabIndex = 2;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(356, 292);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(646, 236);
+            this.dataGridView1.TabIndex = 4;
             // 
             // courseDetailsViewStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1230, 1013);
-            this.Controls.Add(this.dgv_doc);
-            this.Controls.Add(this.dgv_exam);
-            this.Controls.Add(this.dgv_ann);
-            this.Controls.Add(this.lb_document);
-            this.Controls.Add(this.lb_exam);
-            this.Controls.Add(this.lb_ann);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.bt_doc);
+            this.Controls.Add(this.bt_exam);
+            this.Controls.Add(this.bt_ann);
             this.Controls.Add(this.lb_valueStatus);
             this.Controls.Add(this.lb_valueTimeBegin);
             this.Controls.Add(this.lb_valueTimeEnd);
@@ -309,9 +287,8 @@
             this.Controls.Add(this.lb_description);
             this.Name = "courseDetailsViewStudent";
             this.Text = "courseDetailsViewStudent";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ann)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_exam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_doc)).EndInit();
+            this.Load += new System.EventHandler(this.courseDetailsViewStudent_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,11 +314,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_valueSche1;
         private System.Windows.Forms.Label lb_valueSche2;
-        private System.Windows.Forms.Label lb_ann;
-        private System.Windows.Forms.Label lb_exam;
-        private System.Windows.Forms.Label lb_document;
-        private System.Windows.Forms.DataGridView dgv_ann;
-        private System.Windows.Forms.DataGridView dgv_exam;
-        private System.Windows.Forms.DataGridView dgv_doc;
+        private System.Windows.Forms.Button bt_ann;
+        private System.Windows.Forms.Button bt_exam;
+        private System.Windows.Forms.Button bt_doc;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

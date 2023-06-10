@@ -1,6 +1,6 @@
 ﻿namespace PBL_EnglishCenter.View
 {
-    partial class documentManage
+    partial class examManage
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             // lb_courseId
             // 
             this.lb_courseId.AutoSize = true;
-            this.lb_courseId.Location = new System.Drawing.Point(407, 159);
+            this.lb_courseId.Location = new System.Drawing.Point(404, 160);
             this.lb_courseId.Name = "lb_courseId";
             this.lb_courseId.Size = new System.Drawing.Size(53, 16);
             this.lb_courseId.TabIndex = 13;
@@ -50,7 +50,7 @@
             // 
             // bt_cancel
             // 
-            this.bt_cancel.Location = new System.Drawing.Point(863, 504);
+            this.bt_cancel.Location = new System.Drawing.Point(860, 505);
             this.bt_cancel.Name = "bt_cancel";
             this.bt_cancel.Size = new System.Drawing.Size(125, 36);
             this.bt_cancel.TabIndex = 11;
@@ -60,7 +60,7 @@
             // 
             // bt_ok
             // 
-            this.bt_ok.Location = new System.Drawing.Point(592, 504);
+            this.bt_ok.Location = new System.Drawing.Point(589, 505);
             this.bt_ok.Name = "bt_ok";
             this.bt_ok.Size = new System.Drawing.Size(125, 36);
             this.bt_ok.TabIndex = 12;
@@ -70,7 +70,7 @@
             // 
             // rtb_des
             // 
-            this.rtb_des.Location = new System.Drawing.Point(500, 270);
+            this.rtb_des.Location = new System.Drawing.Point(497, 271);
             this.rtb_des.Name = "rtb_des";
             this.rtb_des.Size = new System.Drawing.Size(558, 181);
             this.rtb_des.TabIndex = 10;
@@ -78,14 +78,14 @@
             // 
             // tb_courseName
             // 
-            this.tb_courseName.Location = new System.Drawing.Point(500, 159);
+            this.tb_courseName.Location = new System.Drawing.Point(497, 160);
             this.tb_courseName.Name = "tb_courseName";
             this.tb_courseName.Size = new System.Drawing.Size(272, 22);
             this.tb_courseName.TabIndex = 8;
             // 
             // tb_title
             // 
-            this.tb_title.Location = new System.Drawing.Point(500, 208);
+            this.tb_title.Location = new System.Drawing.Point(497, 209);
             this.tb_title.Name = "tb_title";
             this.tb_title.Size = new System.Drawing.Size(558, 22);
             this.tb_title.TabIndex = 9;
@@ -93,7 +93,7 @@
             // lb_des
             // 
             this.lb_des.AutoSize = true;
-            this.lb_des.Location = new System.Drawing.Point(404, 270);
+            this.lb_des.Location = new System.Drawing.Point(401, 271);
             this.lb_des.Name = "lb_des";
             this.lb_des.Size = new System.Drawing.Size(75, 16);
             this.lb_des.TabIndex = 5;
@@ -102,7 +102,7 @@
             // lb_title
             // 
             this.lb_title.AutoSize = true;
-            this.lb_title.Location = new System.Drawing.Point(404, 208);
+            this.lb_title.Location = new System.Drawing.Point(401, 209);
             this.lb_title.Name = "lb_title";
             this.lb_title.Size = new System.Drawing.Size(33, 16);
             this.lb_title.TabIndex = 6;
@@ -112,13 +112,13 @@
             // 
             this.lb_function.AutoSize = true;
             this.lb_function.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_function.Location = new System.Drawing.Point(586, 87);
+            this.lb_function.Location = new System.Drawing.Point(583, 88);
             this.lb_function.Name = "lb_function";
-            this.lb_function.Size = new System.Drawing.Size(253, 32);
+            this.lb_function.Size = new System.Drawing.Size(196, 32);
             this.lb_function.TabIndex = 7;
-            this.lb_function.Text = "Manage Document";
+            this.lb_function.Text = "Manage Exam";
             // 
-            // documentManage
+            // examManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,8 +132,8 @@
             this.Controls.Add(this.lb_des);
             this.Controls.Add(this.lb_title);
             this.Controls.Add(this.lb_function);
-            this.Name = "documentManage";
-            this.Text = "documentManage";
+            this.Name = "examManage";
+            this.Text = "examManage";
             this.ResumeLayout(false);
             this.PerformLayout();
 

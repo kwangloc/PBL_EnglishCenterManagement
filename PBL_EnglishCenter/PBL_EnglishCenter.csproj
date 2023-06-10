@@ -191,11 +191,11 @@
     <Compile Include="View\examDetailsManage.Designer.cs">
       <DependentUpon>examDetailsManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\examDetailsView.cs">
+    <Compile Include="View\examManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\examDetailsView.Designer.cs">
-      <DependentUpon>examDetailsView.cs</DependentUpon>
+    <Compile Include="View\examManage.Designer.cs">
+      <DependentUpon>examManage.cs</DependentUpon>
     </Compile>
     <Compile Include="View\loginForm.cs">
       <SubType>Form</SubType>
@@ -275,8 +275,8 @@
     <EmbeddedResource Include="View\examDetailsManage.resx">
       <DependentUpon>examDetailsManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\examDetailsView.resx">
-      <DependentUpon>examDetailsView.cs</DependentUpon>
+    <EmbeddedResource Include="View\examManage.resx">
+      <DependentUpon>examManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>

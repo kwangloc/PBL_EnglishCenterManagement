@@ -10,44 +10,45 @@ using System.Windows.Forms;
 
 namespace PBL_EnglishCenter.View
 {
-    public partial class announcementManage : Form
+    public partial class examManage : Form
     {
         private int courseId;
-        private int annId;
-        public announcementManage(int courseId, int annId = -1)
+        private int examId;
+        public examManage(int courseId, int examId = -1)
         {
             InitializeComponent();
             this.courseId = courseId;
-            this.annId = annId;
+            this.examId = examId;
             setGUI();
         }
         private void setGUI()
         {
             tb_courseName.Text = BLL.BLL.Instance.getCourseByCourseID(courseId).name;
             tb_courseName.Enabled = false;
-            if(annId != -1)
+            if (examId != -1)
             {
-                announcement tempAnn = BLL.BLL.Instance.getAnnouncementById(annId);
-                tb_title.Text = tempAnn.name;
-                rtb_des.Text = tempAnn.description;
-            } 
+                exam tempExam = BLL.BLL.Instance.getExamById(examId);
+                tb_title.Text = tempExam.name;
+                rtb_des.Text = tempExam.description;
+            }
         }
         private void bt_cancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
+
         private void bt_ok_Click(object sender, EventArgs e)
         {
             try
             {
-                announcement tempAnn = new announcement
+                exam tempExam = new exam
                 {
-                    id = annId,
+                    id = examId,
                     name = tb_title.Text,
                     description = rtb_des.Text,
                     course_id = courseId
                 };
-                BLL.BLL.Instance.addEditAnnouncement(tempAnn);
+                BLL.BLL.Instance.addEditExam(courseId, tempExam);
             }
             catch
             {

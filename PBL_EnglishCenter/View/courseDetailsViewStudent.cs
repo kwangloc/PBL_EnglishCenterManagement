@@ -20,8 +20,6 @@ namespace PBL_EnglishCenter.View
             this.currentAccount = currentAccount;
             this.currentCourse = currentCourse;
             setGUI();
-            setDGV();
-
         }
         private void setGUI()
         {
@@ -43,20 +41,27 @@ namespace PBL_EnglishCenter.View
             {
                 lb_valueSche2.Hide();
             }
+
         }
-        private void setDGV()
+        private void bt_ann_Click(object sender, EventArgs e)
         {
-            //dgv_ann.DataSource = BLL.BLL.Instance.getListAnnouncementByCourseId(currentCourse.id);
-            dgv_ann.DataSource = BLL.BLL.Instance.customDGVAnnInViewCourseDetails(currentCourse.id);
-            //dgv_exam.DataSource = BLL.BLL.Instance.getListExamByCourseId(currentCourse.id);
-            dgv_exam.DataSource = BLL.BLL.Instance.customDGVExamInViewCourseDetails(currentCourse.id, (int)currentAccount.user_id);
-            //dgv_doc.DataSource = BLL.BLL.Instance.getListDocumentByCourseId(currentCourse.id);
-            dgv_doc.DataSource = BLL.BLL.Instance.customDGVDocInViewCourseDetails(currentCourse.id);
+            dataGridView1.DataSource = BLL.BLL.Instance.customDGVAnnInViewCourseDetails(currentCourse.id);
+            dataGridView1.Columns["ID"].Visible = false;
         }
 
-        private void bt_viewExamDetails_Click(object sender, EventArgs e)
+        private void bt_exam_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = BLL.BLL.Instance.customDGVExamInViewCourseDetails(currentCourse.id, (int)currentAccount.user_id);
+        }
 
+        private void bt_doc_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = BLL.BLL.Instance.customDGVDocInViewCourseDetails(currentCourse.id);
+        }
+
+        private void courseDetailsViewStudent_Load(object sender, EventArgs e)
+        {
+            bt_ann_Click(new object(), new EventArgs());
         }
     }
 }
