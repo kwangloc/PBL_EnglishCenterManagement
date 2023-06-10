@@ -9,6 +9,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 using PBL_EnglishCenter.BLL;
 
 namespace PBL_EnglishCenter.View
@@ -18,6 +19,7 @@ namespace PBL_EnglishCenter.View
         public loginForm()
         {
             InitializeComponent();
+            tb_password.UseSystemPasswordChar = true;
         }
         private void bt_login_Click(object sender, EventArgs e)
         {
@@ -66,6 +68,14 @@ namespace PBL_EnglishCenter.View
         private void bt_exit_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void bt_showpass_Click(object sender, EventArgs e)
+        {
+            if (tb_password.UseSystemPasswordChar)
+                tb_password.UseSystemPasswordChar = false;
+            else
+                tb_password.UseSystemPasswordChar = true;
         }
     }
 }
