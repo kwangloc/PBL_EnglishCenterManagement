@@ -80,5 +80,10 @@ namespace PBL_EnglishCenter.View
                 MessageBox.Show("Not Null");
             }
         }
+
+        private void bt_cancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

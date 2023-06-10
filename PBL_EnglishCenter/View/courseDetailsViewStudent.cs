@@ -63,5 +63,10 @@ namespace PBL_EnglishCenter.View
         {
             bt_ann_Click(new object(), new EventArgs());
         }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

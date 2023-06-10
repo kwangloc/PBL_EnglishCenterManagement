@@ -26,7 +26,7 @@ namespace PBL_EnglishCenter.View
         private void setGUI()
         {
             // set hello + full name
-            lb_fullname.Text = "Hello, " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname;
+            lb_fullname.Text = "Admin: " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname;
             // set manage course dgv
             dgv_courseadmin.DataSource = BLL.BLL.Instance.customDGVCourseViewAdm();
             dgv_courseadmin.Columns["ID"].Visible = false;

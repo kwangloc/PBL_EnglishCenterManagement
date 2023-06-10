@@ -28,29 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(announcementManage));
             this.lb_function = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_cancel = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_ok = new Guna.UI2.WinForms.Guna2Button();
             this.lb_courseId = new System.Windows.Forms.Label();
             this.rtb_des = new System.Windows.Forms.RichTextBox();
             this.tb_courseName = new System.Windows.Forms.TextBox();
             this.tb_title = new System.Windows.Forms.TextBox();
             this.lb_des = new System.Windows.Forms.Label();
             this.lb_title = new System.Windows.Forms.Label();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lb_function
             // 
             this.lb_function.AutoSize = true;
+            this.lb_function.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lb_function.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_function.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lb_function.Location = new System.Drawing.Point(18, 11);
+            this.lb_function.Location = new System.Drawing.Point(35, 18);
+            this.lb_function.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_function.Name = "lb_function";
-            this.lb_function.Size = new System.Drawing.Size(708, 81);
+            this.lb_function.Size = new System.Drawing.Size(572, 67);
             this.lb_function.TabIndex = 0;
             this.lb_function.Text = "Manage Announcement";
             // 
@@ -58,126 +66,191 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.guna2Panel1.Controls.Add(this.lb_function);
-            this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(746, 100);
+            this.guna2Panel1.Size = new System.Drawing.Size(647, 105);
             this.guna2Panel1.TabIndex = 5;
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.guna2Panel2.Controls.Add(this.guna2Button2);
-            this.guna2Panel2.Controls.Add(this.guna2Button1);
+            this.guna2Panel2.Controls.Add(this.bt_cancel);
+            this.guna2Panel2.Controls.Add(this.bt_ok);
             this.guna2Panel2.Controls.Add(this.lb_courseId);
             this.guna2Panel2.Controls.Add(this.rtb_des);
             this.guna2Panel2.Controls.Add(this.tb_courseName);
             this.guna2Panel2.Controls.Add(this.tb_title);
             this.guna2Panel2.Controls.Add(this.lb_des);
             this.guna2Panel2.Controls.Add(this.lb_title);
-            this.guna2Panel2.Location = new System.Drawing.Point(3, 109);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 111);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(746, 642);
+            this.guna2Panel2.Size = new System.Drawing.Size(647, 691);
             this.guna2Panel2.TabIndex = 6;
             // 
-            // guna2Button2
+            // bt_cancel
             // 
-            this.guna2Button2.BorderRadius = 22;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.CornflowerBlue;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(379, 461);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(194, 66);
-            this.guna2Button2.TabIndex = 9;
-            this.guna2Button2.Text = "Cancel";
-            this.guna2Button2.Click += new System.EventHandler(this.bt_cancel_Click);
+            this.bt_cancel.BorderRadius = 22;
+            this.bt_cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_cancel.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_cancel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bt_cancel.ForeColor = System.Drawing.Color.White;
+            this.bt_cancel.Image = ((System.Drawing.Image)(resources.GetObject("bt_cancel.Image")));
+            this.bt_cancel.ImageSize = new System.Drawing.Size(30, 30);
+            this.bt_cancel.Location = new System.Drawing.Point(378, 534);
+            this.bt_cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bt_cancel.Name = "bt_cancel";
+            this.bt_cancel.Size = new System.Drawing.Size(180, 85);
+            this.bt_cancel.TabIndex = 9;
+            this.bt_cancel.Text = "   Cancel";
+            this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
             // 
-            // guna2Button1
+            // bt_ok
             // 
-            this.guna2Button1.BorderRadius = 22;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.CornflowerBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(118, 461);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(194, 66);
-            this.guna2Button1.TabIndex = 11;
-            this.guna2Button1.Text = "OK";
-            this.guna2Button1.Click += new System.EventHandler(this.bt_ok_Click);
+            this.bt_ok.BorderRadius = 22;
+            this.bt_ok.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_ok.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_ok.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_ok.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_ok.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_ok.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bt_ok.ForeColor = System.Drawing.Color.White;
+            this.bt_ok.Image = ((System.Drawing.Image)(resources.GetObject("bt_ok.Image")));
+            this.bt_ok.ImageSize = new System.Drawing.Size(30, 30);
+            this.bt_ok.Location = new System.Drawing.Point(79, 534);
+            this.bt_ok.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bt_ok.Name = "bt_ok";
+            this.bt_ok.Size = new System.Drawing.Size(180, 85);
+            this.bt_ok.TabIndex = 11;
+            this.bt_ok.Text = "   OK";
+            this.bt_ok.Click += new System.EventHandler(this.bt_ok_Click);
             // 
             // lb_courseId
             // 
             this.lb_courseId.AutoSize = true;
-            this.lb_courseId.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lb_courseId.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_courseId.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lb_courseId.Location = new System.Drawing.Point(55, 132);
+            this.lb_courseId.Location = new System.Drawing.Point(11, 56);
+            this.lb_courseId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_courseId.Name = "lb_courseId";
-            this.lb_courseId.Size = new System.Drawing.Size(93, 31);
+            this.lb_courseId.Size = new System.Drawing.Size(112, 37);
             this.lb_courseId.TabIndex = 14;
             this.lb_courseId.Text = "Course:";
             // 
             // rtb_des
             // 
-            this.rtb_des.Location = new System.Drawing.Point(154, 236);
+            this.rtb_des.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_des.Location = new System.Drawing.Point(187, 214);
+            this.rtb_des.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtb_des.Name = "rtb_des";
-            this.rtb_des.Size = new System.Drawing.Size(558, 181);
+            this.rtb_des.Size = new System.Drawing.Size(434, 254);
             this.rtb_des.TabIndex = 10;
             this.rtb_des.Text = "";
             // 
             // tb_courseName
             // 
-            this.tb_courseName.Location = new System.Drawing.Point(154, 141);
+            this.tb_courseName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_courseName.Location = new System.Drawing.Point(187, 59);
+            this.tb_courseName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_courseName.Name = "tb_courseName";
-            this.tb_courseName.Size = new System.Drawing.Size(272, 22);
+            this.tb_courseName.Size = new System.Drawing.Size(225, 35);
             this.tb_courseName.TabIndex = 7;
             // 
             // tb_title
             // 
-            this.tb_title.Location = new System.Drawing.Point(154, 190);
+            this.tb_title.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_title.Location = new System.Drawing.Point(187, 127);
+            this.tb_title.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_title.Name = "tb_title";
-            this.tb_title.Size = new System.Drawing.Size(558, 22);
+            this.tb_title.Size = new System.Drawing.Size(420, 35);
             this.tb_title.TabIndex = 8;
             // 
             // lb_des
             // 
             this.lb_des.AutoSize = true;
-            this.lb_des.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lb_des.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_des.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lb_des.Location = new System.Drawing.Point(9, 236);
+            this.lb_des.Location = new System.Drawing.Point(11, 201);
+            this.lb_des.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_des.Name = "lb_des";
-            this.lb_des.Size = new System.Drawing.Size(144, 31);
+            this.lb_des.Size = new System.Drawing.Size(172, 37);
             this.lb_des.TabIndex = 5;
             this.lb_des.Text = "Description:";
             // 
             // lb_title
             // 
             this.lb_title.AutoSize = true;
-            this.lb_title.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lb_title.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_title.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lb_title.Location = new System.Drawing.Point(80, 181);
+            this.lb_title.Location = new System.Drawing.Point(11, 124);
+            this.lb_title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(68, 31);
+            this.lb_title.Size = new System.Drawing.Size(82, 37);
             this.lb_title.TabIndex = 6;
             this.lb_title.Text = "Title:";
             // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Panel3.BackgroundImage")));
+            this.guna2Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel3.Controls.Add(this.guna2ControlBox1);
+            this.guna2Panel3.Controls.Add(this.label5);
+            this.guna2Panel3.Controls.Add(this.label6);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2Panel3.Location = new System.Drawing.Point(652, 0);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(848, 800);
+            this.guna2Panel3.TabIndex = 9;
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Tomato;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(802, 1);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label5.Location = new System.Drawing.Point(191, 137);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(504, 65);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Management System";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label6.Location = new System.Drawing.Point(264, 59);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(353, 65);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "English Center";
+            // 
             // announcementManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(189)))));
-            this.ClientSize = new System.Drawing.Size(1482, 753);
+            this.ClientSize = new System.Drawing.Size(1500, 800);
+            this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "announcementManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "announcementManage";
@@ -185,6 +258,8 @@
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -194,13 +269,17 @@
         private System.Windows.Forms.Label lb_function;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button bt_cancel;
+        private Guna.UI2.WinForms.Guna2Button bt_ok;
         private System.Windows.Forms.Label lb_courseId;
         private System.Windows.Forms.RichTextBox rtb_des;
         private System.Windows.Forms.TextBox tb_courseName;
         private System.Windows.Forms.TextBox tb_title;
         private System.Windows.Forms.Label lb_des;
         private System.Windows.Forms.Label lb_title;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
