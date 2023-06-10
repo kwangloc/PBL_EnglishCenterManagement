@@ -32,16 +32,13 @@ namespace PBL_EnglishCenter.View
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bt_add = new System.Windows.Forms.Button();
-            this.bt_delete = new System.Windows.Forms.Button();
             this.bt_edit = new System.Windows.Forms.Button();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.bt_search = new System.Windows.Forms.Button();
             this.tb_username = new System.Windows.Forms.TextBox();
             this.tb_pass = new System.Windows.Forms.TextBox();
-            this.tb_pass2 = new System.Windows.Forms.TextBox();
             this.lb_user = new System.Windows.Forms.Label();
             this.lb_pass = new System.Windows.Forms.Label();
-            this.lb_pass2 = new System.Windows.Forms.Label();
             this.cb_type = new System.Windows.Forms.ComboBox();
             this.lb_type = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,6 +59,15 @@ namespace PBL_EnglishCenter.View
             this.lb_gender = new System.Windows.Forms.Label();
             this.lb_accmanage = new System.Windows.Forms.Label();
             this.bt_exit = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gb_search.SuspendLayout();
             this.gb_manage.SuspendLayout();
@@ -69,6 +75,7 @@ namespace PBL_EnglishCenter.View
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 89);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -82,7 +89,7 @@ namespace PBL_EnglishCenter.View
             // 
             this.bt_add.BackColor = System.Drawing.Color.SkyBlue;
             this.bt_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_add.Location = new System.Drawing.Point(467, 318);
+            this.bt_add.Location = new System.Drawing.Point(402, 315);
             this.bt_add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_add.Name = "bt_add";
             this.bt_add.Size = new System.Drawing.Size(127, 58);
@@ -91,24 +98,11 @@ namespace PBL_EnglishCenter.View
             this.bt_add.UseVisualStyleBackColor = false;
             this.bt_add.Click += new System.EventHandler(this.bt_add_Click);
             // 
-            // bt_delete
-            // 
-            this.bt_delete.BackColor = System.Drawing.Color.SkyBlue;
-            this.bt_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_delete.Location = new System.Drawing.Point(71, 318);
-            this.bt_delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_delete.Name = "bt_delete";
-            this.bt_delete.Size = new System.Drawing.Size(127, 58);
-            this.bt_delete.TabIndex = 2;
-            this.bt_delete.Text = "Delete";
-            this.bt_delete.UseVisualStyleBackColor = false;
-            this.bt_delete.Click += new System.EventHandler(this.bt_delete_Click);
-            // 
             // bt_edit
             // 
             this.bt_edit.BackColor = System.Drawing.Color.SkyBlue;
             this.bt_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_edit.Location = new System.Drawing.Point(335, 318);
+            this.bt_edit.Location = new System.Drawing.Point(270, 315);
             this.bt_edit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_edit.Name = "bt_edit";
             this.bt_edit.Size = new System.Drawing.Size(127, 58);
@@ -154,19 +148,8 @@ namespace PBL_EnglishCenter.View
             this.tb_pass.Location = new System.Drawing.Point(145, 100);
             this.tb_pass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_pass.Name = "tb_pass";
-            this.tb_pass.PasswordChar = '*';
             this.tb_pass.Size = new System.Drawing.Size(163, 26);
             this.tb_pass.TabIndex = 7;
-            // 
-            // tb_pass2
-            // 
-            this.tb_pass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_pass2.Location = new System.Drawing.Point(145, 165);
-            this.tb_pass2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tb_pass2.Name = "tb_pass2";
-            this.tb_pass2.PasswordChar = '*';
-            this.tb_pass2.Size = new System.Drawing.Size(163, 26);
-            this.tb_pass2.TabIndex = 8;
             // 
             // lb_user
             // 
@@ -188,20 +171,12 @@ namespace PBL_EnglishCenter.View
             this.lb_pass.TabIndex = 10;
             this.lb_pass.Text = "Password:";
             // 
-            // lb_pass2
-            // 
-            this.lb_pass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_pass2.Location = new System.Drawing.Point(24, 153);
-            this.lb_pass2.Name = "lb_pass2";
-            this.lb_pass2.Size = new System.Drawing.Size(109, 63);
-            this.lb_pass2.TabIndex = 11;
-            this.lb_pass2.Text = "Check password:";
-            // 
             // cb_type
             // 
+            this.cb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_type.FormattingEnabled = true;
-            this.cb_type.Location = new System.Drawing.Point(145, 228);
+            this.cb_type.Location = new System.Drawing.Point(145, 163);
             this.cb_type.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cb_type.Name = "cb_type";
             this.cb_type.Size = new System.Drawing.Size(163, 28);
@@ -211,7 +186,7 @@ namespace PBL_EnglishCenter.View
             // 
             this.lb_type.AutoSize = true;
             this.lb_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_type.Location = new System.Drawing.Point(24, 228);
+            this.lb_type.Location = new System.Drawing.Point(24, 163);
             this.lb_type.Name = "lb_type";
             this.lb_type.Size = new System.Drawing.Size(63, 25);
             this.lb_type.TabIndex = 13;
@@ -238,6 +213,7 @@ namespace PBL_EnglishCenter.View
             // 
             // cb_searchtype
             // 
+            this.cb_searchtype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_searchtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_searchtype.FormattingEnabled = true;
             this.cb_searchtype.Location = new System.Drawing.Point(145, 43);
@@ -320,7 +296,7 @@ namespace PBL_EnglishCenter.View
             // 
             this.bt_view.BackColor = System.Drawing.Color.SkyBlue;
             this.bt_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_view.Location = new System.Drawing.Point(203, 318);
+            this.bt_view.Location = new System.Drawing.Point(138, 315);
             this.bt_view.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_view.Name = "bt_view";
             this.bt_view.Size = new System.Drawing.Size(127, 58);
@@ -337,9 +313,9 @@ namespace PBL_EnglishCenter.View
             this.gb_search.Controls.Add(this.tb_search);
             this.gb_search.Controls.Add(this.bt_search);
             this.gb_search.Location = new System.Drawing.Point(708, 15);
-            this.gb_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_search.Margin = new System.Windows.Forms.Padding(4);
             this.gb_search.Name = "gb_search";
-            this.gb_search.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_search.Padding = new System.Windows.Forms.Padding(4);
             this.gb_search.Size = new System.Drawing.Size(640, 140);
             this.gb_search.TabIndex = 24;
             this.gb_search.TabStop = false;
@@ -369,31 +345,37 @@ namespace PBL_EnglishCenter.View
             // 
             // gb_manage
             // 
+            this.gb_manage.Controls.Add(this.label12);
+            this.gb_manage.Controls.Add(this.label11);
+            this.gb_manage.Controls.Add(this.label7);
+            this.gb_manage.Controls.Add(this.label10);
+            this.gb_manage.Controls.Add(this.label9);
+            this.gb_manage.Controls.Add(this.label8);
+            this.gb_manage.Controls.Add(this.label6);
+            this.gb_manage.Controls.Add(this.label5);
+            this.gb_manage.Controls.Add(this.label4);
             this.gb_manage.Controls.Add(this.lb_gender);
             this.gb_manage.Controls.Add(this.tb_username);
             this.gb_manage.Controls.Add(this.bt_add);
             this.gb_manage.Controls.Add(this.bt_view);
-            this.gb_manage.Controls.Add(this.bt_delete);
             this.gb_manage.Controls.Add(this.label3);
             this.gb_manage.Controls.Add(this.bt_edit);
             this.gb_manage.Controls.Add(this.label2);
             this.gb_manage.Controls.Add(this.tb_pass);
             this.gb_manage.Controls.Add(this.tb_gmail);
-            this.gb_manage.Controls.Add(this.tb_pass2);
             this.gb_manage.Controls.Add(this.tb_Phone);
             this.gb_manage.Controls.Add(this.lb_user);
             this.gb_manage.Controls.Add(this.rb_female);
             this.gb_manage.Controls.Add(this.lb_pass);
             this.gb_manage.Controls.Add(this.rb_Male);
-            this.gb_manage.Controls.Add(this.lb_pass2);
             this.gb_manage.Controls.Add(this.tb_fullname);
             this.gb_manage.Controls.Add(this.cb_type);
             this.gb_manage.Controls.Add(this.label1);
             this.gb_manage.Controls.Add(this.lb_type);
             this.gb_manage.Location = new System.Drawing.Point(708, 175);
-            this.gb_manage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_manage.Margin = new System.Windows.Forms.Padding(4);
             this.gb_manage.Name = "gb_manage";
-            this.gb_manage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_manage.Padding = new System.Windows.Forms.Padding(4);
             this.gb_manage.Size = new System.Drawing.Size(640, 406);
             this.gb_manage.TabIndex = 25;
             this.gb_manage.TabStop = false;
@@ -432,6 +414,105 @@ namespace PBL_EnglishCenter.View
             this.bt_exit.UseVisualStyleBackColor = true;
             this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(436, 209);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 16);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Enter gmail address only";
+            this.label4.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(142, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 16);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Username exist";
+            this.label5.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(145, 79);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(167, 16);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Please provide information";
+            this.label6.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(436, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(167, 16);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Please provide information";
+            this.label8.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(436, 79);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(167, 16);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Please provide information";
+            this.label9.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(436, 142);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(167, 16);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Please provide information";
+            this.label10.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(142, 142);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(167, 16);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Please provide information";
+            this.label7.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(145, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(167, 16);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Please provide information";
+            this.label11.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(436, 209);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(167, 16);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "Please provide information";
+            this.label12.Visible = false;
+            // 
             // accountManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -460,16 +541,13 @@ namespace PBL_EnglishCenter.View
 
         private DataGridView dataGridView1;
         private Button bt_add;
-        private Button bt_delete;
         private Button bt_edit;
         private TextBox tb_search;
         private Button bt_search;
         private TextBox tb_username;
         private TextBox tb_pass;
-        private TextBox tb_pass2;
         private Label lb_user;
         private Label lb_pass;
-        private Label lb_pass2;
         private ComboBox cb_type;
         private Label lb_type;
         private Label label1;
@@ -490,5 +568,14 @@ namespace PBL_EnglishCenter.View
         private Label lb_searchbytype;
         private Label lb_gender;
         private Button bt_exit;
+        private Label label4;
+        private Label label5;
+        private Label label12;
+        private Label label11;
+        private Label label7;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private Label label6;
     }
 }
