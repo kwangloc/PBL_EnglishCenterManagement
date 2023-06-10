@@ -73,6 +73,11 @@ namespace PBL_EnglishCenter.BLL
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
             return db.exam_details.ToList();
         }
+        public List<exam_details> getListExamDetailsByExamId(int examId)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            return db.exam_details.Where(p => p.exam_id == examId).ToList();
+        }
         public List<user> getListAllUser()
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
@@ -534,12 +539,13 @@ namespace PBL_EnglishCenter.BLL
             temp.Reverse();
             data.Columns.AddRange(new DataColumn[]
             {
+                new DataColumn("ID", typeof(string)),
                 new DataColumn("Title", typeof(string)),
                 new DataColumn("Description", typeof(string))
             });
             foreach (announcement i in temp)
             {
-                data.Rows.Add(i.name, i.description);
+                data.Rows.Add(i.id.ToString(), i.name, i.description);
             }
             return data;
         }
@@ -550,8 +556,9 @@ namespace PBL_EnglishCenter.BLL
             temp.Reverse();
             data.Columns.AddRange(new DataColumn[]
             {
-                new DataColumn("Name", typeof(string)),
-                new DataColumn("Link", typeof(string)),
+                new DataColumn("ID", typeof(string)),
+                new DataColumn("Exam name", typeof(string)),
+                new DataColumn("Description", typeof(string)),
                 new DataColumn("Grade", typeof(string)),
                 new DataColumn("Feedback", typeof(string))
             });
@@ -559,12 +566,38 @@ namespace PBL_EnglishCenter.BLL
             {
                 string grade = "";
                 string feedback = "";
-                if (getExamDetailsByExamIdAndStudentId(i.id, stuId) != null)
+                exam_details tempExamDetails = getExamDetailsByExamIdAndStudentId(i.id, stuId);
+                if (tempExamDetails != null)
                 {
-                    grade = getExamDetailsByExamIdAndStudentId(i.id, stuId).grade.ToString();
-                    feedback = getExamDetailsByExamIdAndStudentId(i.id, stuId).feedback.ToString();
+                    if(tempExamDetails.grade != null)
+                    {
+                        grade = getExamDetailsByExamIdAndStudentId(i.id, stuId).grade.ToString();
+                    }
+                    if(tempExamDetails.feedback != null)
+                    {
+                        feedback = getExamDetailsByExamIdAndStudentId(i.id, stuId).feedback.ToString();
+                    }
                 }
-                data.Rows.Add(i.name, i.description, grade, feedback);
+                data.Rows.Add(i.id, i.name, i.description, grade, feedback);
+            }
+            return data;
+        }
+        public DataTable customDGVExamInViewTeacher(int courseId) // teacher
+        {
+            DataTable data = new DataTable();
+            List<exam> temp = getListExamByCourseId(courseId);
+            temp.Reverse();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID", typeof(string)),
+                new DataColumn("Exam name", typeof(string)),
+                new DataColumn("Description", typeof(string)),
+                new DataColumn("Graded", typeof(string))
+            });
+            foreach (exam i in temp)
+            {
+                string taken = countGradedExam(i.id).ToString() + "/" + getCourseByCourseID(courseId).limit.ToString();
+                data.Rows.Add(i.id.ToString(), i.name, i.description, taken);
             }
             return data;
         }
@@ -574,12 +607,13 @@ namespace PBL_EnglishCenter.BLL
             List<document> temp = getListDocumentByCourseId(courseId);
             data.Columns.AddRange(new DataColumn[]
             {
-                new DataColumn("Name", typeof(string)),
+                new DataColumn("ID", typeof(string)),
+                new DataColumn("Document name", typeof(string)),
                 new DataColumn("Description", typeof(string))
             });
             foreach (document i in temp)
             {
-                data.Rows.Add(i.name, i.description);
+                data.Rows.Add(i.id.ToString(), i.name, i.description);
             }
             return data;
         }
@@ -764,11 +798,11 @@ namespace PBL_EnglishCenter.BLL
                 if(i.fullname.Contains(searchName))
                 {
                     data.Rows.Add(
-                    (i.id).ToString(),
-                    i.fullname,
-                    i.gender,
-                    i.phone,
-                    i.gmail
+                        (i.id).ToString(),
+                        i.fullname,
+                        i.gender,
+                        i.phone,
+                        i.gmail
                     );
                 }
             }
@@ -788,21 +822,124 @@ namespace PBL_EnglishCenter.BLL
             foreach (user i in getListAllStudent(searchName))
             {
                 data.Rows.Add(
-                (i.id).ToString(),
-                i.fullname,
-                i.gender,
-                i.phone,
-                i.gmail
+                    (i.id).ToString(),
+                    i.fullname,
+                    i.gender,
+                    i.phone,
+                    i.gmail
                 );
             }
             return data;
         }
-        public void addAnnouncement(announcement annToAdd)
+        public DataTable customDGVExamDetails(int examId) 
+        {
+            DataTable data = new DataTable();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("examDetails ID", typeof(string)),
+                new DataColumn("Student ID", typeof(string)),
+                new DataColumn("Name", typeof(string)),
+                new DataColumn("Grade", typeof(string)),
+                new DataColumn("Feedback", typeof(string))
+            });
+            foreach (exam_details i in getListExamDetailsByExamId(examId))
+            {
+                data.Rows.Add(
+                    (i.id).ToString(),
+                    (i.student_id).ToString(),
+                    i.user.fullname,
+                    i.grade,
+                    i.feedback
+                );
+            }
+            return data;
+        }
+        // end custom dgv
+        // begin manage course details
+        public void addEditAnnouncement(announcement tempAnn)
         {
             pbl3_english_centerEntities db = new pbl3_english_centerEntities();
-            db.announcements.Add(annToAdd);
+            announcement curAnn = db.announcements.Find(tempAnn.id);
+            if(curAnn != null) // edit
+            {
+                curAnn.name = tempAnn.name;
+                curAnn.description = tempAnn.description;
+            }
+            else // add
+            {
+                db.announcements.Add(tempAnn);
+            }
             db.SaveChanges();
         }
+        public void addEditDoc(document tempDoc)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            document curDoc = db.documents.Find(tempDoc.id);
+            if (curDoc != null) // edit
+            {
+                curDoc.name = tempDoc.name;
+                curDoc.description = tempDoc.description;
+            }
+            else // add
+            {
+                db.documents.Add(tempDoc);
+            }
+            db.SaveChanges();
+        }
+        public void addEditExam(int courseId, exam tempExam)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            exam curExam = db.exams.Find(tempExam.id);
+            if (curExam != null) // edit
+            {
+                curExam.name = tempExam.name;
+                curExam.description = tempExam.description;
+                db.SaveChanges();
+            }
+            else // add
+            {
+                db.exams.Add(tempExam);
+                db.SaveChanges();
+                addStudentResultRecords(courseId, tempExam.id);
+            }
+        }
+        public void addStudentResultRecords(int courseId, int examId)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            foreach(user i in getListStudentByCourseId(courseId))
+            {
+                db.exam_details.Add(new exam_details
+                {
+                    student_id = i.id,
+                    exam_id = examId
+                });
+            }
+            db.SaveChanges();
+        }
+        public void editExamDetails(exam_details tempExamDetails)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            exam_details curExamDetails = db.exam_details.Find(tempExamDetails.id);
+            if(curExamDetails != null)
+            {
+                curExamDetails.grade = tempExamDetails.grade;
+                curExamDetails.feedback = tempExamDetails.feedback;
+                db.SaveChanges();
+            }
+        }
+        public int countGradedExam(int examId)
+        {
+            int count = 0;
+            foreach (exam_details i in getListExamDetailsByExamId(examId))
+            {
+                if (i.grade != null)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+        //end course details
         // functions for course Management
         public void removeCourseMember(int courseId, int stuId) 
         {
@@ -850,7 +987,6 @@ namespace PBL_EnglishCenter.BLL
                 return true;
             }
             return false;
-
         }
     }
 }
