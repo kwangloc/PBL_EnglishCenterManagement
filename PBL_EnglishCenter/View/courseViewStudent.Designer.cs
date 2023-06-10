@@ -32,6 +32,7 @@
             this.bt_viewCourseDetails = new System.Windows.Forms.Button();
             this.bt_exit = new System.Windows.Forms.Button();
             this.dgv_courseStu = new System.Windows.Forms.DataGridView();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_courseStu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // 
             // bt_exit
             // 
-            this.bt_exit.Location = new System.Drawing.Point(495, 488);
+            this.bt_exit.Location = new System.Drawing.Point(32, 494);
             this.bt_exit.Name = "bt_exit";
             this.bt_exit.Size = new System.Drawing.Size(119, 29);
             this.bt_exit.TabIndex = 9;
@@ -75,11 +76,32 @@
             this.dgv_courseStu.Size = new System.Drawing.Size(995, 327);
             this.dgv_courseStu.TabIndex = 4;
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.guna2Button1.BorderRadius = 22;
+            this.guna2Button1.BorderThickness = 3;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.Location = new System.Drawing.Point(374, 552);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(183, 46);
+            this.guna2Button1.TabIndex = 12;
+            this.guna2Button1.Text = "guna2Button1";
+            // 
             // courseViewStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(226)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1482, 753);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.lb_fullname);
             this.Controls.Add(this.bt_viewCourseDetails);
             this.Controls.Add(this.bt_exit);
@@ -99,5 +121,6 @@
         private System.Windows.Forms.Button bt_viewCourseDetails;
         private System.Windows.Forms.Button bt_exit;
         private System.Windows.Forms.DataGridView dgv_courseStu;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

@@ -21,5 +21,10 @@ namespace PBL_EnglishCenter.View
         {
             guna2DataGridView1.DataSource = BLL.BLL.Instance.customDGVCourseViewAdm();
         }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
