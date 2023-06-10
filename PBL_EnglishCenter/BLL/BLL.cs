@@ -707,7 +707,7 @@ namespace PBL_EnglishCenter.BLL
                 new DataColumn("ID", typeof(string)),
                 new DataColumn("Name", typeof(string)),
                 new DataColumn("Description", typeof(string)),
-                new DataColumn("Number of places", typeof(string)),
+                new DataColumn("Quantity", typeof(string)),
                 new DataColumn("Teacher", typeof(string)),
                 new DataColumn("Location", typeof(string)),
                 new DataColumn("Status", typeof(string)),
@@ -984,14 +984,34 @@ namespace PBL_EnglishCenter.BLL
         }
         public void addStudentToCourse(int courseId, int stuId)
         {
-            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
-            course_member tempCourseMember = new course_member
+            if(checkStudentToAdd(courseId, stuId))
             {
-                course_id = courseId,
-                student_id = stuId
-            };
-            db.course_member.Add(tempCourseMember);
-            db.SaveChanges();
+                pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+                course_member tempCourseMember = new course_member
+                {
+                    course_id = courseId,
+                    student_id = stuId
+                };
+                db.course_member.Add(tempCourseMember);
+                db.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("The student has been added to course!");
+            }
+        }
+        public bool checkStudentToAdd(int courseId, int stuId)
+        {
+            pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+            course_member temp = db.course_member.Where(p => p.course_id == courseId && p.student_id == stuId).FirstOrDefault();
+            if(temp == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public bool checkCourseToDelete(int courseId)
         {
