@@ -17,8 +17,8 @@ namespace PBL_EnglishCenter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new loginForm());
-            Application.Run(new GunaSample());
+            Application.Run(new loginForm());
+            //Application.Run(new GunaSample());
             //Application.Run(new announcementManage());
         }
     }

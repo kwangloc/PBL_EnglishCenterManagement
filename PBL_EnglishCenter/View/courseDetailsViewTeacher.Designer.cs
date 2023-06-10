@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bt_doc = new System.Windows.Forms.Button();
-            this.bt_exam = new System.Windows.Forms.Button();
-            this.bt_ann = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_valueStatus = new System.Windows.Forms.Label();
             this.lb_valueTimeBegin = new System.Windows.Forms.Label();
             this.lb_valueTimeEnd = new System.Windows.Forms.Label();
@@ -50,56 +50,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lb_limit = new System.Windows.Forms.Label();
             this.lb_description = new System.Windows.Forms.Label();
-            this.bt_newAnn = new System.Windows.Forms.Button();
-            this.bt_newExam = new System.Windows.Forms.Button();
-            this.bt_newDoc = new System.Windows.Forms.Button();
-            this.bt_editAnn = new System.Windows.Forms.Button();
-            this.bt_examRes = new System.Windows.Forms.Button();
-            this.bt_editExam = new System.Windows.Forms.Button();
-            this.bt_editDoc = new System.Windows.Forms.Button();
+            this.bt_ann = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_exam = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_doc = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_newAnn = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_newExam = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_editAnn = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_newDoc = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_editExam = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_editDoc = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_examRes = new Guna.UI2.WinForms.Guna2Button();
+            this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(480, 315);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(646, 236);
-            this.dataGridView1.TabIndex = 26;
-            // 
-            // bt_doc
-            // 
-            this.bt_doc.Location = new System.Drawing.Point(276, 461);
-            this.bt_doc.Name = "bt_doc";
-            this.bt_doc.Size = new System.Drawing.Size(159, 31);
-            this.bt_doc.TabIndex = 25;
-            this.bt_doc.Text = "Document";
-            this.bt_doc.UseVisualStyleBackColor = true;
-            this.bt_doc.Click += new System.EventHandler(this.bt_doc_Click);
-            // 
-            // bt_exam
-            // 
-            this.bt_exam.Location = new System.Drawing.Point(276, 410);
-            this.bt_exam.Name = "bt_exam";
-            this.bt_exam.Size = new System.Drawing.Size(159, 31);
-            this.bt_exam.TabIndex = 24;
-            this.bt_exam.Text = "Exam";
-            this.bt_exam.UseVisualStyleBackColor = true;
-            this.bt_exam.Click += new System.EventHandler(this.bt_exam_Click);
-            // 
-            // bt_ann
-            // 
-            this.bt_ann.Location = new System.Drawing.Point(276, 356);
-            this.bt_ann.Name = "bt_ann";
-            this.bt_ann.Size = new System.Drawing.Size(159, 31);
-            this.bt_ann.TabIndex = 23;
-            this.bt_ann.Text = "Announcement";
-            this.bt_ann.UseVisualStyleBackColor = true;
-            this.bt_ann.Click += new System.EventHandler(this.bt_ann_Click);
             // 
             // lb_valueStatus
             // 
@@ -265,91 +228,283 @@
             this.lb_description.TabIndex = 15;
             this.lb_description.Text = "Description:";
             // 
+            // bt_ann
+            // 
+            this.bt_ann.BackColor = System.Drawing.Color.White;
+            this.bt_ann.BorderRadius = 22;
+            this.bt_ann.BorderThickness = 1;
+            this.bt_ann.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_ann.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_ann.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_ann.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_ann.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_ann.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_ann.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_ann.ForeColor = System.Drawing.Color.Black;
+            this.bt_ann.Location = new System.Drawing.Point(214, 302);
+            this.bt_ann.Name = "bt_ann";
+            this.bt_ann.Size = new System.Drawing.Size(180, 45);
+            this.bt_ann.TabIndex = 27;
+            this.bt_ann.Text = "Announcement";
+            this.bt_ann.Click += new System.EventHandler(this.bt_ann_Click);
+            // 
+            // bt_exam
+            // 
+            this.bt_exam.BackColor = System.Drawing.Color.White;
+            this.bt_exam.BorderRadius = 22;
+            this.bt_exam.BorderThickness = 1;
+            this.bt_exam.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_exam.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_exam.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_exam.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_exam.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_exam.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_exam.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_exam.ForeColor = System.Drawing.Color.Black;
+            this.bt_exam.Location = new System.Drawing.Point(214, 363);
+            this.bt_exam.Name = "bt_exam";
+            this.bt_exam.Size = new System.Drawing.Size(180, 45);
+            this.bt_exam.TabIndex = 27;
+            this.bt_exam.Text = "Exam";
+            this.bt_exam.Click += new System.EventHandler(this.bt_exam_Click);
+            // 
+            // bt_doc
+            // 
+            this.bt_doc.BackColor = System.Drawing.Color.White;
+            this.bt_doc.BorderRadius = 22;
+            this.bt_doc.BorderThickness = 1;
+            this.bt_doc.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_doc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_doc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_doc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_doc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_doc.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_doc.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_doc.ForeColor = System.Drawing.Color.Black;
+            this.bt_doc.Location = new System.Drawing.Point(214, 424);
+            this.bt_doc.Name = "bt_doc";
+            this.bt_doc.Size = new System.Drawing.Size(180, 45);
+            this.bt_doc.TabIndex = 27;
+            this.bt_doc.Text = "Document";
+            this.bt_doc.Click += new System.EventHandler(this.bt_doc_Click);
+            // 
             // bt_newAnn
             // 
-            this.bt_newAnn.Location = new System.Drawing.Point(1151, 356);
+            this.bt_newAnn.BackColor = System.Drawing.Color.White;
+            this.bt_newAnn.BorderRadius = 22;
+            this.bt_newAnn.BorderThickness = 1;
+            this.bt_newAnn.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_newAnn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_newAnn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_newAnn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_newAnn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_newAnn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_newAnn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_newAnn.ForeColor = System.Drawing.Color.Black;
+            this.bt_newAnn.Location = new System.Drawing.Point(1228, 302);
             this.bt_newAnn.Name = "bt_newAnn";
-            this.bt_newAnn.Size = new System.Drawing.Size(159, 31);
+            this.bt_newAnn.Size = new System.Drawing.Size(180, 45);
             this.bt_newAnn.TabIndex = 27;
             this.bt_newAnn.Text = "New announcement";
-            this.bt_newAnn.UseVisualStyleBackColor = true;
             this.bt_newAnn.Click += new System.EventHandler(this.bt_newAnn_Click);
             // 
             // bt_newExam
             // 
-            this.bt_newExam.Location = new System.Drawing.Point(1151, 423);
+            this.bt_newExam.BackColor = System.Drawing.Color.White;
+            this.bt_newExam.BorderRadius = 22;
+            this.bt_newExam.BorderThickness = 1;
+            this.bt_newExam.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_newExam.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_newExam.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_newExam.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_newExam.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_newExam.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_newExam.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_newExam.ForeColor = System.Drawing.Color.Black;
+            this.bt_newExam.Location = new System.Drawing.Point(1228, 358);
             this.bt_newExam.Name = "bt_newExam";
-            this.bt_newExam.Size = new System.Drawing.Size(159, 31);
+            this.bt_newExam.Size = new System.Drawing.Size(180, 45);
             this.bt_newExam.TabIndex = 27;
             this.bt_newExam.Text = "New exam";
-            this.bt_newExam.UseVisualStyleBackColor = true;
             this.bt_newExam.Click += new System.EventHandler(this.bt_newExam_Click);
-            // 
-            // bt_newDoc
-            // 
-            this.bt_newDoc.Location = new System.Drawing.Point(1151, 499);
-            this.bt_newDoc.Name = "bt_newDoc";
-            this.bt_newDoc.Size = new System.Drawing.Size(159, 31);
-            this.bt_newDoc.TabIndex = 27;
-            this.bt_newDoc.Text = "New document";
-            this.bt_newDoc.UseVisualStyleBackColor = true;
-            this.bt_newDoc.Click += new System.EventHandler(this.bt_newDoc_Click);
             // 
             // bt_editAnn
             // 
-            this.bt_editAnn.Location = new System.Drawing.Point(684, 573);
+            this.bt_editAnn.BackColor = System.Drawing.Color.White;
+            this.bt_editAnn.BorderRadius = 22;
+            this.bt_editAnn.BorderThickness = 1;
+            this.bt_editAnn.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_editAnn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_editAnn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_editAnn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_editAnn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_editAnn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_editAnn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_editAnn.ForeColor = System.Drawing.Color.Black;
+            this.bt_editAnn.Location = new System.Drawing.Point(480, 569);
             this.bt_editAnn.Name = "bt_editAnn";
-            this.bt_editAnn.Size = new System.Drawing.Size(147, 37);
-            this.bt_editAnn.TabIndex = 28;
+            this.bt_editAnn.Size = new System.Drawing.Size(180, 45);
+            this.bt_editAnn.TabIndex = 27;
             this.bt_editAnn.Text = "Edit announcement";
-            this.bt_editAnn.UseVisualStyleBackColor = true;
             this.bt_editAnn.Click += new System.EventHandler(this.bt_editAnn_Click);
             // 
-            // bt_examRes
+            // bt_newDoc
             // 
-            this.bt_examRes.Location = new System.Drawing.Point(902, 573);
-            this.bt_examRes.Name = "bt_examRes";
-            this.bt_examRes.Size = new System.Drawing.Size(147, 37);
-            this.bt_examRes.TabIndex = 28;
-            this.bt_examRes.Text = "View exam results";
-            this.bt_examRes.UseVisualStyleBackColor = true;
-            this.bt_examRes.Click += new System.EventHandler(this.bt_examRes_Click);
+            this.bt_newDoc.BackColor = System.Drawing.Color.White;
+            this.bt_newDoc.BorderRadius = 22;
+            this.bt_newDoc.BorderThickness = 1;
+            this.bt_newDoc.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_newDoc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_newDoc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_newDoc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_newDoc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_newDoc.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_newDoc.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_newDoc.ForeColor = System.Drawing.Color.Black;
+            this.bt_newDoc.Location = new System.Drawing.Point(1228, 419);
+            this.bt_newDoc.Name = "bt_newDoc";
+            this.bt_newDoc.Size = new System.Drawing.Size(180, 45);
+            this.bt_newDoc.TabIndex = 27;
+            this.bt_newDoc.Text = "New document";
+            this.bt_newDoc.Click += new System.EventHandler(this.bt_newDoc_Click);
             // 
             // bt_editExam
             // 
-            this.bt_editExam.Location = new System.Drawing.Point(480, 627);
+            this.bt_editExam.BackColor = System.Drawing.Color.White;
+            this.bt_editExam.BorderRadius = 22;
+            this.bt_editExam.BorderThickness = 1;
+            this.bt_editExam.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_editExam.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_editExam.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_editExam.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_editExam.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_editExam.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_editExam.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_editExam.ForeColor = System.Drawing.Color.Black;
+            this.bt_editExam.Location = new System.Drawing.Point(709, 569);
             this.bt_editExam.Name = "bt_editExam";
-            this.bt_editExam.Size = new System.Drawing.Size(147, 37);
-            this.bt_editExam.TabIndex = 28;
+            this.bt_editExam.Size = new System.Drawing.Size(180, 45);
+            this.bt_editExam.TabIndex = 27;
             this.bt_editExam.Text = "Edit exam";
-            this.bt_editExam.UseVisualStyleBackColor = true;
             this.bt_editExam.Click += new System.EventHandler(this.bt_editExam_Click);
             // 
             // bt_editDoc
             // 
-            this.bt_editDoc.Location = new System.Drawing.Point(480, 573);
+            this.bt_editDoc.BackColor = System.Drawing.Color.White;
+            this.bt_editDoc.BorderRadius = 22;
+            this.bt_editDoc.BorderThickness = 1;
+            this.bt_editDoc.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_editDoc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_editDoc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_editDoc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_editDoc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_editDoc.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_editDoc.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_editDoc.ForeColor = System.Drawing.Color.Black;
+            this.bt_editDoc.Location = new System.Drawing.Point(935, 569);
             this.bt_editDoc.Name = "bt_editDoc";
-            this.bt_editDoc.Size = new System.Drawing.Size(147, 37);
-            this.bt_editDoc.TabIndex = 28;
+            this.bt_editDoc.Size = new System.Drawing.Size(180, 45);
+            this.bt_editDoc.TabIndex = 27;
             this.bt_editDoc.Text = "Edit document";
-            this.bt_editDoc.UseVisualStyleBackColor = true;
             this.bt_editDoc.Click += new System.EventHandler(this.bt_editDoc_Click);
+            // 
+            // bt_examRes
+            // 
+            this.bt_examRes.BackColor = System.Drawing.Color.White;
+            this.bt_examRes.BorderRadius = 22;
+            this.bt_examRes.BorderThickness = 1;
+            this.bt_examRes.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_examRes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_examRes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_examRes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_examRes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_examRes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_examRes.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_examRes.ForeColor = System.Drawing.Color.Black;
+            this.bt_examRes.Location = new System.Drawing.Point(1151, 569);
+            this.bt_examRes.Name = "bt_examRes";
+            this.bt_examRes.Size = new System.Drawing.Size(180, 45);
+            this.bt_examRes.TabIndex = 27;
+            this.bt_examRes.Text = "View exam results";
+            this.bt_examRes.Click += new System.EventHandler(this.bt_examRes_Click);
+            // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeight = 29;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridView1.Location = new System.Drawing.Point(453, 277);
+            this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(742, 256);
+            this.dataGridView1.TabIndex = 28;
+            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataGridView1.ThemeStyle.HeaderStyle.Height = 29;
+            this.dataGridView1.ThemeStyle.ReadOnly = false;
+            this.dataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridView1.ThemeStyle.RowsStyle.Height = 24;
+            this.dataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // courseDetailsViewTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1482, 753);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bt_examRes);
             this.Controls.Add(this.bt_editDoc);
             this.Controls.Add(this.bt_editExam);
-            this.Controls.Add(this.bt_editAnn);
-            this.Controls.Add(this.bt_newDoc);
-            this.Controls.Add(this.bt_newExam);
             this.Controls.Add(this.bt_newAnn);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.bt_doc);
+            this.Controls.Add(this.bt_newDoc);
             this.Controls.Add(this.bt_exam);
+            this.Controls.Add(this.bt_editAnn);
+            this.Controls.Add(this.bt_doc);
+            this.Controls.Add(this.bt_newExam);
             this.Controls.Add(this.bt_ann);
             this.Controls.Add(this.lb_valueStatus);
             this.Controls.Add(this.lb_valueTimeBegin);
@@ -380,11 +535,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button bt_doc;
-        private System.Windows.Forms.Button bt_exam;
-        private System.Windows.Forms.Button bt_ann;
         private System.Windows.Forms.Label lb_valueStatus;
         private System.Windows.Forms.Label lb_valueTimeBegin;
         private System.Windows.Forms.Label lb_valueTimeEnd;
@@ -403,12 +553,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_limit;
         private System.Windows.Forms.Label lb_description;
-        private System.Windows.Forms.Button bt_newAnn;
-        private System.Windows.Forms.Button bt_newExam;
-        private System.Windows.Forms.Button bt_newDoc;
-        private System.Windows.Forms.Button bt_editAnn;
-        private System.Windows.Forms.Button bt_examRes;
-        private System.Windows.Forms.Button bt_editExam;
-        private System.Windows.Forms.Button bt_editDoc;
+        private Guna.UI2.WinForms.Guna2Button bt_ann;
+        private Guna.UI2.WinForms.Guna2Button bt_exam;
+        private Guna.UI2.WinForms.Guna2Button bt_doc;
+        private Guna.UI2.WinForms.Guna2Button bt_newAnn;
+        private Guna.UI2.WinForms.Guna2Button bt_newExam;
+        private Guna.UI2.WinForms.Guna2Button bt_editAnn;
+        private Guna.UI2.WinForms.Guna2Button bt_newDoc;
+        private Guna.UI2.WinForms.Guna2Button bt_editExam;
+        private Guna.UI2.WinForms.Guna2Button bt_editDoc;
+        private Guna.UI2.WinForms.Guna2Button bt_examRes;
+        private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
     }
 }

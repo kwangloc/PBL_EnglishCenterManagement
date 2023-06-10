@@ -41,9 +41,6 @@
             this.cbb_status = new System.Windows.Forms.ComboBox();
             this.rtb_des = new System.Windows.Forms.RichTextBox();
             this.tb_id = new System.Windows.Forms.TextBox();
-            this.bt_clear = new System.Windows.Forms.Button();
-            this.bt_cancel = new System.Windows.Forms.Button();
-            this.bt_ok = new System.Windows.Forms.Button();
             this.tb_limit = new System.Windows.Forms.TextBox();
             this.tb_cost = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,14 +56,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lb_name = new System.Windows.Forms.Label();
-            this.bt_listOfPart = new System.Windows.Forms.Button();
+            this.bt_ok = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_cancel = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_listOfPart = new Guna.UI2.WinForms.Guna2Button();
             this.gb_manage.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb_manage
             // 
+            this.gb_manage.Controls.Add(this.bt_listOfPart);
             this.gb_manage.Controls.Add(this.cbb_time2);
+            this.gb_manage.Controls.Add(this.bt_cancel);
             this.gb_manage.Controls.Add(this.cbb_day2);
+            this.gb_manage.Controls.Add(this.bt_ok);
             this.gb_manage.Controls.Add(this.cbb_time1);
             this.gb_manage.Controls.Add(this.cbb_day1);
             this.gb_manage.Controls.Add(this.cbb_location);
@@ -77,9 +79,6 @@
             this.gb_manage.Controls.Add(this.cbb_status);
             this.gb_manage.Controls.Add(this.rtb_des);
             this.gb_manage.Controls.Add(this.tb_id);
-            this.gb_manage.Controls.Add(this.bt_clear);
-            this.gb_manage.Controls.Add(this.bt_cancel);
-            this.gb_manage.Controls.Add(this.bt_ok);
             this.gb_manage.Controls.Add(this.tb_limit);
             this.gb_manage.Controls.Add(this.tb_cost);
             this.gb_manage.Controls.Add(this.label6);
@@ -198,45 +197,6 @@
             this.tb_id.ReadOnly = true;
             this.tb_id.Size = new System.Drawing.Size(163, 26);
             this.tb_id.TabIndex = 6;
-            // 
-            // bt_clear
-            // 
-            this.bt_clear.BackColor = System.Drawing.Color.Lavender;
-            this.bt_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_clear.Location = new System.Drawing.Point(28, 593);
-            this.bt_clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_clear.Name = "bt_clear";
-            this.bt_clear.Size = new System.Drawing.Size(149, 38);
-            this.bt_clear.TabIndex = 1;
-            this.bt_clear.Text = "Clear";
-            this.bt_clear.UseVisualStyleBackColor = false;
-            this.bt_clear.Click += new System.EventHandler(this.bt_clear_Click);
-            // 
-            // bt_cancel
-            // 
-            this.bt_cancel.BackColor = System.Drawing.Color.SkyBlue;
-            this.bt_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancel.Location = new System.Drawing.Point(487, 583);
-            this.bt_cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_cancel.Name = "bt_cancel";
-            this.bt_cancel.Size = new System.Drawing.Size(127, 58);
-            this.bt_cancel.TabIndex = 3;
-            this.bt_cancel.Text = "Cancel";
-            this.bt_cancel.UseVisualStyleBackColor = false;
-            this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
-            // 
-            // bt_ok
-            // 
-            this.bt_ok.BackColor = System.Drawing.Color.SkyBlue;
-            this.bt_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_ok.Location = new System.Drawing.Point(265, 583);
-            this.bt_ok.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_ok.Name = "bt_ok";
-            this.bt_ok.Size = new System.Drawing.Size(127, 58);
-            this.bt_ok.TabIndex = 3;
-            this.bt_ok.Text = "OK";
-            this.bt_ok.UseVisualStyleBackColor = false;
-            this.bt_ok.Click += new System.EventHandler(this.bt_ok_Click);
             // 
             // tb_limit
             // 
@@ -386,26 +346,73 @@
             this.lb_name.TabIndex = 10;
             this.lb_name.Text = "Name:";
             // 
+            // bt_ok
+            // 
+            this.bt_ok.BackColor = System.Drawing.Color.White;
+            this.bt_ok.BorderRadius = 22;
+            this.bt_ok.BorderThickness = 1;
+            this.bt_ok.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_ok.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_ok.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_ok.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_ok.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_ok.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_ok.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_ok.ForeColor = System.Drawing.Color.Black;
+            this.bt_ok.Location = new System.Drawing.Point(29, 557);
+            this.bt_ok.Name = "bt_ok";
+            this.bt_ok.Size = new System.Drawing.Size(180, 45);
+            this.bt_ok.TabIndex = 31;
+            this.bt_ok.Text = "OK";
+            this.bt_ok.Click += new System.EventHandler(this.bt_ok_Click);
+            // 
+            // bt_cancel
+            // 
+            this.bt_cancel.BackColor = System.Drawing.Color.White;
+            this.bt_cancel.BorderRadius = 22;
+            this.bt_cancel.BorderThickness = 1;
+            this.bt_cancel.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_cancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_cancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_cancel.ForeColor = System.Drawing.Color.Black;
+            this.bt_cancel.Location = new System.Drawing.Point(277, 557);
+            this.bt_cancel.Name = "bt_cancel";
+            this.bt_cancel.Size = new System.Drawing.Size(180, 45);
+            this.bt_cancel.TabIndex = 31;
+            this.bt_cancel.Text = "Cancel";
+            this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
+            // 
             // bt_listOfPart
             // 
-            this.bt_listOfPart.BackColor = System.Drawing.Color.SkyBlue;
-            this.bt_listOfPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_listOfPart.Location = new System.Drawing.Point(1085, 200);
-            this.bt_listOfPart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_listOfPart.BackColor = System.Drawing.Color.White;
+            this.bt_listOfPart.BorderRadius = 22;
+            this.bt_listOfPart.BorderThickness = 1;
+            this.bt_listOfPart.CheckedState.FillColor = System.Drawing.Color.Red;
+            this.bt_listOfPart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_listOfPart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_listOfPart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_listOfPart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_listOfPart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.bt_listOfPart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_listOfPart.ForeColor = System.Drawing.Color.Black;
+            this.bt_listOfPart.Location = new System.Drawing.Point(499, 557);
             this.bt_listOfPart.Name = "bt_listOfPart";
-            this.bt_listOfPart.Size = new System.Drawing.Size(235, 44);
-            this.bt_listOfPart.TabIndex = 3;
+            this.bt_listOfPart.Size = new System.Drawing.Size(180, 45);
+            this.bt_listOfPart.TabIndex = 31;
             this.bt_listOfPart.Text = "List of participants";
-            this.bt_listOfPart.UseVisualStyleBackColor = false;
             this.bt_listOfPart.Click += new System.EventHandler(this.bt_listOfPart_Click);
             // 
             // courseViewDetailsAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.gb_manage);
-            this.Controls.Add(this.bt_listOfPart);
             this.Name = "courseViewDetailsAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "courseViewDetailsAdmin";
@@ -426,8 +433,6 @@
         private System.Windows.Forms.ComboBox cbb_status;
         private System.Windows.Forms.RichTextBox rtb_des;
         private System.Windows.Forms.TextBox tb_id;
-        private System.Windows.Forms.Button bt_clear;
-        private System.Windows.Forms.Button bt_ok;
         private System.Windows.Forms.TextBox tb_limit;
         private System.Windows.Forms.TextBox tb_cost;
         private System.Windows.Forms.Label label6;
@@ -440,8 +445,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_name;
-        private System.Windows.Forms.Button bt_cancel;
-        private System.Windows.Forms.Button bt_listOfPart;
         private System.Windows.Forms.ComboBox cbb_time2;
         private System.Windows.Forms.ComboBox cbb_day2;
         private System.Windows.Forms.ComboBox cbb_time1;
@@ -449,5 +452,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lb_sche;
+        private Guna.UI2.WinForms.Guna2Button bt_ok;
+        private Guna.UI2.WinForms.Guna2Button bt_cancel;
+        private Guna.UI2.WinForms.Guna2Button bt_listOfPart;
     }
 }
