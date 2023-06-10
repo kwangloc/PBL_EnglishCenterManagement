@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,7 +25,7 @@ namespace PBL_EnglishCenter.View
         private void setGUI()
         {
             // set hello + full name
-            lb_fullname.Text = "Hello, " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname;
+            lb_fullname.Text = "Welcome " + (BLL.BLL.Instance.getUserById((int)currentAccount.user_id)).fullname;
             // set ann dgv
             //dgvAnnAdm.DataSource = BLL.BLL.Instance.getListAllAnnouncement().ToList();
             dgvAnnAdm.DataSource = BLL.BLL.Instance.customDGVAnnInMainFormAdm();

@@ -23,6 +23,11 @@ namespace PBL_EnglishCenter.View
         {
             lb_showUser.Text = currentAccount.username;
             lb_showType.Text = currentAccount.type;
+
+            tb_currentPassword.UseSystemPasswordChar= true;
+            tb_newPassword.UseSystemPasswordChar= true;
+            tb_confirmPassword.UseSystemPasswordChar = true;
+
         }
 
         private void bt_save_Click(object sender, EventArgs e)
@@ -90,6 +95,30 @@ namespace PBL_EnglishCenter.View
         private void bt_cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bt_showpass1_Click(object sender, EventArgs e)
+        {
+            if (tb_currentPassword.UseSystemPasswordChar)
+                tb_currentPassword.UseSystemPasswordChar = false;
+            else
+                tb_currentPassword.UseSystemPasswordChar = true;
+        }
+
+        private void bt_showpass2_Click(object sender, EventArgs e)
+        {
+            if (tb_newPassword.UseSystemPasswordChar)
+                tb_newPassword.UseSystemPasswordChar = false;
+            else
+                tb_newPassword.UseSystemPasswordChar = true;
+        }
+
+        private void bt_showpass3_Click(object sender, EventArgs e)
+        {
+            if (tb_confirmPassword.UseSystemPasswordChar)
+                tb_confirmPassword.UseSystemPasswordChar = false;
+            else
+                tb_confirmPassword.UseSystemPasswordChar = true;
         }
     }
 }

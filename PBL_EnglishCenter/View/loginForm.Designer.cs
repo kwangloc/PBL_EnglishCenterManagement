@@ -28,131 +28,227 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tb_username = new System.Windows.Forms.TextBox();
-            this.tb_password = new System.Windows.Forms.TextBox();
-            this.lb_username = new System.Windows.Forms.Label();
-            this.lb_password = new System.Windows.Forms.Label();
-            this.bt_login = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.bt_exit = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm));
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.lb_cmt = new System.Windows.Forms.Label();
+            this.tb_password = new Guna.UI2.WinForms.Guna2TextBox();
+            this.bt_exit = new Guna.UI2.WinForms.Guna2Button();
+            this.bt_login = new Guna.UI2.WinForms.Guna2Button();
+            this.tb_username = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lb_login = new System.Windows.Forms.Label();
+            this.bt_showpass = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tb_username
+            // guna2Panel1
             // 
-            this.tb_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_username.Location = new System.Drawing.Point(369, 251);
-            this.tb_username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(331, 37);
-            this.tb_username.TabIndex = 2;
+            this.guna2Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Panel1.BackgroundImage")));
+            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel1.Controls.Add(this.label3);
+            this.guna2Panel1.Controls.Add(this.label4);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1014, 800);
+            this.guna2Panel1.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label3.Location = new System.Drawing.Point(282, 129);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(504, 65);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Management System";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label4.Location = new System.Drawing.Point(355, 51);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(353, 65);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "English Center";
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Silver;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1455, 0);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.TabIndex = 8;
+            // 
+            // lb_cmt
+            // 
+            this.lb_cmt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cmt.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lb_cmt.Location = new System.Drawing.Point(1078, 236);
+            this.lb_cmt.Name = "lb_cmt";
+            this.lb_cmt.Size = new System.Drawing.Size(372, 67);
+            this.lb_cmt.TabIndex = 9;
+            this.lb_cmt.Text = "Login with the account that the English center has given you. If you don\'t rememb" +
+    "er your account and         password, please contact the administrator.";
             // 
             // tb_password
             // 
-            this.tb_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_password.Location = new System.Drawing.Point(369, 308);
-            this.tb_password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tb_password.BorderRadius = 20;
+            this.tb_password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_password.DefaultText = "";
+            this.tb_password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb_password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb_password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_password.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_password.IconLeft = ((System.Drawing.Image)(resources.GetObject("tb_password.IconLeft")));
+            this.tb_password.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.tb_password.Location = new System.Drawing.Point(1082, 441);
+            this.tb_password.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(331, 37);
-            this.tb_password.TabIndex = 3;
-            this.tb_password.UseSystemPasswordChar = true;
-            // 
-            // lb_username
-            // 
-            this.lb_username.AutoSize = true;
-            this.lb_username.Font = new System.Drawing.Font("Lucida Bright", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_username.Location = new System.Drawing.Point(204, 255);
-            this.lb_username.Name = "lb_username";
-            this.lb_username.Size = new System.Drawing.Size(149, 32);
-            this.lb_username.TabIndex = 4;
-            this.lb_username.Text = "Username";
-            // 
-            // lb_password
-            // 
-            this.lb_password.AutoSize = true;
-            this.lb_password.Font = new System.Drawing.Font("Lucida Bright", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_password.Location = new System.Drawing.Point(209, 311);
-            this.lb_password.Name = "lb_password";
-            this.lb_password.Size = new System.Drawing.Size(141, 32);
-            this.lb_password.TabIndex = 4;
-            this.lb_password.Text = "Password";
-            // 
-            // bt_login
-            // 
-            this.bt_login.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_login.Location = new System.Drawing.Point(310, 385);
-            this.bt_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_login.Name = "bt_login";
-            this.bt_login.Size = new System.Drawing.Size(163, 35);
-            this.bt_login.TabIndex = 5;
-            this.bt_login.Text = "Login";
-            this.bt_login.UseVisualStyleBackColor = true;
-            this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Console", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(288, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(412, 47);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "English Center";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Console", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label2.Location = new System.Drawing.Point(234, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(496, 47);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Management System";
+            this.tb_password.PasswordChar = '\0';
+            this.tb_password.PlaceholderText = "";
+            this.tb_password.SelectedText = "";
+            this.tb_password.Size = new System.Drawing.Size(357, 47);
+            this.tb_password.TabIndex = 12;
             // 
             // bt_exit
             // 
-            this.bt_exit.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_exit.Location = new System.Drawing.Point(507, 385);
-            this.bt_exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_exit.BorderRadius = 15;
+            this.bt_exit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_exit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_exit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_exit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_exit.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_exit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_exit.ForeColor = System.Drawing.Color.White;
+            this.bt_exit.Image = ((System.Drawing.Image)(resources.GetObject("bt_exit.Image")));
+            this.bt_exit.Location = new System.Drawing.Point(1248, 599);
             this.bt_exit.Name = "bt_exit";
-            this.bt_exit.Size = new System.Drawing.Size(163, 35);
-            this.bt_exit.TabIndex = 5;
-            this.bt_exit.Text = "Exit";
-            this.bt_exit.UseVisualStyleBackColor = true;
+            this.bt_exit.Size = new System.Drawing.Size(31, 32);
+            this.bt_exit.TabIndex = 14;
             this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
+            // 
+            // bt_login
+            // 
+            this.bt_login.BorderRadius = 20;
+            this.bt_login.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_login.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_login.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.bt_login.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_login.ForeColor = System.Drawing.Color.White;
+            this.bt_login.Location = new System.Drawing.Point(1172, 533);
+            this.bt_login.Name = "bt_login";
+            this.bt_login.Size = new System.Drawing.Size(180, 45);
+            this.bt_login.TabIndex = 13;
+            this.bt_login.Text = "Login";
+            this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
+            // 
+            // tb_username
+            // 
+            this.tb_username.BorderRadius = 20;
+            this.tb_username.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_username.DefaultText = "";
+            this.tb_username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb_username.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb_username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_username.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_username.IconLeft = ((System.Drawing.Image)(resources.GetObject("tb_username.IconLeft")));
+            this.tb_username.IconLeftSize = new System.Drawing.Size(35, 35);
+            this.tb_username.Location = new System.Drawing.Point(1082, 372);
+            this.tb_username.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tb_username.Name = "tb_username";
+            this.tb_username.PasswordChar = '\0';
+            this.tb_username.PlaceholderText = "";
+            this.tb_username.SelectedText = "";
+            this.tb_username.Size = new System.Drawing.Size(357, 47);
+            this.tb_username.TabIndex = 11;
+            // 
+            // lb_login
+            // 
+            this.lb_login.AutoSize = true;
+            this.lb_login.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_login.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lb_login.Location = new System.Drawing.Point(1085, 171);
+            this.lb_login.Name = "lb_login";
+            this.lb_login.Size = new System.Drawing.Size(354, 65);
+            this.lb_login.TabIndex = 10;
+            this.lb_login.Text = "Login Account";
+            // 
+            // bt_showpass
+            // 
+            this.bt_showpass.BackColor = System.Drawing.Color.White;
+            this.bt_showpass.BorderRadius = 10;
+            this.bt_showpass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt_showpass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt_showpass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt_showpass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt_showpass.FillColor = System.Drawing.Color.White;
+            this.bt_showpass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bt_showpass.ForeColor = System.Drawing.Color.White;
+            this.bt_showpass.Image = ((System.Drawing.Image)(resources.GetObject("bt_showpass.Image")));
+            this.bt_showpass.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bt_showpass.Location = new System.Drawing.Point(1392, 451);
+            this.bt_showpass.Name = "bt_showpass";
+            this.bt_showpass.Size = new System.Drawing.Size(42, 28);
+            this.bt_showpass.TabIndex = 15;
+            this.bt_showpass.Click += new System.EventHandler(this.bt_showpass_Click);
             // 
             // loginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1482, 753);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.bt_exit);
-            this.Controls.Add(this.bt_login);
-            this.Controls.Add(this.lb_password);
-            this.Controls.Add(this.lb_username);
+            this.ClientSize = new System.Drawing.Size(1500, 800);
+            this.Controls.Add(this.bt_showpass);
+            this.Controls.Add(this.guna2ControlBox1);
+            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.lb_cmt);
+            this.Controls.Add(this.lb_login);
             this.Controls.Add(this.tb_password);
+            this.Controls.Add(this.bt_login);
+            this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.tb_username);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "loginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "loginForm";
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox tb_username;
-        private System.Windows.Forms.TextBox tb_password;
-        private System.Windows.Forms.Label lb_username;
-        private System.Windows.Forms.Label lb_password;
-        private System.Windows.Forms.Button bt_login;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button bt_exit;
+
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private System.Windows.Forms.Label lb_cmt;
+        private Guna.UI2.WinForms.Guna2TextBox tb_password;
+        private Guna.UI2.WinForms.Guna2Button bt_exit;
+        private Guna.UI2.WinForms.Guna2Button bt_login;
+        private Guna.UI2.WinForms.Guna2TextBox tb_username;
+        private System.Windows.Forms.Label lb_login;
+        private Guna.UI2.WinForms.Guna2Button bt_showpass;
     }
 }
