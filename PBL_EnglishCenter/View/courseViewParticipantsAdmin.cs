@@ -63,5 +63,10 @@ namespace PBL_EnglishCenter.View
             }
             setGUI();
         }
+
+        private void bt_cancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

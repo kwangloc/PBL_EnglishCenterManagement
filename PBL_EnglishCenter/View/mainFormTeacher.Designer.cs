@@ -127,12 +127,13 @@
             // lb_fullname
             // 
             this.lb_fullname.AutoSize = true;
+            this.lb_fullname.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lb_fullname.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold);
             this.lb_fullname.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lb_fullname.Location = new System.Drawing.Point(194, 24);
             this.lb_fullname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_fullname.Name = "lb_fullname";
-            this.lb_fullname.Size = new System.Drawing.Size(228, 65);
+            this.lb_fullname.Size = new System.Drawing.Size(230, 67);
             this.lb_fullname.TabIndex = 2;
             this.lb_fullname.Text = "fullname";
             // 
@@ -258,7 +259,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "mainFormTeacher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainFormTeacher";
