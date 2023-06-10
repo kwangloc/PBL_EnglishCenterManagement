@@ -179,12 +179,6 @@
     <Compile Include="View\documentManage.Designer.cs">
       <DependentUpon>documentManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\documentView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\documentView.Designer.cs">
-      <DependentUpon>documentView.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\examDetailsManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,9 +262,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\documentManage.resx">
       <DependentUpon>documentManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\documentView.resx">
-      <DependentUpon>documentView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\examDetailsManage.resx">
       <DependentUpon>examDetailsManage.cs</DependentUpon>

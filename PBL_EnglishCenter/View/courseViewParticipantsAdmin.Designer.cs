@@ -32,12 +32,12 @@
             this.tb_search = new System.Windows.Forms.TextBox();
             this.bt_search = new System.Windows.Forms.Button();
             this.gb_infor = new System.Windows.Forms.GroupBox();
+            this.bt_add = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.bt_searchToAdd = new System.Windows.Forms.Button();
+            this.tb_searchToAdd = new System.Windows.Forms.TextBox();
             this.lb_quantity = new System.Windows.Forms.Label();
             this.bt_remove = new System.Windows.Forms.Button();
-            this.tb_searchToAdd = new System.Windows.Forms.TextBox();
-            this.bt_searchToAdd = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.bt_add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gb_infor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -84,6 +84,43 @@
             this.gb_infor.TabStop = false;
             this.gb_infor.Text = "Add student";
             // 
+            // bt_add
+            // 
+            this.bt_add.Location = new System.Drawing.Point(357, 498);
+            this.bt_add.Name = "bt_add";
+            this.bt_add.Size = new System.Drawing.Size(88, 39);
+            this.bt_add.TabIndex = 4;
+            this.bt_add.Text = "Add";
+            this.bt_add.UseVisualStyleBackColor = true;
+            this.bt_add.Click += new System.EventHandler(this.bt_add_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(24, 94);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(468, 370);
+            this.dataGridView2.TabIndex = 3;
+            // 
+            // bt_searchToAdd
+            // 
+            this.bt_searchToAdd.Location = new System.Drawing.Point(371, 25);
+            this.bt_searchToAdd.Name = "bt_searchToAdd";
+            this.bt_searchToAdd.Size = new System.Drawing.Size(121, 33);
+            this.bt_searchToAdd.TabIndex = 2;
+            this.bt_searchToAdd.Text = "Search to add";
+            this.bt_searchToAdd.UseVisualStyleBackColor = true;
+            this.bt_searchToAdd.Click += new System.EventHandler(this.bt_searchToAdd_Click);
+            // 
+            // tb_searchToAdd
+            // 
+            this.tb_searchToAdd.Location = new System.Drawing.Point(115, 30);
+            this.tb_searchToAdd.Name = "tb_searchToAdd";
+            this.tb_searchToAdd.Size = new System.Drawing.Size(225, 22);
+            this.tb_searchToAdd.TabIndex = 1;
+            // 
             // lb_quantity
             // 
             this.lb_quantity.AutoSize = true;
@@ -103,48 +140,11 @@
             this.bt_remove.UseVisualStyleBackColor = true;
             this.bt_remove.Click += new System.EventHandler(this.bt_remove_Click);
             // 
-            // tb_searchToAdd
-            // 
-            this.tb_searchToAdd.Location = new System.Drawing.Point(115, 30);
-            this.tb_searchToAdd.Name = "tb_searchToAdd";
-            this.tb_searchToAdd.Size = new System.Drawing.Size(225, 22);
-            this.tb_searchToAdd.TabIndex = 1;
-            // 
-            // bt_searchToAdd
-            // 
-            this.bt_searchToAdd.Location = new System.Drawing.Point(371, 25);
-            this.bt_searchToAdd.Name = "bt_searchToAdd";
-            this.bt_searchToAdd.Size = new System.Drawing.Size(121, 33);
-            this.bt_searchToAdd.TabIndex = 2;
-            this.bt_searchToAdd.Text = "Search to add";
-            this.bt_searchToAdd.UseVisualStyleBackColor = true;
-            this.bt_searchToAdd.Click += new System.EventHandler(this.bt_searchToAdd_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(24, 94);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(468, 370);
-            this.dataGridView2.TabIndex = 3;
-            // 
-            // bt_add
-            // 
-            this.bt_add.Location = new System.Drawing.Point(357, 498);
-            this.bt_add.Name = "bt_add";
-            this.bt_add.Size = new System.Drawing.Size(88, 39);
-            this.bt_add.TabIndex = 4;
-            this.bt_add.Text = "Add";
-            this.bt_add.UseVisualStyleBackColor = true;
-            this.bt_add.Click += new System.EventHandler(this.bt_add_Click);
-            // 
             // courseViewParticipantsAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1413, 796);
+            this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.lb_quantity);
             this.Controls.Add(this.gb_infor);
             this.Controls.Add(this.bt_remove);
@@ -152,6 +152,7 @@
             this.Controls.Add(this.tb_search);
             this.Controls.Add(this.dataGridView1);
             this.Name = "courseViewParticipantsAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "courseViewParticipantsAdmin";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gb_infor.ResumeLayout(false);

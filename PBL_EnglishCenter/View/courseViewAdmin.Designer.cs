@@ -247,7 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1702, 859);
+            this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.bt_viewDetails);
             this.Controls.Add(this.bt_create);
             this.Controls.Add(this.lb_coursemanage);
@@ -257,6 +257,7 @@
             this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.bt_delete);
             this.Name = "courseViewAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "courseViewAdmin";
             this.gb_search.ResumeLayout(false);
             this.gb_search.PerformLayout();

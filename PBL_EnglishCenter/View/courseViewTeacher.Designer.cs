@@ -79,12 +79,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 567);
+            this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.lb_fullname);
             this.Controls.Add(this.bt_viewCourseDetails);
             this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.dgv_courseTea);
             this.Name = "courseViewTeacher";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "courseViewTeacher";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_courseTea)).EndInit();
             this.ResumeLayout(false);

@@ -127,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 471);
+            this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_exit);
@@ -138,6 +138,7 @@
             this.Controls.Add(this.tb_username);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "loginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "loginForm";
             this.ResumeLayout(false);
             this.PerformLayout();

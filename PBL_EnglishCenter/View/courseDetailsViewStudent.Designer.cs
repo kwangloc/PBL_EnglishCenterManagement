@@ -262,7 +262,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1230, 1013);
+            this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bt_doc);
             this.Controls.Add(this.bt_exam);
@@ -286,6 +286,7 @@
             this.Controls.Add(this.lb_limit);
             this.Controls.Add(this.lb_description);
             this.Name = "courseDetailsViewStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "courseDetailsViewStudent";
             this.Load += new System.EventHandler(this.courseDetailsViewStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

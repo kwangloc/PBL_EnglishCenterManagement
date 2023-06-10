@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1662, 977);
+            this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.lb_courseId);
             this.Controls.Add(this.bt_cancel);
             this.Controls.Add(this.bt_ok);
@@ -133,6 +133,7 @@
             this.Controls.Add(this.lb_title);
             this.Controls.Add(this.lb_function);
             this.Name = "announcementManage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "announcementManage";
             this.ResumeLayout(false);
             this.PerformLayout();
