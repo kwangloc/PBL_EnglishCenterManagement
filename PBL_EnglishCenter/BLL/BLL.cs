@@ -772,6 +772,43 @@ namespace PBL_EnglishCenter.BLL
             }
             return data;
         }
+        public DataTable customDGVCourseViewAdmSearch(string status, string name) // admin
+        {
+            DataTable data = new DataTable();
+            List<course> ann = new List<course>();
+            data.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("ID", typeof(string)),
+                new DataColumn("Name", typeof(string)),
+                //new DataColumn("Description", typeof(string)),
+                //new DataColumn("Number of places", typeof(string)),
+                new DataColumn("Teacher", typeof(string)),
+                //new DataColumn("Location", typeof(string)),
+                new DataColumn("Status", typeof(string)),
+                new DataColumn("Schedule", typeof(string)),
+                //new DataColumn("Cost", typeof(string))
+            });
+            foreach (course i in getListCourseByStatusAndName(status, name))
+            {
+                string sche = "";
+                foreach (schedule v in getListScheduleByCourseId(i.id))
+                {
+                    sche += (v.time).ToString() + ". ";
+                }
+                data.Rows.Add(
+                    (i.id).ToString(),
+                    i.name,
+                    //i.description,
+                    //(i.limit).ToString(),
+                    getUserById((int)i.teacher_id).fullname,
+                    //getLocationById((int)i.location_id).name + ", " + getLocationById((int)i.location_id).description,
+                    i.status,
+                    sche
+                //(i.cost).ToString()
+                );
+            }
+            return data;
+        }
         public DataTable customDGVCourseViewTea(int teacherId) // teacher
         {
             DataTable data = new DataTable();
@@ -1028,6 +1065,20 @@ namespace PBL_EnglishCenter.BLL
             if(checkCourseToDelete(courseId)) 
             {
                 pbl3_english_centerEntities db = new pbl3_english_centerEntities();
+                // delete schedule first
+                IList<schedule> schesToRemove = getListScheduleByCourseId(courseId);
+                //db.schedules.RemoveRange(schesToRemove);
+                foreach(schedule i in schesToRemove)
+                {
+                    if(i != null)
+                    {
+                        schedule tempSche = db.schedules.Find(i.id);
+                        db.schedules.Remove(tempSche);
+                        db.SaveChanges();
+                    }
+                }
+                db.SaveChanges();
+                //
                 course tempCourse = db.courses.Find(courseId);
                 db.courses.Remove(tempCourse);
                 db.SaveChanges();
