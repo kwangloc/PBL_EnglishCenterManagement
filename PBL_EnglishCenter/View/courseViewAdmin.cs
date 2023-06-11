@@ -63,7 +63,8 @@ namespace PBL_EnglishCenter.View
         {
             try
             {
-                dgv_courseadmin.DataSource = BLL.BLL.Instance.getListCourseByStatusAndName(cbb_searchStatus.SelectedItem.ToString().Trim(), tb_searchName.Text.ToString().Trim());
+                //dgv_courseadmin.DataSource = BLL.BLL.Instance.getListCourseByStatusAndName(cbb_searchStatus.SelectedItem.ToString().Trim(), tb_searchName.Text.ToString().Trim());
+                dgv_courseadmin.DataSource = BLL.BLL.Instance.customDGVCourseViewAdmSearch(cbb_searchStatus.SelectedItem.ToString().Trim(), tb_searchName.Text.ToString().Trim());
             }
             catch
             {
@@ -78,25 +79,40 @@ namespace PBL_EnglishCenter.View
         }
         private void bt_delete_Click(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    if (dgv_courseadmin.SelectedRows.Count == 1)
+            //    {
+            //        int courseId = Convert.ToInt32(dgv_courseadmin.SelectedRows[0].Cells["ID"].Value);
+            //        //BLL.BLL.Instance.deleteCourse(courseId);
+            //        if(BLL.BLL.Instance.deleteCourse(courseId))
+            //        {
+            //            MessageBox.Show("Deleted successfully");
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Deleted failed. The course must have 0 students to be deleted");
+            //        }
+            //    }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Failed deleting. Try again!");
+            //}
+            //setGUI();
+
+            if (dgv_courseadmin.SelectedRows.Count == 1)
             {
-                if (dgv_courseadmin.SelectedRows.Count == 1)
+                int courseId = Convert.ToInt32(dgv_courseadmin.SelectedRows[0].Cells["ID"].Value);
+                //BLL.BLL.Instance.deleteCourse(courseId);
+                if (BLL.BLL.Instance.deleteCourse(courseId))
                 {
-                    int courseId = Convert.ToInt32(dgv_courseadmin.SelectedRows[0].Cells["ID"].Value);
-                    //BLL.BLL.Instance.deleteCourse(courseId);
-                    if(BLL.BLL.Instance.deleteCourse(courseId))
-                    {
-                        MessageBox.Show("Deleted successfully");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Deleted failed. The course must have 0 students to be deleted");
-                    }
+                    MessageBox.Show("Deleted successfully");
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Failed deleting. Try again!");
+                else
+                {
+                    MessageBox.Show("Deleted failed. The course must have 0 students to be deleted");
+                }
             }
             setGUI();
         }

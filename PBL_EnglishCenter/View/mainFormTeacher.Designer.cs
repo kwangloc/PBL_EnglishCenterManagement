@@ -62,9 +62,10 @@
             this.bt_logout.Image = ((System.Drawing.Image)(resources.GetObject("bt_logout.Image")));
             this.bt_logout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bt_logout.ImageSize = new System.Drawing.Size(30, 30);
-            this.bt_logout.Location = new System.Drawing.Point(32, 455);
+            this.bt_logout.Location = new System.Drawing.Point(43, 560);
+            this.bt_logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bt_logout.Name = "bt_logout";
-            this.bt_logout.Size = new System.Drawing.Size(180, 85);
+            this.bt_logout.Size = new System.Drawing.Size(240, 105);
             this.bt_logout.TabIndex = 14;
             this.bt_logout.Text = "   Logout";
             this.bt_logout.Click += new System.EventHandler(this.bt_logout_Click);
@@ -74,6 +75,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvAnnTea.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAnnTea.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAnnTea.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,13 +96,13 @@
             this.dgvAnnTea.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAnnTea.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvAnnTea.GridColor = System.Drawing.Color.White;
-            this.dgvAnnTea.Location = new System.Drawing.Point(235, 126);
-            this.dgvAnnTea.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAnnTea.Location = new System.Drawing.Point(313, 155);
+            this.dgvAnnTea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAnnTea.Name = "dgvAnnTea";
             this.dgvAnnTea.RowHeadersVisible = false;
             this.dgvAnnTea.RowHeadersWidth = 51;
             this.dgvAnnTea.RowTemplate.Height = 24;
-            this.dgvAnnTea.Size = new System.Drawing.Size(1267, 677);
+            this.dgvAnnTea.Size = new System.Drawing.Size(1689, 805);
             this.dgvAnnTea.TabIndex = 12;
             this.dgvAnnTea.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvAnnTea.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -130,10 +132,9 @@
             this.lb_fullname.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lb_fullname.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold);
             this.lb_fullname.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lb_fullname.Location = new System.Drawing.Point(194, 24);
-            this.lb_fullname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_fullname.Location = new System.Drawing.Point(259, 30);
             this.lb_fullname.Name = "lb_fullname";
-            this.lb_fullname.Size = new System.Drawing.Size(230, 67);
+            this.lb_fullname.Size = new System.Drawing.Size(285, 83);
             this.lb_fullname.TabIndex = 2;
             this.lb_fullname.Text = "fullname";
             // 
@@ -143,10 +144,10 @@
             this.guna2Panel1.Controls.Add(this.bt_courseTeacher);
             this.guna2Panel1.Controls.Add(this.bt_logout);
             this.guna2Panel1.Controls.Add(this.bt_profile);
-            this.guna2Panel1.Location = new System.Drawing.Point(-1, 126);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel1.Location = new System.Drawing.Point(-1, 155);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(232, 677);
+            this.guna2Panel1.Size = new System.Drawing.Size(309, 833);
             this.guna2Panel1.TabIndex = 13;
             // 
             // bt_courseTeacher
@@ -161,9 +162,10 @@
             this.bt_courseTeacher.ForeColor = System.Drawing.Color.White;
             this.bt_courseTeacher.Image = ((System.Drawing.Image)(resources.GetObject("bt_courseTeacher.Image")));
             this.bt_courseTeacher.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_courseTeacher.Location = new System.Drawing.Point(32, 120);
+            this.bt_courseTeacher.Location = new System.Drawing.Point(43, 148);
+            this.bt_courseTeacher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bt_courseTeacher.Name = "bt_courseTeacher";
-            this.bt_courseTeacher.Size = new System.Drawing.Size(180, 85);
+            this.bt_courseTeacher.Size = new System.Drawing.Size(240, 105);
             this.bt_courseTeacher.TabIndex = 15;
             this.bt_courseTeacher.Text = "     My Course";
             this.bt_courseTeacher.Click += new System.EventHandler(this.bt_courseTeacher_Click);
@@ -181,9 +183,10 @@
             this.bt_profile.Image = ((System.Drawing.Image)(resources.GetObject("bt_profile.Image")));
             this.bt_profile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bt_profile.ImageSize = new System.Drawing.Size(30, 30);
-            this.bt_profile.Location = new System.Drawing.Point(32, 290);
+            this.bt_profile.Location = new System.Drawing.Point(43, 357);
+            this.bt_profile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bt_profile.Name = "bt_profile";
-            this.bt_profile.Size = new System.Drawing.Size(180, 85);
+            this.bt_profile.Size = new System.Drawing.Size(240, 105);
             this.bt_profile.TabIndex = 14;
             this.bt_profile.Text = "   Profile";
             this.bt_profile.Click += new System.EventHandler(this.bt_profile_Click);
@@ -193,10 +196,10 @@
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.guna2Panel2.Controls.Add(this.guna2ControlBox1);
             this.guna2Panel2.Controls.Add(this.lb_fullname);
-            this.guna2Panel2.Location = new System.Drawing.Point(233, -2);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel2.Location = new System.Drawing.Point(311, -2);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1269, 126);
+            this.guna2Panel2.Size = new System.Drawing.Size(1692, 155);
             this.guna2Panel2.TabIndex = 14;
             // 
             // guna2ControlBox1
@@ -205,9 +208,10 @@
             this.guna2ControlBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Tomato;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1224, 2);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1632, 2);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(60, 36);
             this.guna2ControlBox1.TabIndex = 9;
             this.guna2ControlBox1.Click += new System.EventHandler(this.bt_logout_Click);
             // 
@@ -222,9 +226,10 @@
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.ImageSize = new System.Drawing.Size(80, 80);
-            this.guna2Button1.Location = new System.Drawing.Point(76, 13);
+            this.guna2Button1.Location = new System.Drawing.Point(101, 16);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(76, 73);
+            this.guna2Button1.Size = new System.Drawing.Size(101, 90);
             this.guna2Button1.TabIndex = 6;
             // 
             // guna2Panel3
@@ -232,9 +237,10 @@
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.guna2Panel3.Controls.Add(this.label4);
             this.guna2Panel3.Controls.Add(this.guna2Button1);
-            this.guna2Panel3.Location = new System.Drawing.Point(-2, 1);
+            this.guna2Panel3.Location = new System.Drawing.Point(-3, 1);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(232, 123);
+            this.guna2Panel3.Size = new System.Drawing.Size(309, 151);
             this.guna2Panel3.TabIndex = 15;
             // 
             // label4
@@ -242,24 +248,23 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(58, 89);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(77, 110);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 20);
+            this.label4.Size = new System.Drawing.Size(139, 25);
             this.label4.TabIndex = 10;
             this.label4.Text = "English Center";
             // 
             // mainFormTeacher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1500, 800);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1924, 985);
             this.Controls.Add(this.dgvAnnTea);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "mainFormTeacher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainFormTeacher";

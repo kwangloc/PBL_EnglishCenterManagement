@@ -54,9 +54,10 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvAnnStu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAnnStu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAnnStu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -66,7 +67,7 @@
             this.dgvAnnStu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -74,13 +75,13 @@
             this.dgvAnnStu.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAnnStu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvAnnStu.GridColor = System.Drawing.Color.White;
-            this.dgvAnnStu.Location = new System.Drawing.Point(233, 123);
-            this.dgvAnnStu.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAnnStu.Location = new System.Drawing.Point(311, 151);
+            this.dgvAnnStu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAnnStu.Name = "dgvAnnStu";
             this.dgvAnnStu.RowHeadersVisible = false;
             this.dgvAnnStu.RowHeadersWidth = 51;
             this.dgvAnnStu.RowTemplate.Height = 24;
-            this.dgvAnnStu.Size = new System.Drawing.Size(1267, 677);
+            this.dgvAnnStu.Size = new System.Drawing.Size(1689, 833);
             this.dgvAnnStu.TabIndex = 8;
             this.dgvAnnStu.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvAnnStu.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -110,10 +111,9 @@
             this.lb_fullname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lb_fullname.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold);
             this.lb_fullname.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lb_fullname.Location = new System.Drawing.Point(194, 24);
-            this.lb_fullname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_fullname.Location = new System.Drawing.Point(259, 30);
             this.lb_fullname.Name = "lb_fullname";
-            this.lb_fullname.Size = new System.Drawing.Size(230, 67);
+            this.lb_fullname.Size = new System.Drawing.Size(285, 83);
             this.lb_fullname.TabIndex = 2;
             this.lb_fullname.Text = "fullname";
             // 
@@ -123,10 +123,10 @@
             this.guna2Panel1.Controls.Add(this.bt_courseStudent);
             this.guna2Panel1.Controls.Add(this.bt_logout);
             this.guna2Panel1.Controls.Add(this.bt_profile);
-            this.guna2Panel1.Location = new System.Drawing.Point(-3, 123);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel1.Location = new System.Drawing.Point(-4, 151);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(232, 677);
+            this.guna2Panel1.Size = new System.Drawing.Size(309, 833);
             this.guna2Panel1.TabIndex = 9;
             // 
             // bt_courseStudent
@@ -141,9 +141,10 @@
             this.bt_courseStudent.ForeColor = System.Drawing.Color.White;
             this.bt_courseStudent.Image = ((System.Drawing.Image)(resources.GetObject("bt_courseStudent.Image")));
             this.bt_courseStudent.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bt_courseStudent.Location = new System.Drawing.Point(32, 120);
+            this.bt_courseStudent.Location = new System.Drawing.Point(43, 148);
+            this.bt_courseStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bt_courseStudent.Name = "bt_courseStudent";
-            this.bt_courseStudent.Size = new System.Drawing.Size(180, 85);
+            this.bt_courseStudent.Size = new System.Drawing.Size(240, 105);
             this.bt_courseStudent.TabIndex = 15;
             this.bt_courseStudent.Text = "     My Course";
             this.bt_courseStudent.Click += new System.EventHandler(this.bt_courseStudent_Click);
@@ -161,9 +162,10 @@
             this.bt_logout.Image = ((System.Drawing.Image)(resources.GetObject("bt_logout.Image")));
             this.bt_logout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bt_logout.ImageSize = new System.Drawing.Size(30, 30);
-            this.bt_logout.Location = new System.Drawing.Point(32, 455);
+            this.bt_logout.Location = new System.Drawing.Point(43, 560);
+            this.bt_logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bt_logout.Name = "bt_logout";
-            this.bt_logout.Size = new System.Drawing.Size(180, 85);
+            this.bt_logout.Size = new System.Drawing.Size(240, 105);
             this.bt_logout.TabIndex = 14;
             this.bt_logout.Text = "   Logout";
             this.bt_logout.Click += new System.EventHandler(this.bt_logout_Click);
@@ -181,9 +183,10 @@
             this.bt_profile.Image = ((System.Drawing.Image)(resources.GetObject("bt_profile.Image")));
             this.bt_profile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bt_profile.ImageSize = new System.Drawing.Size(30, 30);
-            this.bt_profile.Location = new System.Drawing.Point(32, 290);
+            this.bt_profile.Location = new System.Drawing.Point(43, 357);
+            this.bt_profile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bt_profile.Name = "bt_profile";
-            this.bt_profile.Size = new System.Drawing.Size(180, 85);
+            this.bt_profile.Size = new System.Drawing.Size(240, 105);
             this.bt_profile.TabIndex = 14;
             this.bt_profile.Text = "   Profile";
             this.bt_profile.Click += new System.EventHandler(this.bt_profile_Click);
@@ -193,10 +196,10 @@
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.guna2Panel2.Controls.Add(this.guna2ControlBox1);
             this.guna2Panel2.Controls.Add(this.lb_fullname);
-            this.guna2Panel2.Location = new System.Drawing.Point(231, -5);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel2.Location = new System.Drawing.Point(308, -6);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1269, 126);
+            this.guna2Panel2.Size = new System.Drawing.Size(1692, 155);
             this.guna2Panel2.TabIndex = 10;
             // 
             // guna2ControlBox1
@@ -205,9 +208,10 @@
             this.guna2ControlBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Tomato;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1224, 3);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1632, 4);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(60, 36);
             this.guna2ControlBox1.TabIndex = 9;
             this.guna2ControlBox1.Click += new System.EventHandler(this.bt_logout_Click);
             // 
@@ -222,9 +226,10 @@
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.ImageSize = new System.Drawing.Size(80, 80);
-            this.guna2Button1.Location = new System.Drawing.Point(76, 13);
+            this.guna2Button1.Location = new System.Drawing.Point(101, 16);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(76, 73);
+            this.guna2Button1.Size = new System.Drawing.Size(101, 90);
             this.guna2Button1.TabIndex = 6;
             // 
             // guna2Panel3
@@ -232,9 +237,10 @@
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.guna2Panel3.Controls.Add(this.label4);
             this.guna2Panel3.Controls.Add(this.guna2Button1);
-            this.guna2Panel3.Location = new System.Drawing.Point(-4, -2);
+            this.guna2Panel3.Location = new System.Drawing.Point(-5, -2);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(232, 123);
+            this.guna2Panel3.Size = new System.Drawing.Size(309, 151);
             this.guna2Panel3.TabIndex = 11;
             // 
             // label4
@@ -242,24 +248,24 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(58, 89);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(77, 110);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 20);
+            this.label4.Size = new System.Drawing.Size(139, 25);
             this.label4.TabIndex = 10;
             this.label4.Text = "English Center";
             // 
             // mainFormStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1500, 800);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1942, 985);
             this.Controls.Add(this.dgvAnnStu);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "mainFormStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainFormStudent";
